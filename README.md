@@ -1,4 +1,4 @@
-# One4uBot userbot project
+# (One4uBot based) PurpleBot userbot project
 
 <p align="center">
     <a href="https://github.com/MoveAngel/One4uBot/actions?query=workflow%3AFailedChecker" > <img src="https://img.shields.io/github/workflow/status/MoveAngel/One4uBot/FailedChecker/sql-extended?label=Build&style=flat-square&logo=github-actions&logoColor=white&color=98CE00" alt="FailedChecker" /></a>
@@ -47,7 +47,7 @@ wget https://raw.githubusercontent.com/MoveAngel/One4uBot/sql-extended/terminal_
 The easiest way to deploy this great bot! is click on button below.
 Make sure you have an account of heroku and follow all the steps required.
 
-<p align="left"><a href="https://heroku.com/deploy?template=https://github.com/MoveAngel/One4uBot/tree/sql-extended"> <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy to Heroku" /></a></p>
+<p align="left"><a href="https://heroku.com/deploy?template=https://github.com/thewhiteharlot/PurpleBot/tree/sql-extended"> <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy to Heroku" /></a></p>
 
 For further guide you can head to [Groups and Support](https://github.com/MoveAngel/One4uBot#Groups-and-Support) or read this [guide](https://telegra.ph/How-to-host-a-Telegram-Userbot-07-01-2)
 
