@@ -24,16 +24,16 @@ from userbot import CMD_HELP, bot
 from userbot.events import register
 
 KANGING_STR = [
-    "Using Witchery to kang this sticker...",
-    "Plagiarising hehe...",
-    "Inviting this sticker over to my pack...",
-    "Kanging this sticker...",
-    "Hey that's a nice sticker!\nMind if I kang?!..",
-    "hehe me stel ur stikér\nhehe.",
-    "Ay look over there (☉｡☉)!→\nWhile I kang this...",
-    "Roses are red violets are blue, kanging this sticker so my pacc looks cool",
-    "Imprisoning this sticker...",
-    "Mr.Steal Your Sticker is stealing this sticker... ",
+    "Usando alquimia para clonar esse sticker...",
+    "Pegando isso aqui pra mim hehe...",
+    "Convidando esse sticker pro meu pack...",
+    "Hey, lindo sticker!\nSe importa se eu roubar?!..",
+    "hehe eu robo ess stiké\nhehe.",
+    "Ay olha aquilo ali (☉｡☉)!→\nEnquanto eu pego isso aqui...",
+    "Sob minhas ordens, você é meu",
+    "Zsqwabbers",
+    "Passa esse pra mãe...",
+    "Sra. RoubaSticker roubando seu sticker... ",
 ]
 
 
@@ -103,7 +103,7 @@ async def kang(args):
                 emoji = splat[1]
 
         packname = f"a{user.id}_by_{user.username}_{pack}"
-        packnick = f"@{user.username}'s kang pack Vol.{pack}"
+        packnick = f"@{user.username}'s kang library Book.{pack}"
         cmd = "/newpack"
         file = io.BytesIO()
 
@@ -182,8 +182,8 @@ async def kang(args):
                         await bot.send_read_acknowledge(conv.chat_id)
                         await args.edit(
                             f"`Sticker added in a Different Pack !\
-                            \nThis Pack is Newly created!\
-                            \nYour pack can be found [here](t.me/addstickers/{packname})",
+                            \nEsse pacote foi criado recentemente!\
+                            \nSeu pacote pode ser achado [aqui](t.me/addstickers/{packname})",
                             parse_mode="md",
                         )
                         return
@@ -253,8 +253,8 @@ async def kang(args):
                 await bot.send_read_acknowledge(conv.chat_id)
 
         await args.edit(
-            f"`Sticker kanged successfully!`\
-            \nPack can be found [here](t.me/addstickers/{packname})",
+            f"`Sticker roubado com sucesso!`\
+            \nPacote pode ser achado [agui](t.me/addstickers/{packname})",
             parse_mode="md",
         )
 
@@ -299,11 +299,11 @@ async def get_pack_info(event):
         stickerset_attr = rep_msg.document.attributes[1]
         await event.edit("`Fetching details of the sticker pack, please wait..`")
     except BaseException:
-        await event.edit("`This is not a sticker. Reply to a sticker.`")
+        await event.edit("`Isso não é um sticker. Reply em um sticker.`")
         return
 
     if not isinstance(stickerset_attr, DocumentAttributeSticker):
-        await event.edit("`This is not a sticker. Reply to a sticker.`")
+        await event.edit("`Isso não é um sticker. Reply em um sticker.`")
         return
 
     get_stickerset = await bot(

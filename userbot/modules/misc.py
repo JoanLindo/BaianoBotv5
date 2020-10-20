@@ -72,7 +72,7 @@ async def killdabot(reboot):
 async def reedme(event):
     await event.edit(
         "Here's something for you to read:\n"
-        "\n[One4uBot's README.md file](https://github.com/MoveAngel/One4uBot/blob/sql-extended/README.md)"
+        "\n[One4uBot's README.md file](https://github.com/thewhiteharlot/PurpleBot/blob/sql-extended/README.md)"
         "\n[Setup Guide - Basic](https://telegra.ph/How-to-host-a-Telegram-Userbot-07-01-2)"
         "\n[Setup Guide - Google Drive](https://telegra.ph/How-To-Setup-Google-Drive-04-03)"
         "\n[Setup Guide - LastFM Module](https://telegra.ph/How-to-set-up-LastFM-module-for-Paperplane-userbot-11-02)"
@@ -101,7 +101,7 @@ async def repeat(rep):
 async def repo_is_here(wannasee):
     """ For .repo command, just returns the repo URL. """
     await wannasee.edit(
-        "[Click here](https://github.com/MoveAngel/One4uBot) to open One4uBot's GitHub page."
+        "[Click here](https://github.com/thewhiteharlot/PurpleBot) to open One4uBot's GitHub page."
     )
 
 
