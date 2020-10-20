@@ -65,8 +65,8 @@ async def deploy(event, repo, ups_rem, ac_br, txt):
         heroku_applications = heroku.apps()
         if HEROKU_APP_NAME is None:
             await event.edit(
-                "`Please set up HEROKU_APP_NAME variable"
-                " to be able to deploy newest changes of userbot.`"
+                "`Configure a variável HEROKU_APP_NAME"
+                " para poder atualizar o userbot.`"
             )
             repo.__del__()
             return
@@ -76,10 +76,10 @@ async def deploy(event, repo, ups_rem, ac_br, txt):
                 break
         if heroku_app is None:
             await event.edit(
-                f"{txt}\n`Invalid Heroku credentials for deploying userbot dyno.`"
+                f"{txt}\n`Credenciais inválidos do Heroku para implantar a userbot dyno.`"
             )
             return repo.__del__()
-        await event.edit("`Userbot dyno build in progress, please wait...`")
+        await event.edit("Userbot Dyno Build em progresso, por favor aguarde...`")
         ups_rem.fetch(ac_br)
         repo.git.reset("--hard", "FETCH_HEAD")
         heroku_git_url = heroku_app.git_url.replace(
@@ -93,17 +93,17 @@ async def deploy(event, repo, ups_rem, ac_br, txt):
         try:
             remote.push(refspec="HEAD:refs/heads/master", force=True)
         except GitCommandError as error:
-            await event.edit(f"{txt}\n`Here is the error log:\n{error}`")
+            await event.edit(f"{txt}\n`Aqui está o error log:\n{error}`")
             return repo.__del__()
-        await event.edit("`Successfully Updated!\n" "Restarting, please wait...`")
+        await event.edit("`Atualizado com sucesso!\n" "Reiniciando, por favor aguarde...`")
 
         if BOTLOG:
             await event.client.send_message(
-                BOTLOG_CHATID, "#UPDATE \n" "Your One4uBot was successfully updated"
+                BOTLOG_CHATID, "#UPDATE \n" "Seu PurpleBot foi atualizado com sucesso."
             )
 
     else:
-        await event.edit("`Please set up HEROKU_API_KEY variable.`")
+        await event.edit("`Por favor configure a variável HEROKU_API_KEY.`")
     return
 
 
@@ -114,12 +114,12 @@ async def update(event, repo, ups_rem, ac_br):
         repo.git.reset("--hard", "FETCH_HEAD")
     await update_requirements()
     await event.edit(
-        "`Successfully Updated!\n" "Bot is restarting... Wait for a second!`"
+        "`Atualizado com sucesso!\n" "Reiniciando, por favor aguarde...`"
     )
 
     if BOTLOG:
         await event.client.send_message(
-            BOTLOG_CHATID, "#UPDATE \n" "Your One4uBot was successfully updated"
+            BOTLOG_CHATID, "#UPDATE \n" "Seu PurpleBot foi atualizado com sucesso."
         )
 
     # Spin a new instance of bot
@@ -130,26 +130,26 @@ async def update(event, repo, ups_rem, ac_br):
 
 @register(outgoing=True, pattern=r"^.update(?: |$)(now|deploy)?")
 async def upstream(event):
-    "For .update command, check if the bot is up to date, update if specified"
-    await event.edit("`Checking for updates, please wait....`")
+    "Para o comando .update, checa se o bot está atualizado, atualiza se especificado"
+    await event.edit("`Checando por atualizações, aguarde....`")
     conf = event.pattern_match.group(1)
     off_repo = UPSTREAM_REPO_URL
     force_update = False
     try:
-        txt = "`Oops.. Updater cannot continue due to "
-        txt += "some problems occured`\n\n**LOGTRACE:**\n"
+        txt = "`Oops.. Atualizador não obteve êxito devido a "
+        txt += "um problema ocorreu`\n\n**LOGTRACE:**\n"
         repo = Repo()
     except NoSuchPathError as error:
-        await event.edit(f"{txt}\n`directory {error} is not found`")
+        await event.edit(f"{txt}\n`diretório {error} não encontrado`")
         return repo.__del__()
     except GitCommandError as error:
-        await event.edit(f"{txt}\n`Early failure! {error}`")
+        await event.edit(f"{txt}\n`Falha inicial! {error}`")
         return repo.__del__()
     except InvalidGitRepositoryError as error:
         if conf is None:
             return await event.edit(
-                f"`Unfortunately, the directory {error} does not seem to be a git repository."
-                "\nBut we can fix that by force updating the userbot using .update now.`"
+                f"`Infelizmente, o diretório {error} não parece ser um repositório git."
+                "\nMas podemos consertar isso forçando a atualização do userbot usando .update now.`"
             )
         repo = Repo.init()
         origin = repo.create_remote("upstream", off_repo)
@@ -163,10 +163,10 @@ async def upstream(event):
     if ac_br != UPSTREAM_REPO_BRANCH:
         await event.edit(
             "**[UPDATER]:**\n"
-            f"`Looks like you are using your own custom branch ({ac_br}). "
-            "in that case, Updater is unable to identify "
-            "which branch is to be merged. "
-            "please checkout to any official branch`"
+            f"`Parece que você está tentando usar uma branch customizada ({ac_br}). "
+            "nesse caso, o atualizador não pode verificar "
+            "qual branch deve ser atualizada. "
+            "por favor, verifique na branch principal`"
         )
         return repo.__del__()
     try:
@@ -181,16 +181,16 @@ async def upstream(event):
 
     if changelog == "" and force_update is False:
         await event.edit(
-            f"\n`{UPDATER_ALIAS} is`  **up-to-date**  `with`  **{UPSTREAM_REPO_BRANCH}**\n"
+            f"\n`{UPDATER_ALIAS} is`  **atualizada**  `com`  **{UPSTREAM_REPO_BRANCH}**\n"
         )
         return repo.__del__()
 
     if conf is None and force_update is False:
         changelog_str = (
-            f"**New UPDATE available for [{ac_br}]:\n\nCHANGELOG:**\n`{changelog}`"
+            f"**Nova ATUALIZAÇÃO disponível para [{ac_br}]:\n\nLISTA DE MUDANÇAS:**\n`{changelog}`"
         )
         if len(changelog_str) > 4096:
-            await event.edit("`Changelog is too big, view the file to see it.`")
+            await event.edit("`Lista de mudanças muito grande, abra o arquivo para conferir.`")
             file = open("output.txt", "w+")
             file.write(changelog_str)
             file.close()
@@ -206,10 +206,10 @@ async def upstream(event):
 
     if force_update:
         await event.edit(
-            "`Force-Syncing to latest stable userbot code, please wait...`"
+            "`Sincronizando o último código estável do userbot, aguarde...`"
         )
     else:
-        await event.edit("`Updating One4uBot, please wait....`")
+        await event.edit("`Atualizando PurpleBot...`")
     if conf == "now":
         await update(event, repo, ups_rem, ac_br)
     elif conf == "deploy":
@@ -220,10 +220,10 @@ async def upstream(event):
 CMD_HELP.update(
     {
         "update": ".update"
-        "\nUsage: Checks if the main userbot repository has any updates and shows a changelog if so."
+        "\nUso: Checa se o repositório tem atualizações e mostra lista de mudanças."
         "\n\n.update now"
-        "\nUsage: Update your userbot, if there are any updates in your userbot repository."
+        "\nUso: Atualiza seu userbot, caso hajam alterações no repositório."
         "\n\n.update deploy"
-        "\nUsage: Deploy your userbot at heroku, if there are any updates in your userbot repository."
+        "\nUso: Atualiza seu userbot no heroku, caso hajam alterações no repositório ."
     }
 )
