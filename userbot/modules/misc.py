@@ -23,7 +23,7 @@ async def randomise(items):
     itemo = (items.text[8:]).split()
     if len(itemo) < 2:
         await items.edit(
-            "`2 or more items are required! Check .help random for more info.`"
+            "`2 itens ou mais são necessários! Use .help random para mais informações.`"
         )
         return
     index = randint(1, len(itemo) - 1)
@@ -49,10 +49,10 @@ async def sleepybot(time):
 
 @register(outgoing=True, pattern="^.shutdown$")
 async def killbot(shut):
-    """For .shutdown command, shut the bot down."""
-    await shut.edit("`Goodbye *Windows XP shutdown sound*....`")
+    """Para o comando .shutdown, desliga o bot."""
+    await shut.edit("`Adeus *barulho de desligamento do Windows XP*....`")
     if BOTLOG:
-        await shut.client.send_message(BOTLOG_CHATID, "#SHUTDOWN \n" "Bot shut down")
+        await shut.client.send_message(BOTLOG_CHATID, "#SHUTDOWN \n" "Bot desligado")
     await bot.disconnect()
 
 
@@ -60,7 +60,7 @@ async def killbot(shut):
 async def killdabot(reboot):
     await reboot.edit("`*i would be back in a moment*`")
     if BOTLOG:
-        await reboot.client.send_message(BOTLOG_CHATID, "#RESTART \n" "Bot Restarted")
+        await reboot.client.send_message(BOTLOG_CHATID, "#RESTART \n" "Bot reiniciado")
     await bot.disconnect()
     # Spin a new instance of bot
     execl(sys.executable, sys.executable, *sys.argv)
@@ -146,42 +146,42 @@ CMD_HELP.update(
 CMD_HELP.update(
     {
         "shutdown": ".shutdown\
-\nUsage: Sometimes you need to shut down your bot. Sometimes you just hope to\
-hear Windows XP shutdown sound... but you don't."
+\nUsage: As vezes você só precisa desligar seu bot. As vezes só espera\
+ouvir o som de desligamento do Windows XP... mas não ouve."
     }
 )
 
 CMD_HELP.update(
     {
         "repo": ".repo\
-\nUsage: If you are curious what makes the userbot work, this is what you need."
+\nUsage: Se está curioso com o que faz o bot funcionar, é disso que precisa."
     }
 )
 
 CMD_HELP.update(
     {
         "readme": ".readme\
-\nUsage: Provide links to setup the userbot and it's modules."
+\nUsage: Links para configurar o userbot e seus módulos."
     }
 )
 
 CMD_HELP.update(
     {
         "repeat": ".repeat <no.> <text>\
-\nUsage: Repeats the text for a number of times. Don't confuse this with spam tho."
+\nUsage: Repete o texto um número de vezes. Não confunda com spam."
     }
 )
 
 CMD_HELP.update(
     {
         "restart": ".restart\
-\nUsage: Restarts the bot !!"
+\nUsage: Reinicia o bot !!"
     }
 )
 
 CMD_HELP.update(
     {
         "raw": ".raw\
-\nUsage: Get detailed JSON-like formatted data about replied message."
+\nUsage: Dados detalhados da mensagem em reply, no estilo JSON."
     }
 )
