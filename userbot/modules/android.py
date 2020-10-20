@@ -327,7 +327,7 @@ CMD_HELP.update(
 \nUso: Download da ROM Pixel Experience pro seu servidor do userbot.\
 \n\n.specs <marca> <dispositivo>\
 \nUso: Obtenha especificações do dispositivo.\
-\n\n.twrp <codename>\
+\n\n.twrp <codenome>\
 \nUso: Obtenha última versão do TWRP para o dispositivo."
     }
 )
