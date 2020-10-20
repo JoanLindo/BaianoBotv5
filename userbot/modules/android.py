@@ -319,15 +319,15 @@ CMD_HELP.update(
     {
         "android": ".magisk\
 \nÚltimas versões do Magisk\
-\n\n.device <codename>\
+\n\n.device <codenome>\
 \nUso: Obtenha informações sobre codenome ou modelo do dispositivo.\
-\n\n.codename <brand> <device>\
+\n\n.codename <marca> <dispositivo>\
 \nUso: Procure pelo codenome do dispositivo.\
 \n\n.pixeldl **<download.pixelexperience.org>**\
 \nUso: Download da ROM Pixel Experience pro seu servidor do userbot.\
-\n\n.specs <brand> <device>\
-\nUso: Obtenha device specifications info Especificações do dispositivo.\
+\n\n.specs <marca> <dispositivo>\
+\nUso: Obtenha especificações do dispositivo.\
 \n\n.twrp <codename>\
-\nUso: Get latest twrp download for android device Obtenha última versão do TWRP para o dispositivo."
+\nUso: Obtenha última versão do TWRP para o dispositivo."
     }
 )
