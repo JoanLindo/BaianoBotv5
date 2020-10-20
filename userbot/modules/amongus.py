@@ -29,14 +29,14 @@ async def f_load(message):
         if not reply.text:
             await bruh(message, reply.sender)
             return
-        text = reply.raw_text
+        text = reply.pattern_match.group(1)
     
     if text.split(" ")[0] in clrs:
         clr = clrs[text.split(" ")[0]]
         text = " ".join(text.split(" ")[1:])
         
     if text == "colors":
-        await message.edit("Cor inválida:\n"+("\n".join([f"• <code>{i}</code>" for i in list(clrs.keys())])))
+        await message.edit("Cores disponíveis:\n"+("\n".join([f"• `{i}`" for i in list(clrs.keys())])))
         return
     
     url = "https://raw.githubusercontent.com/KeyZenD/AmongUs/master/"
@@ -63,12 +63,12 @@ async def bruh(message, user):
     fn = user.first_name
     ln = user.last_name
     name = fn + (" "+ln if ln else "")
-    name = "<b>"+name
-    await message.edit(name+choice([" ", " не "])+"был предателем!</b>")
+    name = "***"+name
+    await message.edit(name+choice([" ", " não "])+"era um impostor! ***")
 
 CMD_HELP.update(
     {
         "amongus": ".saylie\
-    \nEnvie uma imagem de um impostor do Among Us com uma fala sua."
+    \nEnvie uma imagem de um impostor do Among US com uma fala sua."
     }
 )
