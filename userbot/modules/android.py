@@ -24,13 +24,13 @@ GITHUB = "https://github.com"
 
 @register(outgoing=True, pattern="^.magisk$")
 async def magisk(request):
-    """ magisk latest releases """
+    """ últimas versões do magisk """
     magisk_dict = {
         "Stable": "https://raw.githubusercontent.com/topjohnwu/magisk_files/master/stable.json",
         "Beta": "https://raw.githubusercontent.com/topjohnwu/magisk_files/master/beta.json",
         "Canary": "https://raw.githubusercontent.com/topjohnwu/magisk_files/canary/debug.json",
     }
-    releases = "Latest Magisk Releases:\n"
+    releases = "Últimas versões do Magisk:\n"
     for name, release_url in magisk_dict.items():
         data = get(release_url).json()
         releases += (
@@ -43,7 +43,7 @@ async def magisk(request):
 
 @register(outgoing=True, pattern=r"^.device(?: |$)(\S*)")
 async def device_info(request):
-    """ get android device basic info from its codename """
+    """ informações básicas do dispositivo android pelo seu codename """
     textx = await request.get_reply_message()
     codename = request.pattern_match.group(1)
     if codename:
@@ -61,7 +61,7 @@ async def device_info(request):
     )
     results = data.get(codename)
     if results:
-        reply = f"**Search results for {codename}**:\n\n"
+        reply = f"**Resultados da pesquisa por {codename}**:\n\n"
         for item in results:
             reply += (
                 f"**Brand**: {item['brand']}\n"
@@ -69,13 +69,13 @@ async def device_info(request):
                 f"**Model**: {item['model']}\n\n"
             )
     else:
-        reply = f"`Couldn't find info about {codename}!`\n"
+        reply = f"`Sem informações sobre {codename}!`\n"
     await request.edit(reply)
 
 
 @register(outgoing=True, pattern=r"^.codename(?: |)([\S]*)(?: |)([\s\S]*)")
 async def codename_info(request):
-    """ search for android codename """
+    """ procura por codenome do dispositivo android """
     textx = await request.get_reply_message()
     brand = request.pattern_match.group(1).lower()
     device = request.pattern_match.group(2).lower()
@@ -103,7 +103,7 @@ async def codename_info(request):
         if i["name"].lower() == device.lower() or i["model"].lower() == device.lower()
     ]
     if results:
-        reply = f"**Search results for {brand} {device}**:\n\n"
+        reply = f"**Resultados da pesquisa por {brand} {device}**:\n\n"
         if len(results) > 8:
             results = results[:8]
         for item in results:
@@ -113,13 +113,13 @@ async def codename_info(request):
                 f"**Model**: {item['model']}\n\n"
             )
     else:
-        reply = f"`Couldn't find {device} codename!`\n"
+        reply = f"`Sem resultados para {device} codename!`\n"
     await request.edit(reply)
 
 
 @register(outgoing=True, pattern="^.pixeldl(?: |$)(.*)")
 async def download_api(dl):
-    await dl.edit("`Collecting information...`")
+    await dl.edit("`Coletando informações...`")
     URL = dl.pattern_match.group(1)
     URL_MSG = await dl.get_reply_message()
     if URL:
@@ -127,21 +127,21 @@ async def download_api(dl):
     elif URL_MSG:
         URL = URL_MSG.text
     else:
-        await dl.edit("`Empty information...`")
+        await dl.edit("`Informação vazia...`")
         return
     if not re.findall(r"\bhttps?://download.*pixelexperience.*\.org\S+", URL):
-        await dl.edit("`Invalid information...`")
+        await dl.edit("`Informação inválida...`")
         return
     driver = await chrome()
-    await dl.edit("`Getting information...`")
+    await dl.edit("`Conseguindo informações...`")
     driver.get(URL)
     error = driver.find_elements_by_class_name("swal2-content")
     if len(error) > 0:
-        if error[0].text == "File Not Found.":
-            await dl.edit(f"`FileNotFoundError`: {URL} is not found.")
+        if error[0].text == "Arquivo Inválido.":
+            await dl.edit(f"`FileNotFoundError`: {URL} inválido.")
             return
     datas = driver.find_elements_by_class_name("download__meta")
-    """ - enumerate data to make sure we download the matched version - """
+    """ - enumere os dados para ter certeza de que o download corresponda com a versão - """
     md5_origin = None
     i = None
     for index, value in enumerate(datas):
@@ -153,7 +153,7 @@ async def download_api(dl):
         if md5_origin is not None and i is not None:
             break
     if md5_origin is None and i is None:
-        await dl.edit("`There is no match version available...`")
+        await dl.edit("`Não há versão equivalente disponível...`")
     if URL.endswith("/"):
         file_name = URL.split("/")[-2]
     else:
@@ -161,7 +161,7 @@ async def download_api(dl):
     file_path = TEMP_DOWNLOAD_DIRECTORY + file_name
     download = driver.find_elements_by_class_name("download__btn")[i]
     download.click()
-    await dl.edit("`Starting download...`")
+    await dl.edit("`Começando download...`")
     file_size = human_to_bytes(download.text.split(None, 3)[-1].strip("()"))
     display_message = None
     complete = False
@@ -177,7 +177,7 @@ async def download_api(dl):
         elif os.path.isfile(file_path):
             downloaded = os.stat(file_path).st_size
             file_size = downloaded
-            status = "Checking"
+            status = "Checando"
         else:
             await asyncio.sleep(0.3)
             continue
@@ -214,11 +214,11 @@ async def download_api(dl):
             if md5_origin == MD5:
                 complete = True
             else:
-                await dl.edit("`Download corrupt...`")
+                await dl.edit("`Download corrompido...`")
                 os.remove(file_path)
                 driver.quit()
                 return
-    await dl.respond(f"`{file_name}`\n\n" f"Successfully downloaded to `{file_path}`.")
+    await dl.respond(f"`{file_name}`\n\n" f"Download finalizado em `{file_path}`.")
     await dl.delete()
     driver.quit()
     return
@@ -251,7 +251,7 @@ async def devices_specifications(request):
             i["href"] for i in all_brands if brand == i.text.strip().lower()
         ][0]
     except IndexError:
-        await request.edit(f"`{brand} is unknown brand!`")
+        await request.edit(f"`{brand} é uma marca desconhecida/inexistente!`")
     devices = BeautifulSoup(get(brand_page_url).content, "lxml").findAll(
         "div", {"class": "model-listing-container-80"}
     )
@@ -263,7 +263,7 @@ async def devices_specifications(request):
             if device in i.text.strip().lower()
         ]
     except IndexError:
-        await request.edit(f"`can't find {device}!`")
+        await request.edit(f"`não foi possível achar {device}!`")
     if len(device_page_url) > 2:
         device_page_url = device_page_url[:2]
     reply = ""
@@ -294,11 +294,11 @@ async def twrp(request):
     elif textx:
         device = textx.text.split(" ")[0]
     else:
-        await request.edit("`Usage: .twrp <codename>`")
+        await request.edit("`Uso: .twrp <codename>`")
         return
     url = get(f"https://dl.twrp.me/{device}/")
     if url.status_code == 404:
-        reply = f"`Couldn't find twrp downloads for {device}!`\n"
+        reply = f"`Não foi possível achar downloads para {device}!`\n"
         await request.edit(reply)
         return
     page = BeautifulSoup(url.content, "lxml")
@@ -318,16 +318,16 @@ async def twrp(request):
 CMD_HELP.update(
     {
         "android": ".magisk\
-\nGet latest Magisk releases\
+\nÚltimas versões do Magisk\
 \n\n.device <codename>\
-\nUsage: Get info about android device codename or model.\
+\nUso: Obtenha informações sobre codenome ou modelo do dispositivo.\
 \n\n.codename <brand> <device>\
-\nUsage: Search for android device codename.\
+\nUso: Procure pelo codenome do dispositivo.\
 \n\n.pixeldl **<download.pixelexperience.org>**\
-\nUsage: Download pixel experience ROM into your userbot server.\
+\nUso: Download da ROM Pixel Experience pro seu servidor do userbot.\
 \n\n.specs <brand> <device>\
-\nUsage: Get device specifications info.\
+\nUso: Obtenha device specifications info Especificações do dispositivo.\
 \n\n.twrp <codename>\
-\nUsage: Get latest twrp download for android device."
+\nUso: Get latest twrp download for android device Obtenha última versão do TWRP para o dispositivo."
     }
 )
