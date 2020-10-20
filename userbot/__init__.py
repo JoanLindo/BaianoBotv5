@@ -140,10 +140,10 @@ TZ_NUMBER = int(os.environ.get("TZ_NUMBER") or 1)
 USERBOT_VERSION = os.environ.get("USERBOT_VERSION") or "3.7"
 
 # User Terminal alias
-USER_TERM_ALIAS = os.environ.get("USER_TERM_ALIAS") or "One4uBot"
+USER_TERM_ALIAS = os.environ.get("USER_TERM_ALIAS") or "PurpleBot"
 
 # Updater alias
-UPDATER_ALIAS = os.environ.get("UPDATER_ALIAS") or "One4uBot"
+UPDATER_ALIAS = os.environ.get("UPDATER_ALIAS") or "PurpleBot"
 
 # Zipfile module
 ZIP_DOWNLOAD_DIRECTORY = os.environ.get("ZIP_DOWNLOAD_DIRECTORY") or "./zips"
