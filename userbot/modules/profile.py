@@ -178,15 +178,15 @@ async def remove_profilepic(delpfp):
 
 CMD_HELP.update(
     {
-        "profile": ".username <new_username>\
+        "profile": ".username <novo_nome_de_usuário>\
 \nUsage: Muda seu nome de usuário.\
-\n\n.name <firstname> or .name <firstname> <lastname>\
+\n\n.name <primeiro_nome> ou .name <primeironome> <últimonome>\
 \nUsage: Muda seu nome no Telegram.(Primeiro e último nome serão separados pelo espaço)\
 \n\n.setpfp\
 \nUsage: Dê reply com .setpfp em uma imagem para definir como foto de perfil.\
-\n\n.setbio <new_bio>\
+\n\n.setbio <nova_bio>\
 \nUsage: Muda sua bio no Telegram.\
-\n\n.delpfp or .delpfp <number>/<all>\
+\n\n.delpfp or .delpfp <numero>/<all>\
 \nUsage: Deleta foto(s) de perfil no Telegram.\
 \n\n.reserved\
 \nUsage: Mostra nomes de usuário reservados por você.\
