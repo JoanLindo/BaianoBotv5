@@ -30,8 +30,8 @@ KANGING_STR = [
     "Hey, lindo sticker!\nSe importa se eu roubar?!..",
     "hehe achado não é roubado\nquem perdeu foi relaxado.",
     "Ay olha aquilo ali (☉｡☉)!→\nEnquanto eu pego isso aqui...",
-    "Enviando sticker para meu banco de dados",
-    "Simsalabim, passe esse sticker para mim",
+    "Enviando sticker para meu banco de dados.",
+    "Simsalabim, passe esse sticker para mim.",
     "Sticker capturado com sucesso...",
     "Sra. RoubaSticker roubando seu sticker... ",
 ]
