@@ -54,12 +54,12 @@ TRT_LANG = "en"
 async def setlang(prog):
     global CARBONLANG
     CARBONLANG = prog.pattern_match.group(1)
-    await prog.edit(f"Language for carbon.now.sh set to {CARBONLANG}")
+    await prog.edit(f"Idioma para carbon.now.sh definido como {CARBONLANG}")
 
 
 @register(outgoing=True, pattern="^.carbon")
 async def carbon_api(e):
-    """ A Wrapper for carbon.now.sh """
+    """ Um empacotador para carbon.now.sh """
     await e.edit("`Processing..`")
     CARBON = "https://carbon.now.sh/?l={lang}&code={code}"
     global CARBONLANG
@@ -70,14 +70,14 @@ async def carbon_api(e):
     elif textx:
         pcode = str(textx.message)  # Importing message to module
     code = quote_plus(pcode)  # Converting to urlencoded
-    await e.edit("`Processing...\n25%`")
+    await e.edit("`Processando...\n25%`")
     file_path = TEMP_DOWNLOAD_DIRECTORY + "carbon.png"
     if os.path.isfile(file_path):
         os.remove(file_path)
     url = CARBON.format(code=code, lang=CARBONLANG)
     driver = await chrome()
     driver.get(url)
-    await e.edit("`Processing..\n50%`")
+    await e.edit("`Processando..\n50%`")
     download_path = "./"
     driver.command_executor._commands["send_command"] = (
         "POST",
@@ -95,13 +95,13 @@ async def carbon_api(e):
     # Waiting for downloading
     while not os.path.isfile(file_path):
         await sleep(0.5)
-    await e.edit("`Processing...\n100%`")
-    await e.edit("`Uploading...`")
+    await e.edit("`Processando...\n100%`")
+    await e.edit("`Enviando...`")
     await e.client.send_file(
         e.chat_id,
         file,
-        caption="Made using [Carbon](https://carbon.now.sh/about/),\
-        \na project by [Dawn Labs](https://dawnlabs.io/)",
+        caption="Feito com [Carbon](https://carbon.now.sh/about/),\
+        \num projeto por [Dawn Labs](https://dawnlabs.io/)",
         force_document=True,
         reply_to=e.message.reply_to_msg_id,
     )
@@ -114,8 +114,8 @@ async def carbon_api(e):
 
 @register(outgoing=True, pattern="^.img (.*)")
 async def img_sampler(event):
-    """ For .img command, search and return images matching the query. """
-    await event.edit("`Processing...`")
+    """ Para o comando .img, pesquisa e retorna imagens que correspondam à consulta. """
+    await event.edit("`Processando...`")
     query = event.pattern_match.group(1)
     lim = findall(r"lim=\d+", query)
     try:
@@ -170,7 +170,7 @@ async def moni(event):
                 )
             else:
                 await event.edit(
-                    "`This seems to be some alien currency, which I can't convert right now.`"
+                    "`Esta parece ser uma moeda estrangeira, que não posso converter agora.`"
                 )
         except Exception as e:
             await event.edit(str(e))
@@ -181,7 +181,7 @@ async def moni(event):
 
 @register(outgoing=True, pattern=r"^.google (.*)")
 async def gsearch(q_event):
-    """ For .google command, do a Google search. """
+    """ Para o comando .google, faz uma pesquisa no Google. """
     match = q_event.pattern_match.group(1)
     page = findall(r"page=\d+", match)
     try:
@@ -203,27 +203,27 @@ async def gsearch(q_event):
         except IndexError:
             break
     await q_event.edit(
-        "**Search Query:**\n`" + match + "`\n\n**Results:**\n" + msg, link_preview=False
+        "**Consulta de Pesquisa:**\n`" + match + "`\n\n**Resultados:**\n" + msg, link_preview=False
     )
 
     if BOTLOG:
         await q_event.client.send_message(
             BOTLOG_CHATID,
-            "Google Search query `" + match + "` was executed successfully",
+            "Consulta de pesquisa do Google `" + match + "` foi executado com sucesso",
         )
 
 
 @register(outgoing=True, pattern=r"^.wiki (.*)")
 async def wiki(wiki_q):
-    """ For .wiki command, fetch content from Wikipedia. """
+    """ Para o comando .wiki, busca o conteúdo da Wikipedia. """
     match = wiki_q.pattern_match.group(1)
     try:
         summary(match)
     except DisambiguationError as error:
-        await wiki_q.edit(f"Disambiguated page found.\n\n{error}")
+        await wiki_q.edit(f"Página desambigada encontrada.\n\n{error}")
         return
     except PageError as pageerror:
-        await wiki_q.edit(f"Page not found.\n\n{pageerror}")
+        await wiki_q.edit(f"Página não encontrada.\n\n{pageerror}")
         return
     result = summary(match)
     if len(result) >= 4096:
@@ -234,27 +234,27 @@ async def wiki(wiki_q):
             wiki_q.chat_id,
             "output.txt",
             reply_to=wiki_q.id,
-            caption="`Output too large, sending as file`",
+            caption="`Resultado muito grande, enviando como arquivo`",
         )
         if os.path.exists("output.txt"):
             os.remove("output.txt")
         return
-    await wiki_q.edit("**Search:**\n`" + match + "`\n\n**Result:**\n" + result)
+    await wiki_q.edit("**Pesquisa:**\n`" + match + "`\n\n**Resultado:**\n" + result)
     if BOTLOG:
         await wiki_q.client.send_message(
-            BOTLOG_CHATID, f"Wiki query `{match}` was executed successfully"
+            BOTLOG_CHATID, f"Consulta Wiki `{match}` foi executada com sucesso"
         )
 
 
 @register(outgoing=True, pattern="^.ud (.*)")
 async def urban_dict(ud_e):
-    """ For .ud command, fetch content from Urban Dictionary. """
-    await ud_e.edit("Processing...")
+    """ Para o comando .ud, busca o conteúdo no Urban Dictionary. """
+    await ud_e.edit("Processando...")
     query = ud_e.pattern_match.group(1)
     try:
         define(query)
     except HTTPError:
-        await ud_e.edit(f"Sorry, couldn't find any results for: {query}")
+        await ud_e.edit(f"Desculpe, não foi possível encontrar nenhum resultado para: {query}")
         return
     mean = define(query)
     deflen = sum(len(i) for i in mean[0]["def"])
@@ -262,7 +262,7 @@ async def urban_dict(ud_e):
     meanlen = deflen + exalen
     if int(meanlen) >= 0:
         if int(meanlen) >= 4096:
-            await ud_e.edit("`Output too large, sending as file.`")
+            await ud_e.edit("`Resultado muito grande, enviando como arquivo.`")
             file = open("output.txt", "w+")
             file.write(
                 "Text: "
@@ -277,7 +277,7 @@ async def urban_dict(ud_e):
             await ud_e.client.send_file(
                 ud_e.chat_id,
                 "output.txt",
-                caption="`Output was too large, sent it as a file.`",
+                caption="`Resultado muito grande, enviado como arquivo.`",
             )
             if os.path.exists("output.txt"):
                 os.remove("output.txt")
@@ -286,7 +286,7 @@ async def urban_dict(ud_e):
         await ud_e.edit(
             "Text: **"
             + query
-            + "**\n\nMeaning: **"
+            + "**\n\nSignificado: **"
             + mean[0]["def"]
             + "**\n\n"
             + "Example: \n__"
@@ -295,15 +295,15 @@ async def urban_dict(ud_e):
         )
         if BOTLOG:
             await ud_e.client.send_message(
-                BOTLOG_CHATID, "ud query `" + query + "` executed successfully."
+                BOTLOG_CHATID, "Consulta UrbanDictionary `" + query + "` executada com sucesso."
             )
     else:
-        await ud_e.edit("No result found for **" + query + "**")
+        await ud_e.edit("Nenhum resultado encontrado para **" + query + "**")
 
 
 @register(outgoing=True, pattern=r"^.tts(?: |$)([\s\S]*)")
 async def text_to_speech(query):
-    """ For .tts command, a wrapper for Google Text-to-Speech. """
+    """ Para o comando .tts, usa o Google Text-to-Speech para transformar texto em áudio. """
     textx = await query.get_reply_message()
     message = query.pattern_match.group(1)
     if message:
@@ -311,22 +311,22 @@ async def text_to_speech(query):
     elif textx:
         message = textx.text
     else:
-        await query.edit("`Give a text or reply to a message for Text-to-Speech!`")
+        await query.edit("`Envie uma mensagem de texto ou responda a uma mensagem para transformar em áudio!`")
         return
 
     try:
         gTTS(message, lang=TTS_LANG)
     except AssertionError:
         await query.edit(
-            "The text is empty.\n"
-            "Nothing left to speak after pre-precessing, tokenizing and cleaning."
+            "O texto está vazio.\n"
+            "Não sobrou nada para falar após a pré-precessão, tokenização e limpeza."
         )
         return
     except ValueError:
-        await query.edit("Language is not supported.")
+        await query.edit("Idioma não é suportado.")
         return
     except RuntimeError:
-        await query.edit("Error loading the languages dictionary.")
+        await query.edit("Erro ao carregar o dicionário de idiomas.")
         return
     tts = gTTS(message, lang=TTS_LANG)
     tts.save("k.mp3")
@@ -341,7 +341,7 @@ async def text_to_speech(query):
         os.remove("k.mp3")
         if BOTLOG:
             await query.client.send_message(
-                BOTLOG_CHATID, "Text to Speech executed successfully !"
+                BOTLOG_CHATID, "Text to Speech executado com sucesso !"
             )
         await query.delete()
 
@@ -375,8 +375,8 @@ async def imdb(e):
         credits = soup.findAll("div", "credit_summary_item")
         if len(credits) == 1:
             director = credits[0].a.text
-            writer = "Not available"
-            stars = "Not available"
+            writer = "Não disponível"
+            stars = "Não disponível"
         elif len(credits) > 2:
             director = credits[0].a.text
             writer = credits[1].a.text
@@ -387,7 +387,7 @@ async def imdb(e):
             stars = actors[0] + "," + actors[1] + "," + actors[2]
         else:
             director = credits[0].a.text
-            writer = "Not available"
+            writer = "Não disponível"
             actors = []
             for x in credits[1].findAll("a"):
                 actors.append(x.text)
@@ -396,7 +396,7 @@ async def imdb(e):
         if soup.find("div", "inline canwrap"):
             story_line = soup.find("div", "inline canwrap").findAll("p")[0].text
         else:
-            story_line = "Not available"
+            story_line = "Não disponível"
         info = soup.findAll("div", "txt-block")
         if info:
             mov_country = []
@@ -412,7 +412,7 @@ async def imdb(e):
             for r in soup.findAll("div", "ratingValue"):
                 mov_rating = r.strong["title"]
         else:
-            mov_rating = "Not available"
+            mov_rating = "Não disponível"
         await e.edit(
             "<a href=" + poster + ">&#8203;</a>"
             "<b>Title : </b><code>"
@@ -439,12 +439,12 @@ async def imdb(e):
             parse_mode="HTML",
         )
     except IndexError:
-        await e.edit("Plox enter **Valid movie name** kthx")
+        await e.edit("Insira um **nome de filme válido** k obgd")
 
 
 @register(outgoing=True, pattern=r"^.trt(?: |$)([\s\S]*)")
 async def translateme(trans):
-    """ For .trt command, translate the given text using Google Translate. """
+    """ Para o comando .trt, traduz o texto fornecido usando o Google Translate. """
     translator = Translator()
     textx = await trans.get_reply_message()
     message = trans.pattern_match.group(1)
@@ -453,30 +453,30 @@ async def translateme(trans):
     elif textx:
         message = textx.text
     else:
-        await trans.edit("`Give a text or reply to a message to translate!`")
+        await trans.edit("`Dê um texto ou responda a uma mensagem para traduzir!`")
         return
 
     try:
         reply_text = translator.translate(deEmojify(message), dest=TRT_LANG)
     except ValueError:
-        await trans.edit("Invalid destination language.")
+        await trans.edit("Idioma de destino inválido.")
         return
 
     source_lan = LANGUAGES[f"{reply_text.src.lower()}"]
     transl_lan = LANGUAGES[f"{reply_text.dest.lower()}"]
-    reply_text = f"From **{source_lan.title()}**\nTo **{transl_lan.title()}:**\n\n{reply_text.text}"
+    reply_text = f"De **{source_lan.title()}**\nPara **{transl_lan.title()}:**\n\n{reply_text.text}"
 
     await trans.edit(reply_text)
     if BOTLOG:
         await trans.client.send_message(
             BOTLOG_CHATID,
-            f"Translated some {source_lan.title()} stuff to {transl_lan.title()} just now.",
+            f"Traduzido algumas {source_lan.title()} coisas para {transl_lan.title()} agora.",
         )
 
 
 @register(pattern=".lang (trt|tts) (.*)", outgoing=True)
 async def lang(value):
-    """ For .lang command, change the default langauge of userbot scrapers. """
+    """ Para o comando .lang, altera o idioma padrão dos scrapers do userbot. """
     util = value.pattern_match.group(1).lower()
     if util == "trt":
         scraper = "Translator"
@@ -487,7 +487,7 @@ async def lang(value):
             LANG = LANGUAGES[arg]
         else:
             await value.edit(
-                f"`Invalid Language code !!`\n`Available language codes for TRT`:\n\n`{LANGUAGES}`"
+                f"`Código de idioma inválido !!`\n`Códigos de idioma disponíveis para TRT`:\n\n`{LANGUAGES}`"
             )
             return
     elif util == "tts":
@@ -499,19 +499,19 @@ async def lang(value):
             LANG = tts_langs()[arg]
         else:
             await value.edit(
-                f"`Invalid Language code !!`\n`Available language codes for TTS`:\n\n`{tts_langs()}`"
+                f"`Código de idioma inválido !!`\n`Códigos de idioma disponíveis para TTS`:\n\n`{tts_langs()}`"
             )
             return
-    await value.edit(f"`Language for {scraper} changed to {LANG.title()}.`")
+    await value.edit(f"`Idioma para {scraper} mudou para {LANG.title()}.`")
     if BOTLOG:
         await value.client.send_message(
-            BOTLOG_CHATID, f"`Language for {scraper} changed to {LANG.title()}.`"
+            BOTLOG_CHATID, f"`Idioma para {scraper} mudou para {LANG.title()}.`"
         )
 
 
 @register(outgoing=True, pattern=r"^\.yt (\d*) *(.*)")
 async def yt_search(video_q):
-    """For .yt command, do a YouTube search from Telegram."""
+    """Para o comando .yt, faz uma pesquisa no YouTube no Telegram."""
     if video_q.pattern_match.group(1) != "":
         counter = int(video_q.pattern_match.group(1))
         if counter > 10:
@@ -523,17 +523,17 @@ async def yt_search(video_q):
 
     query = video_q.pattern_match.group(2)
     if not query:
-        await video_q.edit("`Enter query to search`")
-    await video_q.edit("`Processing...`")
+        await video_q.edit("`Insira a consulta para pesquisar`")
+    await video_q.edit("`Processando...`")
 
     try:
         results = json.loads(YoutubeSearch(query, max_results=counter).to_json())
     except KeyError:
         return await video_q.edit(
-            "`Youtube Search gone retard.\nCan't search this query!`"
+            "`Pesquisa do Youtube ficou retardada.\nNão é possível pesquisar esta consulta!`"
         )
 
-    output = f"**Search Query:**\n`{query}`\n\n**Results:**\n\n"
+    output = f"**Consulta de pesquisa:**\n`{query}`\n\n**Resultados:**\n\n"
 
     for i in results["videos"]:
         try:
@@ -551,11 +551,11 @@ async def yt_search(video_q):
 
 @register(outgoing=True, pattern=r".rip(audio|video) (.*)")
 async def download_video(v_url):
-    """ For .rip command, download media from YouTube and many other sites. """
+    """ Para o comando .rip, baixa mídia do YouTube e de muitos outros sites. """
     url = v_url.pattern_match.group(2)
     type = v_url.pattern_match.group(1).lower()
 
-    await v_url.edit("`Preparing to download...`")
+    await v_url.edit("`Preparando para baixar...`")
 
     if type == "audio":
         opts = {
@@ -599,33 +599,33 @@ async def download_video(v_url):
         video = True
 
     try:
-        await v_url.edit("`Fetching data, please wait..`")
+        await v_url.edit("`Buscando dados, por favor aguarde..`")
         with YoutubeDL(opts) as rip:
             rip_data = rip.extract_info(url)
     except DownloadError as DE:
         return await v_url.edit(f"`{str(DE)}`")
     except ContentTooShortError:
-        return await v_url.edit("`The download content was too short.`")
+        return await v_url.edit("`O conteúdo do download era muito curto.`")
     except GeoRestrictedError:
         return await v_url.edit(
-            "`Video is not available from your geographic location "
-            "due to geographic restrictions imposed by a website.`"
+            "`O vídeo não está disponível em sua localização geográfica "
+            "devido a restrições geográficas impostas pelo site.`"
         )
     except MaxDownloadsReached:
-        return await v_url.edit("`Max-downloads limit has been reached.`")
+        return await v_url.edit("`O limite máximo de downloads foi atingido.`")
     except PostProcessingError:
-        return await v_url.edit("`There was an error during post processing.`")
+        return await v_url.edit("`Ocorreu um erro durante o pós-processamento.`")
     except UnavailableVideoError:
-        return await v_url.edit("`Media is not available in the requested format.`")
+        return await v_url.edit("`A mídia não está disponível no formato solicitado.`")
     except XAttrMetadataError as XAME:
         return await v_url.edit(f"`{XAME.code}: {XAME.msg}\n{XAME.reason}`")
     except ExtractorError:
-        return await v_url.edit("`There was an error during info extraction.`")
+        return await v_url.edit("`Ocorreu um erro durante a extração de informações.`")
     except Exception as e:
         return await v_url.edit(f"{str(type(e)): {str(e)}}")
     c_time = time.time()
     if song:
-        await v_url.edit(f"`Preparing to upload song:`\n**{rip_data['title']}**")
+        await v_url.edit(f"`Preparando para fazer upload da música:`\n**{rip_data['title']}**")
         await v_url.client.send_file(
             v_url.chat_id,
             f"{rip_data['id']}.mp3",
@@ -638,20 +638,20 @@ async def download_video(v_url):
                 )
             ],
             progress_callback=lambda d, t: asyncio.get_event_loop().create_task(
-                progress(d, t, v_url, c_time, "Uploading..", f"{rip_data['title']}.mp3")
+                progress(d, t, v_url, c_time, "Enviando..", f"{rip_data['title']}.mp3")
             ),
         )
         os.remove(f"{rip_data['id']}.mp3")
         await v_url.delete()
     elif video:
-        await v_url.edit(f"`Preparing to upload video:`\n**{rip_data['title']}**")
+        await v_url.edit(f"`Preparando para enviar vídeo:`\n**{rip_data['title']}**")
         await v_url.client.send_file(
             v_url.chat_id,
             f"{rip_data['id']}.mp4",
             supports_streaming=True,
             caption=rip_data["title"],
             progress_callback=lambda d, t: asyncio.get_event_loop().create_task(
-                progress(d, t, v_url, c_time, "Uploading..", f"{rip_data['title']}.mp4")
+                progress(d, t, v_url, c_time, "Enviando..", f"{rip_data['title']}.mp4")
             ),
         )
         os.remove(f"{rip_data['id']}.mp4")
@@ -659,7 +659,7 @@ async def download_video(v_url):
 
 
 def deEmojify(inputString):
-    """ Remove emojis and other non-safe characters from string """
+    """ Remova emojis e outros caracteres não seguros da string """
     return get_emoji_regexp().sub("", inputString)
 
 
@@ -668,8 +668,8 @@ async def wolfram(wvent):
     """ Wolfram Alpha API """
     if WOLFRAM_ID is None:
         await wvent.edit(
-            "Please set your WOLFRAM_ID first !\n"
-            "Get your API KEY from [here](https://"
+            "Defina o seu WOLFRAM_ID primeiro !\n"
+            "Obtenha sua API KEY [aqui](https://"
             "products.wolframalpha.com/api/)",
             parse_mode="Markdown",
         )
@@ -687,69 +687,69 @@ async def wolfram(wvent):
 
 CMD_HELP.update(
     {
-        "img": ".img <search_query>\
-        \nUsage: Does an image search on Google and shows 5 images."
+        "img": ".img <consulta>\
+        \nUso: Faz uma pesquisa de imagens no Google e mostra 5 imagens."
     }
 )
 CMD_HELP.update(
     {
-        "currency": ".currency <amount> <from> <to>\
-        \nUsage: Converts various currencies for you."
+        "currency": ".currency <valor> <de> <para>\
+        \nUso: Converte várias moedas para você."
     }
 )
 CMD_HELP.update(
     {
-        "carbon": ".carbon <text> [or reply]\
-        \nUsage: Beautify your code using carbon.now.sh\nUse .crblang <text> to set language for your code."
+        "carbon": ".carbon <texto> [ou reply]\
+        \nUso: Capriche seu código usando carbon.now.sh\nUse .crblang <texto> para definir o idioma do seu código."
     }
 )
 CMD_HELP.update(
     {
-        "google": ".google <query>\
-        \nUsage: Does a search on Google."
+        "google": ".google <consulta>\
+        \nUso: Faz uma pesquisa no Google."
     }
 )
 CMD_HELP.update(
     {
-        "wiki": ".wiki <query>\
-        \nUsage: Does a search on Wikipedia."
+        "wiki": ".wiki <consulta>\
+        \nUso: Faz uma pesquisa na Wikipedia."
     }
 )
 CMD_HELP.update(
     {
-        "ud": ".ud <query>\
-        \nUsage: Does a search on Urban Dictionary."
+        "ud": ".ud <consulta>\
+        \nUsage: Faz uma pesquisa no Urban Dictionary."
     }
 )
 CMD_HELP.update(
     {
-        "tts": ".tts <text> [or reply]\
-        \nUsage: Translates text to speech for the language which is set.\nUse .lang tts <language code> to set language for tts. (Default is English.)"
+        "tts": ".tts <texto> [ou reply]\
+        \nUso: Traduz text-to-speech para o idioma que está definido.\nUse .lang tts <código do idioma> para definir o idioma para tts. (Padrão é [English])"
     }
 )
 CMD_HELP.update(
     {
-        "trt": ".trt <text> [or reply]\
-        \nUsage: Translates text to the language which is set.\nUse .lang trt <language code> to set language for trt. (Default is English)"
+        "trt": ".trt <texto> [ou reply]\
+        \nUso: Traduz o texto para o idioma definido.\nUse .lang trt <código do idioma> para definir idioma para trt. (Padrão é [English])"
     }
 )
 CMD_HELP.update(
     {
-        "yt": ".yt <count> <query>"
-        "\nUsage: Does a YouTube search."
-        "\nCan specify the number of results needed (default is 5)."
+        "yt": ".yt <número> <consulta>"
+        "\nUso: Faz uma pesquisa no YouTube."
+        "\nPode especificar o número de resultados necessários (padrão é 5)."
     }
 )
-CMD_HELP.update({"imdb": ".imdb <movie-name>\nShows movie info and other stuff."})
+CMD_HELP.update({"imdb": ".imdb <nome-do-filme>\nMostra informações do filme e outras coisas."})
 CMD_HELP.update(
     {
-        "rip": ".ripaudio <url> or ripvideo <url>\
-        \nUsage: Download videos and songs from YouTube (and [many other sites](https://ytdl-org.github.io/youtube-dl/supportedsites.html))."
+        "rip": ".ripaudio <url> ou ripvideo <url>\
+        \nUso: Baixe vídeos e músicas do YouTube (e [muitos outros sites](https://ytdl-org.github.io/youtube-dl/supportedsites.html))."
     }
 )
 CMD_HELP.update(
     {
-        "wolfram": ".wolfram <query>\
-        \nUsage: Get answers to questions using WolframAlpha Spoken Results API."
+        "wolfram": ".wolfram <consulta>\
+        \nUso: Obtenha respostas para perguntas usando WolframAlpha Spoken Results API."
     }
 )
