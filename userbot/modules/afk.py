@@ -287,7 +287,7 @@ async def afk_on_pm(sender):
 CMD_HELP.update(
     {
         "afk": ".afk [Motivo Opcional]\
-\nUsage: Define você como ausente.\nResponde qualquer pessoa que envia PMs/marca \
+\nUso: Define você como ausente.\nResponde qualquer pessoa que envia PMs/marca \
 você e diz o motivo da ausência(razão).\n\nDesliga o AUSENTE quando digitar qualquer coisa, em qualquer lugar.\
 "
     }
