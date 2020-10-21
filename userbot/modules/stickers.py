@@ -78,10 +78,10 @@ async def kang(args):
             is_anim = True
             photo = 1
         else:
-            await args.edit("`Unsupported File!`")
+            await args.edit("`Arquivo não suportado!`")
             return
     else:
-        await args.edit("`I can't kang that...`")
+        await args.edit("`Não posso roubar isso...`")
         return
 
     if photo:
@@ -135,15 +135,15 @@ async def kang(args):
                 while "120" in x.text:
                     pack += 1
                     packname = f"a{user.id}_by_{user.username}_{pack}"
-                    packnick = f"@{user.username}'s kang pack Vol.{pack}"
+                    packnick = f"@{user.username}'s kang library Book.{pack}"
                     await args.edit(
-                        "`Switching to Pack "
+                        "`Trocando para pacote "
                         + str(pack)
-                        + " due to insufficient space`"
+                        + " devido a espaço insuficiente`"
                     )
                     await conv.send_message(packname)
                     x = await conv.get_response()
-                    if x.text == "Invalid pack selected.":
+                    if x.text == "Pack inválido selecionado.":
                         await conv.send_message(cmd)
                         await conv.get_response()
                         # Ensure user doesn't get spamming notifications
@@ -181,7 +181,7 @@ async def kang(args):
                         # Ensure user doesn't get spamming notifications
                         await bot.send_read_acknowledge(conv.chat_id)
                         await args.edit(
-                            f"`Sticker added in a Different Pack !\
+                            f"`Sticker adicionado a um pacote diferente !\
                             \nEsse pacote foi criado recentemente!\
                             \nSeu pacote pode ser achado [aqui](t.me/addstickers/{packname})",
                             parse_mode="md",
@@ -194,9 +194,9 @@ async def kang(args):
                     file.seek(0)
                     await conv.send_file(file, force_document=True)
                 rsp = await conv.get_response()
-                if "Sorry, the file type is invalid." in rsp.text:
+                if "Desculpe, o tipo de arquivo é inválido." in rsp.text:
                     await args.edit(
-                        "`Failed to add sticker, use` @Stickers `bot to add the sticker manually.`"
+                        "`Falha ao adicionar adesivo, use` @Stickers `bot para adicionar o adesivo manualmente.`"
                     )
                     return
                 await conv.send_message(emoji)
@@ -208,7 +208,7 @@ async def kang(args):
                 # Ensure user doesn't get spamming notifications
                 await bot.send_read_acknowledge(conv.chat_id)
         else:
-            await args.edit("`Brewing a new Pack...`")
+            await args.edit("`Preparando um novo pacote...`")
             async with bot.conversation("Stickers") as conv:
                 await conv.send_message(cmd)
                 await conv.get_response()
@@ -225,9 +225,9 @@ async def kang(args):
                     file.seek(0)
                     await conv.send_file(file, force_document=True)
                 rsp = await conv.get_response()
-                if "Sorry, the file type is invalid." in rsp.text:
+                if "Desculpe, o tipo de arquivo é inválido." in rsp.text:
                     await args.edit(
-                        "`Failed to add sticker, use` @Stickers `bot to add the sticker manually.`"
+                        "`Falha ao adicionar adesivo, use` @Stickers `bot para adicionar o adesivo manualmente.`"
                     )
                     return
                 await conv.send_message(emoji)
@@ -287,23 +287,23 @@ async def resize_photo(photo):
 @register(outgoing=True, pattern="^.stkrinfo$")
 async def get_pack_info(event):
     if not event.is_reply:
-        await event.edit("`I can't fetch info from nothing, can I ?!`")
+        await event.edit("`Não consigo obter informações do nada, posso ?!`")
         return
 
     rep_msg = await event.get_reply_message()
     if not rep_msg.document:
-        await event.edit("`Reply to a sticker to get the pack details`")
+        await event.edit("`Responda a um adesivo para obter os detalhes do pacote`")
         return
 
     try:
         stickerset_attr = rep_msg.document.attributes[1]
-        await event.edit("`Fetching details of the sticker pack, please wait..`")
+        await event.edit("`Buscando detalhes do pacote de adesivos, aguarde..`")
     except BaseException:
-        await event.edit("`Isso não é um sticker. Reply em um sticker.`")
+        await event.edit("`Isso não é um sticker. Responda em um adesivo.`")
         return
 
     if not isinstance(stickerset_attr, DocumentAttributeSticker):
-        await event.edit("`Isso não é um sticker. Reply em um sticker.`")
+        await event.edit("`Isso não é um sticker. Responda em um adesivo.`")
         return
 
     get_stickerset = await bot(
@@ -339,13 +339,13 @@ async def sticker_to_png(sticker):
 
     img = await sticker.get_reply_message()
     if not img.document:
-        await sticker.edit("`Reply to a sticker...`")
+        await sticker.edit("`Responda em um adesivo...`")
         return False
 
     try:
         img.document.attributes[1]
     except Exception:
-        await sticker.edit("`This is not a sticker...`")
+        await sticker.edit("`Isto não é um adesivo...`")
         return
 
     with io.BytesIO() as image:
@@ -355,7 +355,7 @@ async def sticker_to_png(sticker):
         try:
             await img.reply(file=image, force_document=True)
         except Exception:
-            await sticker.edit("`Error, can't send file...`")
+            await sticker.edit("`Erro, não é possível enviar arquivo...`")
         else:
             await sticker.delete()
     return
@@ -364,16 +364,16 @@ async def sticker_to_png(sticker):
 CMD_HELP.update(
     {
         "stickers": ".kang\
-\nUsage: Reply .kang to a sticker or an image to kang it to your userbot pack.\
+\nUso: Responda .kang a um adesivo ou imagem para colocá-lo em seu pacote de userbot.\
 \n\n.kang [emoji('s)]\
-\nUsage: Works just like .kang but uses the emoji('s) you picked.\
-\n\n.kang [number]\
-\nUsage: Kang's the sticker/image to the specified pack but uses 🤔 as emoji.\
-\n\n.kang [emoji('s)] [number]\
-\nUsage: Kang's the sticker/image to the specified pack and uses the emoji('s) you picked.\
+\nUso: Funciona como .kang, mas usa os emoji(s) que você escolheu.\
+\n\n.kang [número]\
+\nUso: Rouba o adesivo/imagem para o pacote especificado, mas usa 🤔 como emoji.\
+\n\n.kang [emoji('s)] [número]\
+\nUso: Rouba o adesivo/imagem para o pacote especificado e usa os emoji(s) que você escolheu.\
 \n\n.stkrinfo\
-\nUsage: Gets info about the sticker pack.\
+\nUso: Obtém informações sobre o pacote de adesivos.\
 \n\n.getsticker\
-\nUsage: reply to a sticker to get 'PNG' file of sticker."
+\nUso: Responda a um adesivo para obter o arquivo 'PNG' do adesivo."
     }
 )
