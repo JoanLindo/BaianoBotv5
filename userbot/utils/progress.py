@@ -26,11 +26,11 @@ async def progress(
         elapsed_time = round(diff)
         eta = round((total - current) / speed)
         if 'upload' in prog_type.lower():
-            status = 'Uploading'
+            status = 'Enviando'
         elif 'download' in prog_type.lower():
-            status = 'Downloading'
+            status = 'Baixando'
         else:
-            status = 'Unknown'
+            status = 'Desconhecido'
         progress_str = "`{0}` | [{1}{2}] `{3}%`".format(
             status,
             ''.join(["■" for i in range(
@@ -42,8 +42,8 @@ async def progress(
             f"{progress_str}\n"
             f"`{humanbytes(current)} of {humanbytes(total)}"
             f" @ {humanbytes(speed)}`\n"
-            f"`ETA` -> {time_formatter(eta)}\n"
-            f"`Duration` -> {time_formatter(elapsed_time)}"
+            f"`Tempo estimado` -> {time_formatter(eta)}\n"
+            f"`Duração` -> {time_formatter(elapsed_time)}"
         )
         await gdrive.edit(f"`{prog_type}`\n\n"
                           f"`Status`\n{tmp}")
