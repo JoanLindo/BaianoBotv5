@@ -25,14 +25,14 @@ from userbot.events import register
 
 KANGING_STR = [
     "Usando alquimia para clonar esse sticker...",
-    "Pegando isso aqui pra mim hehe...",
+    "Pegando isso aqui emprestado...",
     "Convidando esse sticker pro meu pack...",
     "Hey, lindo sticker!\nSe importa se eu roubar?!..",
-    "hehe eu robo ess stiké\nhehe.",
+    "hehe achado não é roubado\nquem perdeu foi relaxado.",
     "Ay olha aquilo ali (☉｡☉)!→\nEnquanto eu pego isso aqui...",
-    "Sob minhas ordens, você é meu",
-    "Zsqwabbers",
-    "Passa esse pra mãe...",
+    "Enviando sticker para meu banco de dados",
+    "Simsalabim, passe esse sticker para mim",
+    "Sticker capturado com sucesso...",
     "Sra. RoubaSticker roubando seu sticker... ",
 ]
 
@@ -254,7 +254,7 @@ async def kang(args):
 
         await args.edit(
             f"`Sticker roubado com sucesso!`\
-            \nPacote pode ser achado [agui](t.me/addstickers/{packname})",
+            \nPacote pode ser achado [aqui](t.me/addstickers/{packname})",
             parse_mode="md",
         )
 
