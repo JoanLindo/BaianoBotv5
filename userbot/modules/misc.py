@@ -34,17 +34,17 @@ async def randomise(items):
 
 @register(outgoing=True, pattern="^.sleep ([0-9]+)$")
 async def sleepybot(time):
-    """ For .sleep command, let the userbot snooze for a few second. """
+    """ Para o comando .sleep, deixe o userbot dormir por alguns segundos. """
     counter = int(time.pattern_match.group(1))
-    await time.edit("`I am sulking and snoozing...`")
+    await time.edit("`Estou de mau humor e cochilando.....`")
     if BOTLOG:
         str_counter = time_formatter(counter)
         await time.client.send_message(
             BOTLOG_CHATID,
-            f"You put the bot to sleep for {str_counter}.",
+            f"Você colocou o bot para dormir por {str_counter}.",
         )
     sleep(counter)
-    await time.edit("`OK, I'm awake now.`")
+    await time.edit("`OK, estou acordado agora.`")
 
 
 @register(outgoing=True, pattern="^.shutdown$")
@@ -58,7 +58,7 @@ async def killbot(shut):
 
 @register(outgoing=True, pattern="^.restart$")
 async def killdabot(reboot):
-    await reboot.edit("`*i would be back in a moment*`")
+    await reboot.edit("`*eu estarei de volta em um momento*`")
     if BOTLOG:
         await reboot.client.send_message(BOTLOG_CHATID, "#RESTART \n" "Bot reiniciado")
     await bot.disconnect()
@@ -72,7 +72,7 @@ async def killdabot(reboot):
 async def reedme(event):
     await event.edit(
         "Here's something for you to read:\n"
-        "\n[One4uBot's README.md file](https://github.com/thewhiteharlot/PurpleBot/blob/sql-extended/README.md)"
+        "\n[PurpleBot's README.md file](https://github.com/thewhiteharlot/PurpleBot/blob/sql-extended/README.md)"
         "\n[Setup Guide - Basic](https://telegra.ph/How-to-host-a-Telegram-Userbot-07-01-2)"
         "\n[Setup Guide - Google Drive](https://telegra.ph/How-To-Setup-Google-Drive-04-03)"
         "\n[Setup Guide - LastFM Module](https://telegra.ph/How-to-set-up-LastFM-module-for-Paperplane-userbot-11-02)"
@@ -99,9 +99,9 @@ async def repeat(rep):
 
 @register(outgoing=True, pattern="^.repo$")
 async def repo_is_here(wannasee):
-    """ For .repo command, just returns the repo URL. """
+    """ Para o comando .repo, apenas retorna o URL do repositório. """
     await wannasee.edit(
-        "[Click here](https://github.com/thewhiteharlot/PurpleBot) to open One4uBot's GitHub page."
+        "[Click here](https://github.com/thewhiteharlot/PurpleBot) to open PurpleBot's GitHub page."
     )
 
 
@@ -118,35 +118,35 @@ async def raw(rawtext):
         reply_to_id = rawtext.message.id
     with io.BytesIO(str.encode(the_real_message)) as out_file:
         out_file.name = "raw_message_data.txt"
-        await rawtext.edit("`Check the userbot log for the decoded message data !!`")
+        await rawtext.edit("`Verifique o log do userbot para os dados da mensagem decodificada !!`")
         await rawtext.client.send_file(
             BOTLOG_CHATID,
             out_file,
             force_document=True,
             allow_cache=False,
             reply_to=reply_to_id,
-            caption="`Here's the decoded message data !!`",
+            caption="`Aqui estão os dados da mensagem decodificada !!`",
         )
 
 
 CMD_HELP.update(
     {
         "random": ".random <item1> <item2> ... <itemN>\
-\nUsage: Get a random item from the list of items."
+\nUso: Pegue um item aleatório da lista de itens."
     }
 )
 
 CMD_HELP.update(
     {
         "sleep": ".sleep <seconds>\
-\nUsage: Userbots get tired too. Let yours snooze for a few seconds."
+\nUso: Os userbots também se cansam. Deixe o seu adormecer por alguns segundos."
     }
 )
 
 CMD_HELP.update(
     {
         "shutdown": ".shutdown\
-\nUsage: As vezes você só precisa desligar seu bot. As vezes só espera\
+\nUso: As vezes você só precisa desligar seu bot. As vezes só quer\
 ouvir o som de desligamento do Windows XP... mas não ouve."
     }
 )
@@ -154,34 +154,34 @@ ouvir o som de desligamento do Windows XP... mas não ouve."
 CMD_HELP.update(
     {
         "repo": ".repo\
-\nUsage: Se está curioso com o que faz o bot funcionar, é disso que precisa."
+\nUso: Se está curioso com o que faz o bot funcionar, é disso que precisa."
     }
 )
 
 CMD_HELP.update(
     {
         "readme": ".readme\
-\nUsage: Links para configurar o userbot e seus módulos."
+\nUso: Links para configurar o userbot e seus módulos."
     }
 )
 
 CMD_HELP.update(
     {
         "repeat": ".repeat <no.> <text>\
-\nUsage: Repete o texto um número de vezes. Não confunda com spam."
+\nUso: Repete o texto um número de vezes. Não confunda com spam."
     }
 )
 
 CMD_HELP.update(
     {
         "restart": ".restart\
-\nUsage: Reinicia o bot !!"
+\nUso: Reinicia o bot !!"
     }
 )
 
 CMD_HELP.update(
     {
         "raw": ".raw\
-\nUsage: Dados detalhados da mensagem em reply, no estilo JSON."
+\nUso: Dados detalhados da mensagem em reply, em formatação JSON."
     }
 )
