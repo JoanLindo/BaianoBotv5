@@ -33,7 +33,7 @@ KANGING_STR = [
     "Enviando sticker para meu banco de dados.",
     "Simsalabim, passe esse sticker para mim.",
     "Sticker capturado com sucesso...",
-    "Sra. RoubaSticker roubando seu sticker... ",
+    "Sr. RoubaSticker roubando seu sticker... ",
 ]
 
 
