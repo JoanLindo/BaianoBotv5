@@ -55,7 +55,7 @@ afk_start = {}
 
 @register(outgoing=True, pattern="^.afk(?: |$)(.*)", disable_errors=True)
 async def set_afk(afk_e):
-    """ Para o comando .afk , permite que você informe às pessoas que você está ausente quando elas lhe enviam mensagens """
+    """ For .afk command, allows you to inform people that you are afk when they message you """
     afk_e.text
     string = afk_e.pattern_match.group(1)
     global ISAFK
@@ -79,7 +79,7 @@ async def set_afk(afk_e):
     else:
         await afk_e.edit("Ficarei ausente!")
     if BOTLOG:
-        await afk_e.client.send_message(BOTLOG_CHATID, "#AFK\nVocê está AUSENTE!")
+        await afk_e.client.send_message(BOTLOG_CHATID, "#AFK\nVocê ficou ausente!")
     ISAFK = True
     afk_time = datetime.now()  # pylint:disable=E0602
     raise StopPropagation
@@ -87,7 +87,7 @@ async def set_afk(afk_e):
 
 @register(outgoing=True)
 async def type_afk_is_not_true(notafk):
-    """ Isso configura seu status como não AUSENTE automaticamente quando você escreve algo enquanto está AUSENTE """
+    """ This sets your status as not afk automatically when you write something while being afk """
     global ISAFK
     global COUNT_MSG
     global USERS
@@ -100,7 +100,7 @@ async def type_afk_is_not_true(notafk):
     afk_end = back_alive.replace(microsecond=0)
     if ISAFK:
         ISAFK = False
-        msg = await notafk.respond("Não estou mais AUSENTE.")
+        msg = await notafk.respond("Não estou mais ausente.")
         time.sleep(3)
         await msg.delete()
         if BOTLOG:
@@ -122,7 +122,7 @@ async def type_afk_is_not_true(notafk):
                     + "](tg://user?id="
                     + str(i)
                     + ")"
-                    + " te mandou "
+                    + " te enviou "
                     + "`"
                     + str(USERS[i])
                     + " mensagens`",
@@ -134,7 +134,7 @@ async def type_afk_is_not_true(notafk):
 
 @register(incoming=True, disable_edited=True)
 async def mention_afk(mention):
-    """ Esta função se encarrega de notificar as pessoas que mencionam quando você está AUSENTE."""
+    """ This function takes care of notifying the people who mention you that you are AFK."""
     global COUNT_MSG
     global USERS
     global ISAFK
@@ -144,7 +144,7 @@ async def mention_afk(mention):
     global afk_end
     back_alivee = datetime.now()
     afk_end = back_alivee.replace(microsecond=0)
-    afk_since = "alguns minutos"
+    afk_since = "algum tempo atrás"
     if mention.message.mentioned and not (await mention.get_sender()).bot:
         if ISAFK:
             now = datetime.now()
@@ -169,15 +169,15 @@ async def mention_afk(mention):
                     wday = now + datetime.timedelta(days=-days)
                     afk_since = wday.strftime("%A")
             elif hours > 1:
-                afk_since = f"`{int(hours)}h{int(minutes)}m` ago"
+                afk_since = f"`{int(hours)}h{int(minutes)}m` atrás"
             elif minutes > 0:
-                afk_since = f"`{int(minutes)}m{int(seconds)}s` ago"
+                afk_since = f"`{int(minutes)}m{int(seconds)}s` atrás"
             else:
-                afk_since = f"`{int(seconds)}s` ago"
+                afk_since = f"`{int(seconds)}s` atrás"
             if mention.sender_id not in USERS:
                 if AFKREASON:
                     await mention.reply(
-                        f"Estou AUSENTE desde {afk_since}.\
+                        f"Estou ausente desde {afk_since}.\
                         \nRazão: `{AFKREASON}`"
                     )
                 else:
@@ -188,7 +188,7 @@ async def mention_afk(mention):
                 if USERS[mention.sender_id] % randint(2, 4) == 0:
                     if AFKREASON:
                         await mention.reply(
-                            f"Eu ainda estou AUSENTE desde {afk_since}.\
+                            f"Ainda estou ausente desde {afk_since}.\
                             \nRazão: `{AFKREASON}`"
                         )
                     else:
@@ -202,7 +202,7 @@ async def mention_afk(mention):
 
 @register(incoming=True, disable_errors=True)
 async def afk_on_pm(sender):
-    """ Função que informa às pessoas que você está AUSENTE no PM """
+    """ Function which informs people that you are AFK in PM """
     global ISAFK
     global USERS
     global COUNT_MSG
@@ -253,15 +253,15 @@ async def afk_on_pm(sender):
                     wday = now + datetime.timedelta(days=-days)
                     afk_since = wday.strftime("%A")
             elif hours > 1:
-                afk_since = f"`{int(hours)}h{int(minutes)}m` ago"
+                afk_since = f"`{int(hours)}h{int(minutes)}m` atrás"
             elif minutes > 0:
-                afk_since = f"`{int(minutes)}m{int(seconds)}s` ago"
+                afk_since = f"`{int(minutes)}m{int(seconds)}s` atrás"
             else:
-                afk_since = f"`{int(seconds)}s` ago"
+                afk_since = f"`{int(seconds)}s` atrás"
             if sender.sender_id not in USERS:
                 if AFKREASON:
                     await sender.reply(
-                        f"Estou AUSENTE desde {afk_since}.\
+                        f"Estou ausente desde {afk_since}.\
                         \nRazão: `{AFKREASON}`"
                     )
                 else:
@@ -272,7 +272,7 @@ async def afk_on_pm(sender):
                 if USERS[sender.sender_id] % randint(2, 4) == 0:
                     if AFKREASON:
                         await sender.reply(
-                            f"Ainda estou AUSENTE desde {afk_since}.\
+                            f"Ainda estou ausente desde {afk_since}.\
                             \nRazão: `{AFKREASON}`"
                         )
                     else:
@@ -286,9 +286,9 @@ async def afk_on_pm(sender):
 
 CMD_HELP.update(
     {
-        "afk": ".afk [Motivo (Opcional)]\
-\nUso: Define você como AUSENTE.\nResponde para qualquer pessoa que marca / PM's \
-você dizendo a eles que você está AUSENTE(razão).\n\nDesliga o AUSENTE quando você digita qualquer coisa, em qualquer lugar.\
+        "afk": ".afk [Motivo Opcional]\
+\nUsage: Define você como ausente.\nResponde qualquer pessoa que envia PMs/marca \
+você e diz o motivo da ausência(razão).\n\nDesliga o AUSENTE quando digitar qualquer coisa, em qualquer lugar.\
 "
     }
 )
