@@ -1518,7 +1518,6 @@ async def lal(event):
     await event.edit("╔╗─╔═╗╔╗─\n║╚╗║╬║║╚╗\n╚═╝╚═╝╚═╝")
 
 # Author: @helloji123bot
-
 @register(outgoing=True, pattern="^.tanimate (.*)")
 async def tanimate(event):
     name = event.pattern_match.group(1)
@@ -1720,6 +1719,38 @@ async def tanimate(event):
     for i in animation_ttl:
         await sleep(animation_interval)
         await event.edit(animation_chars[i%189])
+        
+# Author: @The_Avengers_leader
+@register(outgoing=True, pattern="^.call$")
+async def call(event):
+    if event.fwd_from:
+        return
+    animation_interval = 3
+    animation_ttl = range(0, 18)
+    await event.edit("Calling...")
+    animation_chars = [
+            "`Connecting To Telegram Headquarters...`",
+            "`Call Connected.`",
+            "`Telegram: Hello This is Telegram HQ. Who is this?`",
+            "`Me: Yo this is` @[pyfilesforbot](t.me/py_coding) ,`Please Connect me to my idiot bro【﻿ＩＲＯＮ ＭＡＮ】,`",
+            "`User Authorised.`",
+            "`Calling Pavel Durov`  `At +916969696969`",
+            "`Private  Call Connected...`",
+            "`Me: Hello Sir, Please Ban This Telegram Account.`",    
+            "`Pavel: May I Know Who Is This?`",
+            "`Me: Yo Brah, itz me @The_Avengers_leader`  ",
+            "`Pavel: OMG!!! Long time no see, Wassup Brother...\nI'll Make Sure That Guy Account Will Get Blocked Within 24Hrs.`",
+            "`Me: Thanks, See You Later Brah.`",
+            "`Pavel: Please Don't Thank Brah, Telegram Is Our's. Just Gimme A Call When You Become Free.`",
+            "`Me: Is There Any Issue/Emergency???`",
+            "`Pavel: Yes Sur, There Is A Bug In Telegram v69.6.9.\nI Am Not Able To Fix It. If Possible, Please Help Fix The Bug.`",
+            "`Me: Send Me The App On My Telegram Account, I Will Fix The Bug & Send You.`",
+            "`Pavel: Sure Sur \nTC Bye Bye :)`",
+            "`Private Call Disconnected.`"
+        ]
+    for i in animation_ttl:
+        await sleep(animation_interval)
+        await event.edit(animation_chars[i % 18])
 
 CMD_HELP.update(
     {
@@ -1790,7 +1821,7 @@ CMD_HELP.update(
 \n.nou ; .bot ; .gey ; .gey ; .tf ; .paw ; .taco ; .nih ;\
 \n.fag ; .gtfo ; .stfu ; .lol ; .lool ; .fail ; .earth ; .iwi\
 \n.mst ; .gm ; .good ; .hhlo ; .sry ; .thnq ; .ok ; .smile\
-\n.lal\
+\n.lal ; .call\
 \n\n\nThanks to 🅱️ottom🅱️ext🅱️ot (@NotAMemeBot) for some of these."
     }
 )
