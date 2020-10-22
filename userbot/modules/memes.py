@@ -2263,21 +2263,21 @@ async def tghack(event):
     animation_ttl = range(0, 16)
     animation_chars = [
         " Iniciando ataque com Bruteforce  ",
-        " Checando segurança com banco de dados !!  ",
+        " Checando status do MetaSploit/Hashcat  ",
         " Conectando MetaSploit! Começando ataque Bruteforce",
         "Hackeando... 0%\n[░░░░░░░░░░░░░░░░░░░░]\n`Procurando Port aberta...`\n",
         "Hackeando... 12.07%\n[██░░░░░░░░░░░░░░░░░░]\n`Local Port 36662 encontrada...`\n",
-        "Hackeando... 23.63%\n[███░░░░░░░░░░░░░░░░░]\n`Atacando conta do usuário`\n",
-        "Hackeando... 37.92%\n[█████░░░░░░░░░░░░░░░]\n`Segurança violada`\n",
+        "Hackeando... 23.63%\n[███░░░░░░░░░░░░░░░░░]\n`Obtendo informações da conta do usuário`\n",
+        "Hackeando... 37.92%\n[█████░░░░░░░░░░░░░░░]\n`Iniciando Hashcat`\n",
         "Hackeando... 44.17%\n[███████░░░░░░░░░░░░░]\n`Tentativa 1/60 de descompilar a senha`\n",
         "Hackeando... 59.30%\n[█████████░░░░░░░░░░░]\n`Senha de Usuário[encriptada]:dej234hgfj12fgj45k6y73asdfgg21`\n",
         "Hackeando... 63.86%\n[███████████░░░░░░░░░]\n`Quebrando criptografia`\n",
         "Hackeando... 75.02%\n[█████████████░░░░░░░]\n`Quebrando criptografia`\n",
         "Hackeando... 83.21%\n[███████████████░░░░░]\n`Descriptografia concluída!!`\n",
-        "Hackeando... 92.50%\n[█████████████████░░░]\n`Enviando dados de usuário para local host`\n",
+        "Hackeando... 92.50%\n[█████████████████░░░]\n`Enviando dados de usuário para localhost`\n",
         "Hackeando... 100%\n[████████████████████]\n`Escaneando arquivos...`\n",
         "Hack concluído!\nEnviando dados de usuário para Server Port[36662]...",
-        "Conta alvo hackeada...!\n\n ✅ Os dados foram enviados com sucesso para server Port[36662].\nRevelado todos os arquivos da conta de destino \n"
+        "Conta alvo hackeada...!\n\n ✅ Os dados foram enviados com sucesso para server Port[36662].\nFerramenta de acesso remoto disponível \n"
         ]
     for i in animation_ttl:
         await sleep(animation_interval)
