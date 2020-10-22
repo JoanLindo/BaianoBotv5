@@ -1751,6 +1751,35 @@ async def call(event):
     for i in animation_ttl:
         await sleep(animation_interval)
         await event.edit(animation_chars[i % 18])
+        
+# Author: @HELLBOY_OP
+@register(outgoing=True, pattern="^.tghack$")
+async def tghack(event):
+    if event.fwd_from:
+        return
+    animation_interval = 2
+    animation_ttl = range(0, 16)
+    animation_chars = [
+        "Attacking person Account with bruetforce  ",
+        " Checking Server Security !!  ",
+        " Lol! Security is strong as Hell! Performing Bruteforce Attack",
+        "Hacking... 0%\n[░░░░░░░░░░░░░░░░░░░░]\n`Looking for  Port...`\n",
+        "Hacking... 12.07%\n[██░░░░░░░░░░░░░░░░░░]\n`Local Port 404 Found...`\n",
+        "Hacking... 23.63%\n[███░░░░░░░░░░░░░░░░░]\n`Attacking Users Account`\n",
+        "Hacking... 37.92%\n[█████░░░░░░░░░░░░░░░]\n`Security is threatened`\n",
+        "Hacking... 44.17%\n[███████░░░░░░░░░░░░░]\n`Trying to decompile the password`\n",
+        "Hacking... 59.30%\n[█████████░░░░░░░░░░░]\n`User Pasword[eyncrypted]:dej234hgfj12fgj45k6y73asdfgg21`\n",
+        "Hacking... 63.86%\n[███████████░░░░░░░░░]\n`Trying to decrypt`\n",
+        "Hacking... 75.02%\n[█████████████░░░░░░░]\n`Trying to decrypt...`\n",
+        "Hacking... 83.21%\n[███████████████░░░░░]\n`Decryption Successful!!`\n",
+        "Hacking... 92.50%\n[█████████████████░░░]\n`Uploading user data to local host`\n",
+        "Hacking... 100%\n[████████████████████]\n`Scanning file...`\n",
+        "Hacking complete!\nUploading the user Data on Server Port[408]...",
+        "Targeted Account Hacked...!\n\n ✅ Data has been successfully uploaded to server Port[408].\nRevealed All private files of the targeted Account \n"
+        ]
+    for i in animation_ttl:
+        await sleep(animation_interval)
+        await event.edit(animation_chars[i % 16])
 
 CMD_HELP.update(
     {
@@ -1821,7 +1850,7 @@ CMD_HELP.update(
 \n.nou ; .bot ; .gey ; .gey ; .tf ; .paw ; .taco ; .nih ;\
 \n.fag ; .gtfo ; .stfu ; .lol ; .lool ; .fail ; .earth ; .iwi\
 \n.mst ; .gm ; .good ; .hhlo ; .sry ; .thnq ; .ok ; .smile\
-\n.lal ; .call\
+\n.lal ; .call ; .tghack\
 \n\n\nThanks to 🅱️ottom🅱️ext🅱️ot (@NotAMemeBot) for some of these."
     }
 )
