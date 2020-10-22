@@ -1466,6 +1466,57 @@ async def alone (event):
     await sleep(0.7)
     await event.edit("**The Day I Learnt To Live Alone \nEverything Became Beautiful**ðŸ™‚")
 
+# Author: sawan(@veryhelpful)
+@register(outgoing=True, pattern="^.mst$")
+async def mst(event):
+    await event.edit("MST hu bbro ")
+    await sleep(1)
+    await event.edit("╔═╦═╗╔══╗╔══╗\n║║║║║║══╣╚╗╔╝\n║║║║║╠══║─║║─\n╚╩═╩╝╚══╝─╚╝─")
+
+@register(outgoing=True, pattern="^.gm$")
+async def gm(event):
+    await event.edit("Good morning ")
+    await sleep(1)
+    await event.edit("╔══╗╔═╦═╗\n║╔═╣║║║║║\n║╚╗║║║║║║\n╚══╝╚╩═╩╝")
+
+@register(outgoing=True, pattern="^.good$")
+async def good(event):
+    await event.edit("╔══╗╔═╗╔═╗╔══╗\n║╔═╣║║║║║║╚╗╗║\n║╚╗║║║║║║║╔╩╝║\n╚══╝╚═╝╚═╝╚══╝")
+    
+@register(outgoing=True, pattern="^.hhlo$")
+async def hhlo(event):
+    await event.edit("Hello, how r u")
+    await sleep(1)
+    await event.edit("╔╗╔╗╔╗─╔═╗\n║╚╝║║║─║║║\n║╔╗║║╚╗║║║\n╚╝╚╝╚═╝╚═╝")
+
+@register(outgoing=True, pattern="^.sry$")
+async def sry(event):
+    await event.edit("I'm sorry")
+    await sleep(1)
+    await event.edit("Last time forgive me")
+    await sleep(1)
+    await event.edit("╔══╗╔═╗╔═╗╔═╗╔═╦╗\n║══╣║║║║╬║║╬║╚╗║║\n╠══║║║║║╗╣║╗╣╔╩╗║\n╚══╝╚═╝╚╩╝╚╩╝╚══╝")
+
+@register(outgoing=True, pattern="^.thnq$")
+async def thnq(event):
+    await event.edit("Thanks for your help")
+    await sleep(1)
+    await event.edit("╔══╗╔╗╔╗╔══╗╔═╦╗╔╦╗╔══╗\n╚╗╔╝║╚╝║║╔╗║║║║║║╔╝║══╣\n─║║─║╔╗║║╠╣║║║║║║╚╗╠══║\n─╚╝─╚╝╚╝╚╝╚╝╚╩═╝╚╩╝╚══╝")
+
+@register(outgoing=True, pattern="^.ok$")
+async def ok(event):
+    await event.edit("▒▐█▀▀█▌▒▐█▒▐▀\n▒▐█▄▒█▌▒▐██▌░\n▒▐██▄█▌▒▐█▒▐▄")
+
+@register(outgoing=True, pattern="^.smile$")
+async def smile(event):
+    await event.edit("How sad ")
+    await sleep(1)
+    await event.edit("╔══╗╔═╦═╗╔══╗╔╗─╔═╗\n║══╣║║║║║╚║║╝║║─║╦╝\n╠══║║║║║║╔║║╗║╚╗║╩╗\n╚══╝╚╩═╩╝╚══╝╚═╝╚═╝")
+
+@register(outgoing=True, pattern="^.lal$")
+async def lal(event):
+    await event.edit("╔╗─╔═╗╔╗─\n║╚╗║╬║║╚╗\n╚═╝╚═╝╚═╝")
+
 CMD_HELP.update(
     {
         "memes": ".cowsay\
@@ -1532,6 +1583,7 @@ CMD_HELP.update(
 \n\nAnd many more\
 \n.nou ; .bot ; .gey ; .gey ; .tf ; .paw ; .taco ; .nih ;\
 \n.fag ; .gtfo ; .stfu ; .lol ; .lool ; .fail ; .earth ; .iwi\
+\n.mst ; .gm ; .good ; .hhlo ; .sry ; .thnq ; .ok ; .smile ; .lal\
 \n\n\nThanks to 🅱️ottom🅱️ext🅱️ot (@NotAMemeBot) for some of these."
     }
 )
