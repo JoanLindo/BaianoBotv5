@@ -10,56 +10,47 @@
     <a href="https://github.com/MoveAngel/One4uBot/stargazers"><img src="https://img.shields.io/github/stars/MoveAngel/One4uBot?label=Stars&style=flat-square&logo=github&color=F87575" alt="Stars" /></a>
     <a href="https://github.com/MoveAngel/One4uBot/network/members"><img src="https://img.shields.io/github/forks/MoveAngel/One4uBot?label=Fork&style=flat-square&logo=github&color=E0777D" alt="Fork" /></a>
     <a href="https://hub.docker.com/r/movecrew/one4ubot"> <img src="https://img.shields.io/docker/image-size/movecrew/one4ubot/alpine-latest?label=Docker%20Size&style=flat-square&logo=docker&logoColor=white&color=1B98E0" alt="Docker Image" /></a><br>
-    <a href="https://t.me/userbotindo"> <img src="https://img.shields.io/badge/telegram-Support_Group-blue?style=social&logo=telegram" alt="Support" /></a>
-</p>
+    </p>
 
-![logo](https://www.intoxianime.com/wp-content/uploads/2019/07/cc-code-geass-lelouch-of-the-rebellion-609.jpg)
+![logo](https://i.ibb.co/xH67gZN/image.png)
 
 ```
 #include <std/disclaimer.h>
 /**
-    Your Telegram account may get banned.
-    I am not responsible for any improper use of this bot
-    This bot is intended for the purpose of having fun with memes,
-    as well as efficiently managing groups.
-    You ended up spamming groups, getting reported left and right,
-    and you ended up in a Finale Battle with Telegram and at the end
-    Telegram Team deleted your account?
-    And after that, then you pointed your fingers at us
-    for getting your acoount deleted?
-    I will be rolling on the floor laughing at you.
+    Sua conta do Telegram pode ser banida.
+    Eu não sou responsável por qualquer uso indevido deste bot
+    Este bot tem o objetivo de se divertir e ser útil,
+    bem como gerenciar grupos de forma eficiente.
+    Você acabou enviando spam para grupos, sendo denunciado a torto e a direito,
+    e você acabou em uma batalha com o Telegram e no final
+    A equipe do Telegram excluiu sua conta?
+    E depois disso, você apontou seu dedo para nós
+    por ter sua conta excluída?
+    Estarei me divertindo e rindo de você.
 /**
 ```
 
-## Generate String Session
-Easy way to get STRING_SESSION. 
+## Gerar Sessão de String
+Maneira fácil de obter STRING_SESSION. 
 
-### Run on repl.it
+### Executar no repl.it
 [![Run repl.it](https://img.shields.io/badge/run-string__session.py-blue?style=flat-square&logo=repl.it)](https://userbotsession.moveangel.repl.run)
 
-### or Run on your terminal
+### ou execute em seu terminal
 ```
-wget https://raw.githubusercontent.com/MoveAngel/One4uBot/sql-extended/terminal_getstring.sh && bash terminal_getstring.sh
+wget https://raw.githubusercontent.com/thewhiteharlot/PurpleBot/sql-extended/terminal_getstring.sh && bash terminal_getstring.sh
 ```
 
-## How To Host?
+## Como hospedar?
 
-The easiest way to deploy this great bot! is click on button below.
-Make sure you have an account of heroku and follow all the steps required.
+A maneira mais fácil de implantar este bot é clicar no botão abaixo.
+Certifique-se de ter uma conta do heroku e siga todos os passos necessários.
 
-<p align="left"><a href="https://heroku.com/deploy?template=https://github.com/thewhiteharlot/PurpleBot/tree/sql-extended"> <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy to Heroku" /></a></p>
+<p align="left"><a href="https://heroku.com/deploy?template=https://github.com/thewhiteharlot/PurpleBot/tree/sql-extended"> <img src="https://www.herokucdn.com/deploy/button.svg" alt="Implantar no Heroku" /></a></p>
 
-For further guide you can head to [Groups and Support](https://github.com/MoveAngel/One4uBot#Groups-and-Support) or read this [guide](https://telegra.ph/How-to-host-a-Telegram-Userbot-07-01-2)
 
-## Groups and Support
+## Créditos
 
-if you want new features, or announcements, you can follow our [UserbotIndo Channel](https://t.me/userbotindocloud).
-
-For discussion, bug reporting, and help, you can join [UserbotIndo Support Group](https://t.me/userbotindo).
-
-## Credits
-
-Thanks: 
 * [RaphielGang](https://github.com/RaphielGang) - Telegram-Paperplane
 * [AvinashReddy3108](https://github.com/AvinashReddy3108) - PaperplaneExtended
 * [kandnub](https://github.com/kandnub) - TG-UserBot
@@ -67,9 +58,10 @@ Thanks:
 * [Mr.Miss](https://github.com/keselekpermen69) - Userbutt
 * [GengKapak](https://github.com/GengKapak) - DCLXVI
 * [Mkaraniya](https://github.com/mkaraniya) & [Dev73](https://github.com/Devp73) - OpenUserBot
+* [MoveAngel](https://github.com/MoveAngel) - Original One4UBot
 
-and many more people who aren't mentioned here, but may be found in [Contributors](https://github.com/MoveAngel/One4uBot/graphs/contributors).
+e muitas outras pessoas que não são mencionadas aqui, mas podem ser encontradas em [Contributors](https://github.com/MoveAngel/One4uBot/graphs/contributors).
 
-## License
+## Licença
 
-This userbot licensed on [Raphielscape Public License](https://github.com/MoveAngel/One4uBot/blob/sql-extended/LICENSE) - Version 1.d, February 2020
+Este userbot é licenciado em [Raphielscape Public License](https://github.com/thewhiteharlot/PurpleBot/blob/sql-extended/LICENSE) - Versão 1.d, Outubro 2020
