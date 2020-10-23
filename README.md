@@ -13,7 +13,7 @@
     <a href="https://t.me/userbotindo"> <img src="https://img.shields.io/badge/telegram-Support_Group-blue?style=social&logo=telegram" alt="Support" /></a>
 </p>
 
-![logo](https://i.ibb.co/02QVkHC/headersmina.jpg)
+![logo](https://www.intoxianime.com/wp-content/uploads/2019/07/cc-code-geass-lelouch-of-the-rebellion-609.jpg)
 
 ```
 #include <std/disclaimer.h>
