@@ -35,15 +35,15 @@ async def okgoogle(img):
         photo = io.BytesIO()
         await bot.download_media(message, photo)
     else:
-        await img.edit("`Reply to photo or sticker nigger.`")
+        await img.edit("`Responda a uma foto ou sticker.`")
         return
 
     if photo:
-        await img.edit("`Processing...`")
+        await img.edit("`Processando...`")
         try:
             image = Image.open(photo)
         except OSError:
-            await img.edit("`Unsupported sexuality, most likely.`")
+            await img.edit("`Formato de arquivo não suportado.`")
             return
         name = "okgoogle.png"
         image.save(name, "PNG")
@@ -56,11 +56,11 @@ async def okgoogle(img):
 
         if response != 400:
             await img.edit(
-                "`Image successfully uploaded to Google. Maybe.`"
-                "\n`Parsing source now. Maybe.`"
+                "`Imagem enviada com sucesso.`"
+                "\n`Analisando a fonte`"
             )
         else:
-            await img.edit("`Google told me to fuck off.`")
+            await img.edit("`Erro no envio.`")
             return
 
         os.remove(name)
@@ -71,7 +71,7 @@ async def okgoogle(img):
         if guess and imgspage:
             await img.edit(f"[{guess}]({fetchUrl})\n\n`Looking for images...`")
         else:
-            await img.edit("`Couldn't find anything for your uglyass.`")
+            await img.edit("`Não foram encontrados resultados.`")
             return
 
         if img.pattern_match.group(1):
@@ -97,7 +97,7 @@ async def okgoogle(img):
 
 
 async def ParseSauce(googleurl):
-    """Parse/Scrape the HTML code for the info we want."""
+    """Analisa o código HTML para obter a informação que desejamos."""
 
     source = opener.open(googleurl).read()
     soup = BeautifulSoup(source, "html.parser")
@@ -143,6 +143,6 @@ async def scam(results, lim):
 CMD_HELP.update(
     {
         "reverse": ".reverse\
-        \nUsage: Reply to a pic/sticker to revers-search it on Google Images !!"
+        \nUso: Responda a uma foto/sticker para fazer uma pesquisa reversa no Google Imagens !!"
     }
 )
