@@ -18,27 +18,27 @@ if GENIUS is not None:
 
 @register(outgoing=True, pattern="^.lyrics (?:(now)|(.*) - (.*))")
 async def lyrics(lyric):
-    await lyric.edit("`Getting information...`")
+    await lyric.edit("`Obtendo informações...`")
     if GENIUS is None:
-        await lyric.edit("`Provide genius access token to Heroku ConfigVars...`")
+        await lyric.edit("`Forneça o token de acesso genius nas ConfigVars do Heroku...`")
         return False
     if lyric.pattern_match.group(1) == "now":
         playing = User(LASTFM_USERNAME, lastfm).get_now_playing()
         if playing is None:
-            await lyric.edit("`No information current lastfm scrobbling...`")
+            await lyric.edit("`Sem informações do scrobble atual do lastfm...`")
             return False
         artist = playing.get_artist()
         song = playing.get_title()
     else:
         artist = lyric.pattern_match.group(2)
         song = lyric.pattern_match.group(3)
-    await lyric.edit(f"`Searching lyrics for {artist} - {song}...`")
+    await lyric.edit(f"`Procurando letras por {artist} - {song}...`")
     songs = genius.search_song(song, artist)
     if songs is None:
-        await lyric.edit(f"`Song`  **{artist} - {song}**  `not found...`")
+        await lyric.edit(f"`Música`  **{artist} - {song}**  `não encontrada...`")
         return False
     if len(songs.lyrics) > 4096:
-        await lyric.edit("`Lyrics is too big, view the file to see it.`")
+        await lyric.edit("`A letra é muito grande, visualize o arquivo para vê-la.`")
         with open("lyrics.txt", "w+") as f:
             f.write(f"Search query: \n{artist} - {song}\n\n{songs.lyrics}")
         await lyric.client.send_file(
@@ -50,16 +50,16 @@ async def lyrics(lyric):
         return True
     else:
         await lyric.edit(
-            f"**Search query**:\n`{artist}` - `{song}`" f"\n\n```{songs.lyrics}```"
+            f"**Consulta de pesquisa**:\n`{artist}` - `{song}`" f"\n\n```{songs.lyrics}```"
         )
         return True
 
 
 CMD_HELP.update(
     {
-        "lyrics": ".lyrics **<artist name> - <song name>**"
-        "\nUsage: Get lyrics matched artist and song."
+        "lyrics": ".lyrics **<nome do artista> - <nome da música>**"
+        "\nUso: Obtenha as letras do artista e da música correspondentes."
         "\n\n.lyrics now"
-        "\nUsage: Get lyrics artist and song from current lastfm scrobbling."
+        "\nUso: Obtenha as letras do artista e música atuais do scrobble do lastfm."
     }
 )
