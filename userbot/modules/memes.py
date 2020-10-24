@@ -1593,7 +1593,7 @@ async def bluetext(bt_e):
     if await bt_e.get_reply_message() and bt_e.is_group:
         await bt_e.edit(
             "/TEXTOAZUL /DEVO /CLICAR.\n"
-            "/VOCÊ /É /UM /ANIMAL /ESTÚPIDO /QUE /É /ATRAÍDO /A /CORES?"
+            "/VOCÊ /E /UM /ANIMAL /ESTUPIDO /QUE /E /ATRAIDO /A /CORES?"
         )
 
 
