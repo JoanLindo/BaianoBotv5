@@ -2236,7 +2236,7 @@ async def call(event):
             "`Chamada privada conectada... `",
             "`Eu: Olá, senhor, bane esta conta do telegram` ",
             "`Pavel: Posso saber quem é este? `",
-            "`Eu: Olá, sou eu @AndrielFR` ",
+            "`Eu: Olá, sou eu ` @[Andrieeel](t.me/AndrielFR),`",
             "`Pavel: Muito tempo sem te ver, irmão, eae...\nVou garantir que a conta do cara seja bloqueada em 24 horas.`",
             "`Eu: Obrigado, vejo você mais tarde bruh.`",
             "`Pavel: Por favor, não agradeça irmão, o Telegram é nosso. Apenas me ligue quando você estiver livre.`",
