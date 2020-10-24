@@ -20,13 +20,13 @@ from userbot.modules.admin import get_user_from_event
 
 # ================= CONSTANT =================
 METOOSTR = [
-    "Me too thanks",
-    "Haha yes, me too",
-    "Same lol",
-    "Me irl",
-    "Same here",
-    "Haha yes",
-    "Me rn",
+    "Eu também, obrigado",
+    "Haha sim, eu também",
+    "Também lol",
+    "Eu ai",
+    "Mesmo aqui",
+    "Haha sim",
+    "Eu agora",
 ]
 
 ZALG_LIST = [
@@ -177,68 +177,68 @@ EMOJIS = [
 ]
 
 INSULT_STRINGS = [
-    "Owww ... Such a stupid idiot.",
-    "Don't drink and type.",
-    "I think you should go home or better a mental asylum.",
-    "Command not found. Just like your brain.",
-    "Do you realize you are making a fool of yourself? Apparently not.",
-    "You can type better than that.",
-    "Bot rule 544 section 9 prevents me from replying to stupid humans like you.",
-    "Sorry, we do not sell brains.",
-    "Believe me you are not normal.",
-    "I bet your brain feels as good as new, seeing that you never use it.",
-    "If I wanted to kill myself I'd climb your ego and jump to your IQ.",
-    "Zombies eat brains... you're safe.",
-    "You didn't evolve from apes, they evolved from you.",
-    "Come back and talk to me when your I.Q. exceeds your age.",
-    "I'm not saying you're stupid, I'm just saying you've got bad luck when it comes to thinking.",
-    "What language are you speaking? Cause it sounds like bullshit.",
-    "Stupidity is not a crime so you are free to go.",
-    "You are proof that evolution CAN go in reverse.",
-    "I would ask you how old you are but I know you can't count that high.",
-    "As an outsider, what do you think of the human race?",
-    "Brains aren't everything. In your case they're nothing.",
-    "Ordinarily people live and learn. You just live.",
-    "I don't know what makes you so stupid, but it really works.",
-    "Keep talking, someday you'll say something intelligent! (I doubt it though)",
-    "Shock me, say something intelligent.",
-    "Your IQ's lower than your shoe size.",
-    "Alas! Your neurotransmitters are no more working.",
-    "Are you crazy you fool.",
-    "Everyone has the right to be stupid but you are abusing the privilege.",
-    "I'm sorry I hurt your feelings when I called you stupid. I thought you already knew that.",
-    "You should try tasting cyanide.",
-    "Your enzymes are meant to digest rat poison.",
-    "You should try sleeping forever.",
-    "Pick up a gun and shoot yourself.",
-    "You could make a world record by jumping from a plane without parachute.",
-    "Stop talking BS and jump in front of a running bullet train.",
-    "Try bathing with Hydrochloric Acid instead of water.",
-    "Try this: if you hold your breath underwater for an hour, you can then hold it forever.",
-    "Go Green! Stop inhaling Oxygen.",
-    "God was searching for you. You should leave to meet him.",
-    "give your 100%. Now, go donate blood.",
-    "Try jumping from a hundred story building but you can do it only once.",
-    "You should donate your brain seeing that you never used it.",
-    "Volunteer for target in an firing range.",
-    "Head shots are fun. Get yourself one.",
-    "You should try swimming with great white sharks.",
-    "You should paint yourself red and run in a bull marathon.",
-    "You can stay underwater for the rest of your life without coming back up.",
-    "How about you stop breathing for like 1 day? That'll be great.",
-    "Try provoking a tiger while you both are in a cage.",
-    "Have you tried shooting yourself as high as 100m using a canon.",
-    "You should try holding TNT in your mouth and igniting it.",
-    "Try playing catch and throw with RDX its fun.",
-    "I heard phogine is poisonous but i guess you wont mind inhaling it for fun.",
-    "Launch yourself into outer space while forgetting oxygen on Earth.",
-    "You should try playing snake and ladders, with real snakes and no ladders.",
-    "Dance naked on a couple of HT wires.",
-    "Active Volcano is the best swimming pool for you.",
-    "You should try hot bath in a volcano.",
-    "Try to spend one day in a coffin and it will be yours forever.",
-    "Hit Uranium with a slow moving neutron in your presence. It will be a worthwhile experience.",
-    "You can be the first person to step on sun. Have a try.",
+    "Owww ... que idiota estúpido.",
+    "Não beba e digite.",
+    "Eu acho que você deveria ir para casa ou melhor, um asilo mental.",
+    "Comando não encontrado. Assim como seu cérebro.",
+    "Você percebe que está fazendo papel de bobo? Aparentemente não.",
+    "Você pode digitar melhor do que isso.",
+    "A regra do bot 544, seção 9, me impede de responder a humanos estúpidos como você.",
+    "Desculpe, nós não vendemos cérebros.",
+    "Acredite em mim, você não é normal.",
+    "Aposto que seu cérebro parece tão bom quanto novo, visto que você nunca o usa.",
+    "Se eu quisesse me matar, escalaria seu ego e pularia para seu QI.",
+    "Os zombies comem cérebros... você tá safo.",
+    "Você não evoluiu dos macacos, eles evoluíram de você.",
+    "Volte e fale comigo quando seu Q.I. exceder sua idade.",
+    "Não estou dizendo que você é estúpido, só estou dizendo que você dá azar quando se trata de pensar.",
+    "Que língua você está falando? Porque parece besteira.",
+    "Estupidez não é um crime, então você está livre.",
+    "Você é a prova de que a evolução PODE ir ao contrário.",
+    "Eu perguntaria quantos anos você tem, mas eu acho que você não sabe como contar até lá.",
+    "Como um alien, o que você acha da raça humana?",
+    "Cérebros não são tudo. No seu caso, eles não são nada",
+    "Normalmente as pessoas vivem e aprendem. Você só vive.",
+    "Eu não sei o que te torna tão estúpido, mas realmente funciona.",
+    "Continue falando, algum dia você dirá algo inteligente! (Eu duvido entretanto)",
+    "Me choque, diga algo inteligente.",
+    "Seu QI é menor do que o tamanho do seu sapato.",
+    "Ai de mim! Seus neurotransmissores não estão mais funcionando.",
+    "Você está louco, seu tolo.",
+    "Todo mundo tem o direito de ser estúpido, mas você está abusando do privilégio.",
+    "Lamento ter magoado seus sentimentos quando chamei você de estúpido. Achei que você já soubesse disso.",
+    "Você deveria experimentar provar cianeto.",
+    "Suas enzimas são destinadas a digerir veneno de rato.",
+    "Você deveria tentar dormir para sempre.",
+    "Pegue uma arma e atire em si mesmo.",
+    "Você poderia fazer um recorde mundial pulando de um avião sem pára-quedas.",
+    "Pare de falar besteira e pule na frente de um trem-bala em execução.",
+    "Experimente tomar banho com ácido clorídrico em vez de água.",
+    "Tente isto: se você prender a respiração debaixo d'água por uma hora, poderá prendê-la para sempre.",
+    "Go Green! Pare de inalar oxigênio.",
+    "Deus estava procurando por você. Você deveria ir ao seu encontro.",
+    "Dê seus 100%! Agora vá doar sangue.",
+    "Tente pular de um prédio de cem andares, mas você só pode fazer isso uma vez.",
+    "Você deveria doar seu cérebro, já que nunca o usou.",
+    "Voluntário para o alvo em um campo de tiro.",
+    "Tiros na cabeça são divertidos. Arranje um.",
+    "Você deveria tentar nadar com grandes tubarões brancos.",
+    "Você deveria se pintar de vermelho e correr em uma maratona de touros.",
+    "Você pode ficar debaixo d'água pelo resto da vida sem voltar para cima.",
+    "Que tal você parar de respirar por, tipo, 1 dia? Isso vai ser ótimo.",
+    "Experimente provocar um tigre enquanto vocês dois estão em uma gaiola.",
+    "Você já tentou atirar em si mesmo a uma altura de 100m usando um canhão?",
+    "Você deve tentar segurar TNT na boca e acendê-lo.",
+    "Tente pegar e jogar com fulminato de mercúrio, é divertido.",
+    "Ouvi dizer que fosfina é tóxico, mas acho que você não se importaria em inalá-la por diversão.",
+    "Lance-se ao espaço sideral enquanto se esquece do oxigênio na Terra.",
+    "Você deve tentar brincar de cobra e escadas, com cobras de verdade e sem escadas.",
+    "Dance pelado em alguns fios de alta tensão.",
+    "Um vulcão ativo é a melhor piscina para você.",
+    "Você deveria experimentar um banho quente em um vulcão.",
+    "Tente passar um dia em um caixão e ele será seu para sempre.",
+    "Acerte o Urânio com um nêutron lento em sua presença. Será uma experiência valiosa.",
+    "Você pode ser a primeira pessoa a pisar no sol. Experimente.",
 ]
 
 UWUS = [
@@ -389,98 +389,97 @@ FACEREACTS = [
 ]
 
 RUNS_STR = [
-    "Runs to Thanos..",
-    "Runs far, far away from earth..",
-    "Running faster than Bolt coz i'mma userbot !!",
-    "Runs to Marie..",
-    "This Group is too cancerous to deal with.",
-    "Cya bois",
+    "Corre para Thanos ..",
+    "Corre pra muito, muito longe da terra ..",
+    "Correndo mais rápido que o Bolt porque sou um userbolt !!",
+    "Corre até a Marie ..",
+    "Este grupo é canceroso demais para lidar com isso.",
+    "Cya rapazes",
     "Kys",
-    "I go away",
-    "I am just walking off, coz me is too fat.",
-    "I Fugged off!",
-    "Will run for chocolate.",
-    "I run because I really like food.",
-    "Running...\nbecause dieting is not an option.",
-    "Wicked fast runnah",
-    "If you wanna catch me, you got to be fast...\nIf you wanna stay with me, you got to be good...\nBut if you wanna pass me...\nYou've got to be kidding.",
-    "Anyone can run a hundred meters, it's the next forty-two thousand and two hundred that count.",
-    "Why are all these people following me?",
-    "Are the kids still chasing me?",
-    "Running a marathon...there's an app for that.",
+    "Eu vou embora",
+    "Estou indo embora, porque sou muito gordo.",
+    "Eu fugi!",
+    "Vou correr para o chocolate.",
+    "Eu corro porque gosto muito de comida.",
+    "Correndo...\nporque fazer dieta não é uma opção.",
+    "Corredor muito louco e rápido",
+    "Se você quer me pegar, você tem que ser rápido...\nSe você quer ficar comigo, você tem que ser bom...\nMas se você quiser me passar...\nVocê só pode estar de brincadeira.",
+    "Qualquer um pode correr cem metros, são os próximos quarenta e dois mil e duzentos que contam.",
+    "Por que todas essas pessoas estão me seguindo? ",
+    "As crianças ainda estão me perseguindo?",
+    "Correr uma maratona ... existe um aplicativo para isso.",
 ]
 
 CHASE_STR = [
-    "Where do you think you're going?",
-    "Huh? what? did they get away?",
-    "ZZzzZZzz... Huh? what? oh, just them again, nevermind.",
-    "Get back here!",
-    "Not so fast...",
-    "Look out for the wall!",
-    "Don't leave me alone with them!!",
-    "You run, you die.",
-    "Jokes on you, I'm everywhere",
-    "You're gonna regret that...",
-    "You could also try /kickme, I hear that's fun.",
-    "Go bother someone else, no-one here cares.",
-    "You can run, but you can't hide.",
-    "Is that all you've got?",
-    "I'm behind you...",
-    "You've got company!",
-    "We can do this the easy way, or the hard way.",
-    "You just don't get it, do you?",
-    "Yeah, you better run!",
-    "Please, remind me how much I care?",
-    "I'd run faster if I were you.",
-    "That's definitely the droid we're looking for.",
-    "May the odds be ever in your favour.",
-    "Famous last words.",
-    "And they disappeared forever, never to be seen again.",
-    '"Oh, look at me! I\'m so cool, I can run from a bot!" - this person',
+    "Onde você pensa que está indo?",
+    "Huh? O quê? Eles escaparam?",
+    "ZZzzZZzz ... Hã? O quê? Oh, só eles de novo, deixa pra lá.",
+    "Volte aqui!",
+    "Não tão rápido...",
+    "Cuidado com a parede!",
+    "Não me deixe sozinho com eles !!",
+    "Você corre, você morre.",
+    "Se ferrou, estou em todo lugar",
+    "Você vai se arrepender disso ...",
+    "Você também pode tentar /kickme, ouvi dizer que é divertido.",
+    "Vá incomodar outra pessoa, ninguém aqui liga.",
+    "Você pode correr, mas não pode se esconder.",
+    "Isso é tudo que você tem?",
+    "Estou atrás de você...",
+    "Você tem companhia!",
+    "Podemos fazer isso da maneira fácil ou da maneira mais difícil.",
+    "Você simplesmente não entende, não é?",
+    "Sim, é melhor você correr!",
+    "Por favor, me lembre o quanto eu me importo?",
+    "Eu correria mais rápido se fosse você.",
+    "Esse é definitivamente o andróide que procuramos.",
+    "Que as probabilidades estejam sempre a seu favor.",
+    "Últimas palavras famosas.",
+    "E eles desapareceram para sempre, para nunca mais serem vistos.",
     "Yeah yeah, just tap /kickme already.",
-    "Here, take this ring and head to Mordor while you're at it.",
-    "Legend has it, they're still running...",
-    "Unlike Harry Potter, your parents can't protect you from me.",
-    "Fear leads to anger. Anger leads to hate. Hate leads to suffering. If you keep running in fear, you might "
-    "be the next Vader.",
-    "Multiple calculations later, I have decided my interest in your shenanigans is exactly 0.",
-    "Legend has it, they're still running.",
-    "Keep it up, not sure we want you here anyway.",
-    "You're a wiza- Oh. Wait. You're not Harry, keep moving.",
-    "NO RUNNING IN THE HALLWAYS!",
+    "Aqui, pegue este anel e vá até Mordor enquanto faz isso.",
+    "Diz a lenda que ainda estão em execução ...",
+    "Ao contrário de Harry Potter, seus pais não podem proteger você de mim.",
+    "O medo leva à raiva. A raiva leva ao ódio. O ódio leva ao sofrimento. Se você continuar correndo com medo, poderá"
+    "ser o próximo Vader.",
+    "Múltiplos cálculos depois, decidi que meu interesse em suas travessuras é exatamente 0.",
+    "Reza a lenda que ainda estão em execução.",
+    "Continue assim, não tenho certeza se queremos você aqui de qualquer maneira.",
+    "Você é um brux- Oh. Espere. Você não é Harry, continue andando.",
+    "SEM CORRER NOS CORREDORES!",
     "Hasta la vista, baby.",
-    "Who let the dogs out?",
-    "It's funny, because no one cares.",
-    "Ah, what a waste. I liked that one.",
-    "Frankly, my dear, I don't give a damn.",
-    "My milkshake brings all the boys to yard... So run faster!",
-    "You can't HANDLE the truth!",
-    "A long time ago, in a galaxy far far away... Someone would've cared about that. Not anymore though.",
-    "Hey, look at them! They're running from the inevitable banhammer... Cute.",
-    "Han shot first. So will I.",
-    "What are you running after, a white rabbit?",
-    "As The Doctor would say... RUN!",
+    "Quem soltou os cachorros?",
+    "É engraçado, porque ninguém liga.",
+    "Ah, que desperdício. Gostei desse.",
+    "Francamente, meu querido, não dou a mínima.",
+    "Meu milkshake traz todos os meninos para o quintal ... Então corra mais rápido!",
+    "Você não pode MANTER a verdade!",
+    "Há muito tempo, em uma galáxia muito distante ... Alguém teria se importado com isso. Mas não mais.",
+    "Ei, olhe para eles! Eles estão fugindo do inevitável martelo do banimento ... Fofo.",
+    "Han atirou primeiro. Eu também",
+    "O que você está correndo atrás, um coelho branco?",
+    "Como diria o médico ... CORRA!",
 ]
 
 HELLOSTR = [
     "Hi !",
-    "‘Ello, gov'nor!",
-    "What’s crackin’?",
-    "‘Sup, homeslice?",
-    "Howdy, howdy ,howdy!",
-    "Hello, who's there, I'm talking.",
-    "You know who this is.",
+    "‘Lá, cap'tão!",
+    "Qq tá rolando’?",
+    "‘Eae, cupcake?",
+    "Oi, oi ,oi!",
+    "Olá, quem está aí, estou falando.",
+    "Você sabe quem é.",
     "Yo!",
-    "Whaddup.",
-    "Greetings and salutations!",
-    "Hello, sunshine!",
-    "Hey, howdy, hi!",
-    "What’s kickin’, little chicken?",
-    "Peek-a-boo!",
-    "Howdy-doody!",
-    "Hey there, freshman!",
-    "I come in peace!",
-    "Ahoy, matey!",
+    "Qual a boa?",
+    "Saudações e felicitações!",
+    "Olá, flor do dia!",
+    "Hey, opa, hi!",
+    "O que que houve, minha couve?",
+    "Surpresa!",
+    "Olá-holá!",
+    "Olá calouro!",
+    "Eu venho em paz!",
+    "Ahoy, camarada!",
     "Hiya!",
 ]
 
@@ -544,98 +543,99 @@ CRI = [
 ]
 
 SLAP_TEMPLATES = [
-    "{hits} {victim} with a {item}.",
-    "{hits} {victim} in the face with a {item}.",
-    "{hits} {victim} around a bit with a {item}.",
-    "{throws} a {item} at {victim}.",
-    "grabs a {item} and {throws} it at {victim}'s face.",
-    "{hits} a {item} at {victim}.",
-    "{throws} a few {item} at {victim}.",
-    "grabs a {item} and {throws} it in {victim}'s face.",
-    "launches a {item} in {victim}'s general direction.",
-    "sits on {victim}'s face while slamming a {item} {where}.",
-    "starts slapping {victim} silly with a {item}.",
-    "pins {victim} down and repeatedly {hits} them with a {item}.",
-    "grabs up a {item} and {hits} {victim} with it.",
-    "starts slapping {victim} silly with a {item}.",
-    "holds {victim} down and repeatedly {hits} them with a {item}.",
-    "prods {victim} with a {item}.",
-    "picks up a {item} and {hits} {victim} with it.",
-    "ties {victim} to a chair and {throws} a {item} at them.",
-    "{hits} {victim} {where} with a {item}.",
-    "ties {victim} to a pole and whips them {where} with a {item}."
-    "gave a friendly push to help {victim} learn to swim in lava.",
-    "sent {victim} to /dev/null.",
-    "sent {victim} down the memory hole.",
-    "beheaded {victim}.",
-    "threw {victim} off a building.",
-    "replaced all of {victim}'s music with Nickelback.",
-    "spammed {victim}'s email.",
-    "made {victim} a knuckle sandwich.",
-    "slapped {victim} with pure nothing.",
-    "hit {victim} with a small, interstellar spaceship.",
-    "quickscoped {victim}.",
-    "put {victim} in check-mate.",
-    "RSA-encrypted {victim} and deleted the private key.",
-    "put {victim} in the friendzone.",
-    "slaps {victim} with a DMCA takedown request!",
+    "{hits} {victim} com um {item}.",
+    "{hits} {victim} no rosto com um {item}.",
+    "{hits} {victim} um pouco com um {item}.",
+    "{throws} um {item} em {victim}.",
+    "pega um {item} e {throws} ele no rosto de {victim}",
+    "{hits} um {item} em {victim}.",
+    "{throws} alguns {item} em {victim}.",
+    "pega um {item} e {throws} ele no rosto de {victim}",
+    "joga um {item} na direção de {victim}",
+    "senta no rosto de {victim} enquanto bate um {item} {where}.",
+    "começa a estapear {victim} com um {item}.",
+    "imobiliza {victim} e repetidamente {hits} ele com um {item}.",
+    "pega um {item} e {hits} {victim} com ele.",
+    "começa a esbofeteá-lo {victim} com um {item}.",
+    "mantém a {victim} pressionada e repetidamente os acerta com um {item}.",
+    "cutuca {victim} com um {item}.",
+    "pega um {item} e {hits} {victim} com ele.",
+    "amarra {victim} a uma cadeira e {throws} um {item} nele.",
+    "{hits} {victim} {where} com um {item}.",
+    "amarra {victim} em um poste e os chicoteia {where} com um {item}."
+    "deu um empurrão amigável para ajudar {victim} aprender a nadar na lava.",
+    "mandou {victim} para /dev/null.",
+    "enviou {victim} pelo buraco da memória.",
+    "decapitou {victim}.",
+    "jogou {victim} de um prédio.",
+    "substituiu todas as músicas de {victim} por Nickelback.",
+    "enviou spam ao e-mail de {victim}",
+    "fez de {vítima} um sanduíche de junta.",
+    "esbofeteou {vítima} com absolutamente nada.",
+    "acertou {victim} com uma pequena nave espacial interestelar.",
+    "deu um quickscope em {victim}.",
+    "botou {victim} em cheque-mate.",
+    "criptografou {victim} em RSA e excluiu a chave privada.",
+    "botou {victim} na friendzone.",
+    "bloqueou {victim} com um pedido de remoção DMCA!",
 ]
 
 ITEMS = [
-    "cast iron skillet",
-    "large trout",
-    "baseball bat",
-    "cricket bat",
-    "wooden cane",
-    "nail",
-    "printer",
-    "shovel",
-    "pair of trousers",
-    "CRT monitor",
-    "diamond sword",
-    "baguette",
-    "physics textbook",
-    "toaster",
-    "portrait of Richard Stallman",
-    "television",
-    "mau5head",
-    "five ton truck",
-    "roll of duct tape",
-    "book",
-    "laptop",
-    "old television",
-    "sack of rocks",
-    "rainbow trout",
-    "cobblestone block",
-    "lava bucket",
-    "rubber chicken",
-    "spiked bat",
-    "gold block",
-    "fire extinguisher",
-    "heavy rock",
-    "chunk of dirt",
-    "beehive",
-    "piece of rotten meat",
-    "bear",
-    "ton of bricks",
+    
+    "frigideira de ferro fundido",
+    "truta grande",
+    "taco de beisebol",
+    "bastão de cricket",
+    "bengala de madeira",
+    "unha",
+    "impressora",
+    "pá",
+    "par de calças",
+    "Monitor CRT",
+    "espada de diamante",
+    "baguete",
+    "livro de física",
+    "torradeira",
+    "retrato de Richard Stallman",
+    "televisão",
+    "cabeça mau5",
+    "caminhão de cinco toneladas",
+    "rolo de fita adesiva",
+    "livro",
+    "computador portátil",
+    "televisão antiga",
+    "saco de pedras",
+    "truta arco-íris",
+    "bloco de paralelepípedos",
+    "balde de lava",
+    "galinha de borracha",
+    "bastão com espinhos",
+    "bloco de ouro",
+    "extintor de incêndio",
+    "pedra pesada",
+    "pedaço de sujeira",
+    "colméia",
+    "pedaço de carne podre",
+    "Urso",
+    "tonelada de tijolos",
 ]
 
 THROW = [
-    "throws",
-    "flings",
-    "chucks",
-    "hurls",
+    "arremessa",
+    "lança",
+    "zune",
+    "joga",
 ]
 
 HIT = [
-    "hits",
-    "whacks",
-    "slaps",
-    "smacks",
-    "bashes",
+    "acerta",
+    "golpeia",
+    "estapeia",
+    "bate",
+    "surra",
 ]
 
-WHERE = ["in the chest", "on the head", "on the butt", "on the crotch"]
+WHERE = ["no peito","na cabeça","na bunda","na virilha"]
 
 # Author: @Jisan7509
 A = ("⢀⣠⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀⠀⠀⠀⣠⣤⣶⣶\n"
@@ -931,7 +931,7 @@ S = ("▬▬▬.◙.▬▬▬ \n"
 "╬═╬ \n"
 "╬═╬ \n"
 "╬═╬ \n"
-"╬═╬ Hello, My Friend :D \n"
+"╬═╬ Olá, meu amigo :D \n"
 "╬═╬☻/ \n"
 "╬═╬/▌ \n"
 "╬═╬/ \\n")
@@ -952,7 +952,7 @@ T = ("┳┻┳┻╭━━━━╮╱▔▔▔╲\n"
 "┻┳┻┳┻┳┃┃┃┈'''┃┈┃┃.\n"
 "┳┻┳┻┳┻┣╋┫'''┊┣━╋┫\n"
 "┻┳┻┳┻╭╯╰╰-╭╯━╯.''╰╮\n"
-"**I Love You 💕** \n")
+"**Eu te amo 💕** \n")
 
 U = ("⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿\n"
 "⣿⣿⣿⣿⣿⣿⡿⠋⠹⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿\n"
@@ -1009,7 +1009,7 @@ V = ("⣿⣿⣿⣿⣿⣍⠀⠉⠻⠟⠻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿�
 "⣿⣿⣿⣿⣿⣇⠀⠀⠀⢠⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿\n"
 "⣿⣿⣿⣿⣿⣿⡆⠀⢀⣼⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿\n"
 "⣿⣿⣿⣿⣿⣿⣿⣦⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿\n"
-"**🇮🇳PROUD TO BE AN INDIAN🇮🇳**\n")
+"**🇮🇳EU ODEIO SER INDIANO🇮🇳**\n")
 
 
 
@@ -1175,22 +1175,22 @@ async def coin(event):
         input_str = input_str.lower()
     if r == "heads":
         if input_str == "heads":
-            await event.edit("The coin landed on: **Heads**.\nYou were correct.")
+            await event.edit("A moeda caiu em: **Cara**.\nVocê venceu.")
         elif input_str == "tails":
             await event.edit(
-                "The coin landed on: **Heads**.\nYou weren't correct, try again ..."
+                "A moeda caiu em: **Cara**.\nVocê perdeu, tente de novo..."
             )
         else:
-            await event.edit("The coin landed on: **Heads**.")
+            await event.edit("A moeda caiu em: **Cara**.")
     elif r == "tails":
         if input_str == "tails":
-            await event.edit("The coin landed on: **Tails**.\nYou were correct.")
+            await event.edit("A moeda caiu em: **Coroa**.\nVocê venceu.")
         elif input_str == "heads":
             await event.edit(
-                "The coin landed on: **Tails**.\nYou weren't correct, try again ..."
+                "A moeda caiu em: **Coroa**.\nVocê perdeu, tente de novo..."
             )
         else:
-            await event.edit("The coin landed on: **Tails**.")
+            await event.edit("A moeda caiu em: **Coroa**.")
 
 
 @register(pattern="^.slap(?: |$)(.*)", outgoing=True)
@@ -1208,7 +1208,7 @@ async def who(event):
 
     except BaseException:
         await event.edit(
-            "`Can't slap this person, need to fetch some sticks and stones !!`"
+            "`Não posso dar um tapa nessa pessoa, preciso buscar alguns paus e pedras !!`"
         )
 
 
@@ -1296,7 +1296,7 @@ async def copypasta(cp_e):
     elif textx:
         message = textx.text
     else:
-        await cp_e.edit("`😂🅱️IvE👐sOME👅text👅for✌️Me👌tO👐MAkE👀iT💞funNy!💦`")
+        await cp_e.edit("`😂🅱️Me👐dÊ💞uM👅tExTo👅pRa✌️Eu👌DeIXaR👐engr👀aça💞do!💦`")
         return
 
     reply_text = choice(EMOJIS)
@@ -1330,7 +1330,7 @@ async def vapor(vpr):
     elif textx:
         message = textx.text
     else:
-        await vpr.edit("`Ｇｉｖｅ ｓｏｍｅ ｔｅｘｔ ｆｏｒ ｖａｐｏｒ！`")
+        await vpr.edit("`Ｍｅ　ｄá　ｕｍ　ｔｅｘｔｏ　ｐｒａ　ｅｕ　ｖａｐｏｒａｒ！`")
         return
 
     for charac in message:
@@ -1355,7 +1355,7 @@ async def stretch(stret):
     elif textx:
         message = textx.text
     else:
-        await stret.edit("`GiiiiiiiB sooooooomeeeeeee teeeeeeext!`")
+        await stret.edit("`Meeeeeee ddddddáááááááá uuuuummmmm teeeexxxxttttooo!`")
         return
 
     count = randint(3, 10)
@@ -1375,7 +1375,7 @@ async def zal(zgfy):
         message = textx.text
     else:
         await zgfy.edit(
-            "`gͫ ̆ i̛ ̺ v͇̆ ȅͅ   a̢ͦ   s̴̪ c̸̢ ä̸ rͩͣ y͖͞   t̨͚ é̠ x̢͖  t͔͛`"
+            "Me̷̛ ͝͞͠d҉͢͢á ̧u͝͡m ̕t̡e̸͟͠x̶̛͡t͠o ̀p̕͢r̕͟a҉ ̡̧̨eu ̨́͘d͢e̕͏i̷̡͝x́҉͘ar̸̡͡ ͢͟m̛èdon̶h́͝o͘"
         )
         return
 
@@ -1415,7 +1415,7 @@ async def face(owo):
     elif textx:
         message = textx.text
     else:
-        await owo.edit("` UwU no text given! `")
+        await owo.edit("` UwU sem texto base! `")
         return
 
     reply_text = sub(r"(r|l)", "w", message)
@@ -1444,7 +1444,7 @@ async def faces(siwis):
     elif textx:
         message = textx.text
     else:
-        await siwis.edit("` IwI no text given! `")
+        await siwis.edit("` IwI sem texto base! `")
         return
 
     reply_text = sub(r"(a|i|u|e|o)", "i", message)
@@ -1556,7 +1556,7 @@ async def spongemocktext(mock):
     elif textx:
         message = textx.text
     else:
-        await mock.edit("`gIvE sOMEtHInG tO MoCk!`")
+        await mock.edit("`mE Da AlGo pRa zuAr!`")
         return
 
     for charac in message:
@@ -1579,7 +1579,7 @@ async def claptext(memereview):
     elif textx:
         message = textx.text
     else:
-        await memereview.edit("`Hah, I don't clap pointlessly!`")
+        await memereview.edit("`Hah, eu não bato palmas inutilmente!`")
         return
     reply_text = "👏 "
     reply_text += message.replace(" ", " 👏 ")
@@ -1592,8 +1592,8 @@ async def bluetext(bt_e):
     """ Believe me, you will find this useful. """
     if await bt_e.get_reply_message() and bt_e.is_group:
         await bt_e.edit(
-            "/BLUETEXT /MUST /CLICK.\n"
-            "/ARE /YOU /A /STUPID /ANIMAL /WHICH /IS /ATTRACTED /TO /COLOURS?"
+            "/TEXTOAZUL /DEVO /CLICAR.\n"
+            "/VOCÊ /É /UM /ANIMAL /ESTÚPIDO /QUE /É /ATRAÍDO /A /CORES?"
         )
 
 
@@ -1627,11 +1627,11 @@ async def let_me_google_that_for_you(lmgtfy_q):
         query = textx
         query = query.message
     query_encoded = query.replace(" ", "+")
-    lfy_url = f"http://lmgtfy.com/?s=g&iie=1&q={query_encoded}"
+    lfy_url = f"https://lmgtfy.app/?q={query_encoded}"
     payload = {"format": "json", "url": lfy_url}
     r = requests.get("http://is.gd/create.php", params=payload)
     await lmgtfy_q.edit(
-        f"Here you are, help yourself.\
+        f"Aqui está, sirva-se.\
     \n[{query}]({r.json()['shorturl']})"
     )
 
@@ -1667,7 +1667,7 @@ async def scam(event):
         scam_action = str(args[0]).lower()
         scam_time = int(args[1])
     else:
-        await event.edit("`Invalid Syntax !!`")
+        await event.edit("`Sintaxe inválida !!`")
         return
     try:
         if scam_time > 0:
@@ -1688,7 +1688,7 @@ async def typewriter(typew):
     elif textx:
         message = textx.text
     else:
-        await typew.edit("`Give a text to type!`")
+        await typew.edit("`Dê um texto para digitar!`")
         return
     sleep_time = 0.03
     typing_symbol = "|"
@@ -1774,11 +1774,11 @@ async def nih(rose):
         await rose.edit(
             r"`(\_/)`"
             "`\n(●_●)`"
-            "`\n />🌹 *ini buat kamu`"
+            "`\n />🌹 *tome`"
             "\n\n"
             r"`(\_/)`"
             "`\n(●_●)\n`"
-            r"`🌹<\  *tapi boong`"
+            r"`🌹<\  *me devolve`"
         )
 
 
@@ -1789,7 +1789,7 @@ async def ugay(faggot):
             "`\n█████████`"
             "`\n█▄█████▄█`"
             "`\n█▼▼▼▼▼`"
-            "`\n█       STFU FAGGOT'S`"
+            "`\n█       STFU TROXA`"
             "`\n█▲▲▲▲▲`"
             "`\n█████████`"
             "`\n ██   ██`"
@@ -1799,7 +1799,7 @@ async def ugay(faggot):
 @register(outgoing=True, pattern="^.taco$")
 async def taco(tacoo):
     if not tacoo.text[0].isalpha() and tacoo.text[0] not in ("/", "#", "@", "!"):
-        await tacoo.edit(r"\n{\__/}" "\n(●_●)" "\n( >🌮 Want a taco?")
+        await tacoo.edit(r"\n{\__/}" "\n(●_●)" "\n( >🌮 Quer um taco?")
 
 
 @register(outgoing=True, pattern="^.paw$")
@@ -1831,7 +1831,7 @@ async def gay(ugay):
         await ugay.edit(
             "`\n┈┈┈╭━━━━━╮┈┈┈┈┈\n┈┈┈┃┊┊┊┊┊┃┈┈┈┈┈`"
             "`\n┈┈┈┃┊┊╭━╮┻╮┈┈┈┈\n┈┈┈╱╲┊┃▋┃▋┃┈┈┈┈\n┈┈╭┻┊┊╰━┻━╮┈┈┈┈`"
-            "`\n┈┈╰┳┊╭━━━┳╯┈┈┈┈\n┈┈┈┃┊┃╰━━┫┈BAPAQ U GAY`"
+            "`\n┈┈╰┳┊╭━━━┳╯┈┈┈┈\n┈┈┈┃┊┃╰━━┫┈BRUH U GAY`"
             "\n┈┈┈┈┈┈┏━┓┈┈┈┈┈┈"
         )
 
@@ -1868,105 +1868,101 @@ async def nou(noway):
 # Author: @Kraken_The_BadASS
 @register(outgoing=True, pattern="^.alone$")
 async def alone (event):
-    await event.edit("T")
+    await event.edit("O")
     await sleep(0.7)
-    await event.edit("Th")
+    await event.edit("O d")
     await sleep(0.7)
-    await event.edit("The")
+    await event.edit("O di")
     await sleep(0.7)
-    await event.edit("The D")
+    await event.edit("O dia")
     await sleep(0.7)
-    await event.edit("The Da")
+    await event.edit("O dia q")
     await sleep(0.7)
-    await event.edit("The Day")
+    await event.edit("O dia qu")
     await sleep(0.7)
-    await event.edit("The Day I")
+    await event.edit("O dia que")
     await sleep(0.7)
-    await event.edit("The Day I L")
+    await event.edit("O dia que e")
     await sleep(0.7)
-    await event.edit("The Day I Le")
+    await event.edit("O dia que eu")
     await sleep(0.7)
-    await event.edit("The Day I Lea")
+    await event.edit("O dia que eu a")
     await sleep(0.7)
-    await event.edit("The Day I Lear")
+    await event.edit("O dia que eu ap")
     await sleep(0.7)
-    await event.edit("The Day I Learn")
+    await event.edit("O dia que eu apr")
     await sleep(0.7)
-    await event.edit("The Day I Learnt")
+    await event.edit("O dia que eu apre")
     await sleep(0.7)
-    await event.edit("The Day I Learnt T")
+    await event.edit("O dia que eu apren")
     await sleep(0.7)
-    await event.edit("The Day I Learnt To")
+    await event.edit("O dia que eu aprend")
     await sleep(0.7)
-    await event.edit("The Day I Learnt To L")
+    await event.edit("O dia que eu aprendi")
     await sleep(0.7)
-    await event.edit("The Day I Learnt To Li")
+    await event.edit("O dia que eu aprendi a")
     await sleep(0.7)
-    await event.edit("The Day I Learnt To Liv")
+    await event.edit("O dia que eu aprendi a v")
     await sleep(0.7)
-    await event.edit("The Day I Learnt To Live")
+    await event.edit("O dia que eu aprendi a vi")
     await sleep(0.7)
-    await event.edit("The Day I Learnt To Live A")
+    await event.edit("O dia que eu aprendi a viv")
     await sleep(0.7)
-    await event.edit("The Day I Learnt To Live Al")
+    await event.edit("O dia que eu aprendi a vive")
     await sleep(0.7)
-    await event.edit("The Day I Learnt To Live Alo")
+    await event.edit("O dia que eu aprendi a viver")
     await sleep(0.7)
-    await event.edit("The Day I Learnt To Live Alon")
+    await event.edit("O dia que eu aprendi a viver s")
     await sleep(0.7)
-    await event.edit("Tge Day I Learnt To Live Alone")
+    await event.edit("O dia que eu aprendi a viver so")
     await sleep(0.7)
-    await event.edit("The Day I Learnt To Live Alone \nE")
+    await event.edit("O dia que eu aprendi a viver soz")
     await sleep(0.7)
-    await event.edit("The Day I Learnt To Live Alone \nEv")
+    await event.edit("O dia que eu aprendi a viver sozi")
     await sleep(0.7)
-    await event.edit("The Day I Learnt To Live Alone \nEve")
+    await event.edit("O dia que eu aprendi a viver sozinho")
     await sleep(0.7)
-    await event.edit("The Day I Learnt To Live Alone \nEver")
+    await event.edit("O dia que eu aprendi a viver sozinh")
     await sleep(0.7)
-    await event.edit("The Day I Learnt To Live Alone \nEvery")
+    await event.edit("O dia que eu aprendi a viver sozinho")
     await sleep(0.7)
-    await event.edit("The Day I Learnt To Live Alone \nEveryt")
+    await event.edit("O dia que eu aprendi a viver sozinho \nT")
     await sleep(0.7)
-    await event.edit("The Day I Learnt To Live Alone \nEveryth")
+    await event.edit("O dia que eu aprendi a viver sozinho \nTu")
     await sleep(0.7)
-    await event.edit("The Day I Learnt To Live Alone \nEverythi")
+    await event.edit("O dia que eu aprendi a viver sozinho \nTud")
     await sleep(0.7)
-    await event.edit("The Day I Learnt To Live Alone \nEverythin")
+    await event.edit("O dia que eu aprendi a viver sozinho \nTudo f")
     await sleep(0.7)
-    await event.edit("The Day I Learnt To Live Alone \nEverything")
+    await event.edit("O dia que eu aprendi a viver sozinho \nTudo fi")
     await sleep(0.7)
-    await event.edit("The Day I Learnt To Live Alone \nEverything B")
+    await event.edit("O dia que eu aprendi a viver sozinho \nTudo fic")
     await sleep(0.7)
-    await event.edit("The Day I Learnt To Live Alone \nEverything Be")
+    await event.edit("O dia que eu aprendi a viver sozinho \nTudo fico")
     await sleep(0.7)
-    await event.edit("The Day I Learnt To Live Alone \nEverything Bec")
+    await event.edit("O dia que eu aprendi a viver sozinho \nTudo ficou")
     await sleep(0.7)
-    await event.edit("The Day I Learnt To Live Alone \nEverything Beca")
+    await event.edit("O dia que eu aprendi a viver sozinho \nTudo ficou m")
     await sleep(0.7)
-    await event.edit("The Day I Learnt To Live Alone \nEverything Becam")
+    await event.edit("O dia que eu aprendi a viver sozinho \nTudo ficou ma")
     await sleep(0.7)
-    await event.edit("The Day I Learnt To Live Alone \nEverything Became")
+    await event.edit("O dia que eu aprendi a viver sozinho \nTudo ficou mai")
     await sleep(0.7)
-    await event.edit("The Day I Learnt To Live Alone \nEverything Became B")
+    await event.edit("O dia que eu aprendi a viver sozinho \nTudo ficou mais")
     await sleep(0.7)
-    await event.edit("The Say I Learnt To Live Alone \nEverything Became Be")
+    await event.edit("O dia que eu aprendi a viver sozinho \nTudo ficou mais b")
     await sleep(0.7)
-    await event.edit("The Day I Learnt To Live Alone \nEverything Became Bea")
+    await event.edit("O dia que eu aprendi a viver sozinho \nTudo ficou mais bo")
     await sleep(0.7)
-    await event.edit("The Day I Learnt To Live Alone \nEverything Became Beau")
+    await event.edit("O dia que eu aprendi a viver sozinho \nTudo ficou mais bon")
     await sleep(0.7)
-    await event.edit("The Day I Learnt To Live Alone \nEverything Became Beaut")
+    await event.edit("O dia que eu aprendi a viver sozinho \nTudo ficou mais boni")
     await sleep(0.7)
-    await event.edit("The Day I Learnt To Live Alone \nEverything Became Beauti")
+    await event.edit("O dia que eu aprendi a viver sozinho \nTudo ficou mais bonit")
     await sleep(0.7)
-    await event.edit("The Day I Learnt To Live Alone \nEverything Became Beautif")
+    await event.edit("O dia que eu aprendi a viver sozinho \nTudo ficou mais bonito."
     await sleep(0.7)
-    await event.edit("The Day I Learnt To Live Alone \nEverything Became Beautifu")
-    await sleep(0.7)
-    await event.edit("The Day I Learnt To Live Alone \nEverything Became Beautiful")
-    await sleep(0.7)
-    await event.edit("**The Day I Learnt To Live Alone \nEverything Became Beautiful**ðŸ™‚")
+    await event.edit("**O dia que eu aprendi a viver sozinho \nTudo ficou mais bonito.**ðŸ™‚")
 
 # Author: sawan(@veryhelpful)
 @register(outgoing=True, pattern="^.mst$")
@@ -1977,7 +1973,7 @@ async def mst(event):
 
 @register(outgoing=True, pattern="^.gm$")
 async def gm(event):
-    await event.edit("Good morning ")
+    await event.edit("Bom Dia ")
     await sleep(1)
     await event.edit("╔══╗╔═╦═╗\n║╔═╣║║║║║\n║╚╗║║║║║║\n╚══╝╚╩═╩╝")
 
@@ -1987,21 +1983,21 @@ async def good(event):
     
 @register(outgoing=True, pattern="^.hhlo$")
 async def hhlo(event):
-    await event.edit("Hello, how r u")
+    await event.edit("Hello, como você está")
     await sleep(1)
     await event.edit("╔╗╔╗╔╗─╔═╗\n║╚╝║║║─║║║\n║╔╗║║╚╗║║║\n╚╝╚╝╚═╝╚═╝")
 
 @register(outgoing=True, pattern="^.sry$")
 async def sry(event):
-    await event.edit("I'm sorry")
+    await event.edit("Eu sinto Muito")
     await sleep(1)
-    await event.edit("Last time forgive me")
+    await event.edit("Ultima vez,me perdoe")
     await sleep(1)
     await event.edit("╔══╗╔═╗╔═╗╔═╗╔═╦╗\n║══╣║║║║╬║║╬║╚╗║║\n╠══║║║║║╗╣║╗╣╔╩╗║\n╚══╝╚═╝╚╩╝╚╩╝╚══╝")
 
 @register(outgoing=True, pattern="^.thnq$")
 async def thnq(event):
-    await event.edit("Thanks for your help")
+    await event.edit("Obrigado pela ajuda")
     await sleep(1)
     await event.edit("╔══╗╔╗╔╗╔══╗╔═╦╗╔╦╗╔══╗\n╚╗╔╝║╚╝║║╔╗║║║║║║╔╝║══╣\n─║║─║╔╗║║╠╣║║║║║║╚╗╠══║\n─╚╝─╚╝╚╝╚╝╚╝╚╩═╝╚╩╝╚══╝")
 
@@ -2011,7 +2007,7 @@ async def ok(event):
 
 @register(outgoing=True, pattern="^.smile$")
 async def smile(event):
-    await event.edit("How sad ")
+    await event.edit("Que triste ")
     await sleep(1)
     await event.edit("╔══╗╔═╦═╗╔══╗╔╗─╔═╗\n║══╣║║║║║╚║║╝║║─║╦╝\n╠══║║║║║║╔║║╗║╚╗║╩╗\n╚══╝╚╩═╩╝╚══╝╚═╝╚═╝")
 
@@ -2229,26 +2225,26 @@ async def call(event):
         return
     animation_interval = 3
     animation_ttl = range(0, 18)
-    await event.edit("Calling...")
+    await event.edit("Ligando...")
     animation_chars = [
-            "`Connecting To Telegram Headquarters...`",
-            "`Call Connected.`",
-            "`Telegram: Hello This is Telegram HQ. Who is this?`",
-            "`Me: Yo this is` @[pyfilesforbot](t.me/py_coding) ,`Please Connect me to my idiot bro【﻿ＩＲＯＮ ＭＡＮ】,`",
-            "`User Authorised.`",
-            "`Calling Pavel Durov`  `At +916969696969`",
-            "`Private  Call Connected...`",
-            "`Me: Hello Sir, Please Ban This Telegram Account.`",    
-            "`Pavel: May I Know Who Is This?`",
-            "`Me: Yo Brah, itz me @The_Avengers_leader`  ",
-            "`Pavel: OMG!!! Long time no see, Wassup Brother...\nI'll Make Sure That Guy Account Will Get Blocked Within 24Hrs.`",
-            "`Me: Thanks, See You Later Brah.`",
-            "`Pavel: Please Don't Thank Brah, Telegram Is Our's. Just Gimme A Call When You Become Free.`",
-            "`Me: Is There Any Issue/Emergency???`",
-            "`Pavel: Yes Sur, There Is A Bug In Telegram v69.6.9.\nI Am Not Able To Fix It. If Possible, Please Help Fix The Bug.`",
-            "`Me: Send Me The App On My Telegram Account, I Will Fix The Bug & Send You.`",
-            "`Pavel: Sure Sur \nTC Bye Bye :)`",
-            "`Private Call Disconnected.`"
+            "`Conectando-se à sede do Telegram...`",
+            "`Chamada conectada`",
+            "`Telegram: Olá, aqui é o HQ do Telegram. Quem é?`",
+            "`Eu: Ei, aqui é` @[Purple](t.me/Rewrite4),`Por favor, conecte-me ao meu irmão idiota 【ＩＲＯＮ ＭＡＮ】,`",
+            "`Autorizado pelo usuário`",
+            "`Ligar para Pavel Durov`ʻAT +916969696969` ",
+            "`Chamada privada conectada... `",
+            "`Eu: Olá, senhor, bane esta conta do telegram` ",
+            "`Pavel: Posso saber quem é este? `",
+            "`Eu: Olá, sou eu @AndrielFR` ",
+            "`Pavel: Muito tempo sem te ver, irmão, eae...\nVou garantir que a conta do cara seja bloqueada em 24 horas.`",
+            "`Eu: Obrigado, vejo você mais tarde bruh.`",
+            "`Pavel: Por favor, não agradeça irmão, o Telegram é nosso. Apenas me ligue quando você estiver livre.`",
+            "`Eu: Existe algum problema/emergência???`",
+            "`Pavel: Sim, claro, há um bug no Telegram v69.6.9.\nEu não sou capaz de consertar isso. Se possível, Usome ajude a corrigir o bug.`",
+            "`Eu: Envie-me o aplicativo na minha conta do Telegram, eu corrigirei o bug e enviarei para você.`",
+            "`Pavel: Claro sir \nTC Bye Bye :)`",
+            "`Chamada privada desconectada.`"
         ]
     for i in animation_ttl:
         await sleep(animation_interval)
@@ -2411,69 +2407,69 @@ async def bluedevildislike(dislike):
 CMD_HELP.update(
     {
         "memes": ".cowsay\
-\nUsage: cow which says things.\
+\nUso: vaca que diz coisas.\
 \n\n:/\
-\nUsage: Check yourself ;)\
+\nUso: Veja você mesmo ;)\
 \n\n-_-\
-\nUsage: Ok...\
+\nUso: Ok...\
 \n\n;_;\
-\nUsage: Like `-_-` but crying.\
+\nUso: Igual `-_-` só que chorando.\
 \n\n.cp\
-\nUsage: Copypasta the famous meme\
+\nUso: Copypasta do meme famoso\
 \n\n.vapor\
-\nUsage: Vaporize everything!\
+\nUso: Vaporize tudo!\
 \n\n.str\
-\nUsage: Stretch it.\
+\nUso: Estique tudo.\
 \n\n.zal\
-\nUsage: Invoke the feeling of chaos.\
+\nUso: Invoque o sentimento de caos.\
 \n\nOof\
-\nUsage: Ooooof\
+\nUso: Ooooof\
 \n\n.moon\
-\nUsage: kensar moon animation.\
+\nUso: Animação de lua.\
 \n\n.clock\
-\nUsage: kensar clock animation.\
+\nUso: Animação de relógio.\
 \n\n.hi\
-\nUsage: Greet everyone!\
+\nUso: Cumprimente a todos!\
 \n\n.coinflip <heads/tails>\
-\nUsage: Flip a coin !!\
+\nUso: Jogue a moeda !!\
 \n\n.owo\
-\nUsage: UwU\
+\nUso: UwU\
 \n\n.react\
-\nUsage: Make your userbot react to everything.\
+\nUso: Faça seu userbot reagir a tudo.\
 \n\n.slap\
-\nUsage: reply to slap them with random objects !!\
+\nUso: responda para bater neles com objetos aleatórios !!\
 \n\n.cry\
-\nUsage: y u du dis, i cri.\
+\nUsoe: pq vc faz isso, eu choro.\
 \n\n.shg\
-\nUsage: Shrug at it !!\
+\nUso: Dê de ombros !!\
 \n\n.run\
-\nUsage: Let Me Run, run, RUNNN!\
+\nUso: Deixe-me correr, correr, CORRER!\
 \n\n.chase\
-\nUsage: You better start running\
+\nUso: É melhor você começar a correr!\
 \n\n.metoo\
-\nUsage: Haha yes\
+\nUso: Haha sim\
 \n\n.mock\
-\nUsage: Do it and find the real fun.\
+\nUso: Faça e encontre a verdadeira diversão.\
 \n\n.clap\
-\nUsage: Praise people!\
-\n\n.f <emoji/character>\
-\nUsage: Pay Respects.\
+\nUso: Elogie as pessoas!\
+\n\n.f <emoji/caractere>\
+\nUso: Preste respeitos.\
 \n\n.bt\
-\nUsage: Believe me, you will find this useful.\
+\nUso: Acredite em mim, você achará isso útil.\
 \n\n.type\
-\nUsage: Just a small command to make your keyboard become a typewriter!\
-\n\n.lfy <query>\
-\nUsage: Let me Google that for you real quick !!\
-\n\n.decide [Alternates: (.yes, .no, .maybe)]\
-\nUsage: Make a quick decision.\
+\nUso: Só um pequeno comando para fazer seu teclado se tornar uma máquina de escrever!\
+\n\n.lfy <consulta>\
+\nUso: Deixe-me pesquisar isso no Google pra você bem rápido !!\
+\n\n.decide [Alternativas: (.yes, .no, .maybe)]\
+\nUso: Faz uma decisão rápida.\
 \n\n.alone\
-\nUsage:  Send a 'sad' text.\
-\n\n.tanimate <name>\
-\nUsage: Send a name around several hearts\
-\n\n.scam <action> <time>\
-\n[Available Actions: (typing, contact, game, location, voice, round, video, photo, document, cancel)]\
-\nUsage: Create fake chat actions, for fun. (Default action: typing)\
-\n\nAnd many more\
+\nUso: Manda um texto 'triste'.\
+\n\n.tanimate <nome>\
+\nUso: Envia um nome em torno de vários corações\
+\n\n.scam <ação> <tempo>\
+\n[Ações disponíveis: (typing, contact, game, location, voice, round, video, photo, document, cancel)]\
+\nUso: Crie ações de chat falsas para se divertir. (Ação padrão: typing)\
+\n\nE muito mais\
 \n.nou ; .bot ; .gey ; .gey ; .tf ; .paw ; .taco ; .nih ;\
 \n.fag ; .gtfo ; .stfu ; .lol ; .lool ; .fail ; .earth ; .iwi\
 \n.mst ; .gm ; .good ; .hhlo ; .sry ; .thnq ; .ok ; .smile\
@@ -2482,6 +2478,6 @@ CMD_HELP.update(
 \n.sdead ; .strump ; .schina ; .india ; .monster ; .killer\
 \n.pig ; .gun ; .dog ; .hello ; .hmf ; .couple ; .india2\
 \n.sup ; .wc ; .snk ; .ded ; .bye ; .shitos ; .dislike\
-\n\n\nThanks to 🅱️ottom🅱️ext🅱️ot (@NotAMemeBot) for some of these."
+\n\n\nObrigada a 🅱️ottom🅱️ext🅱️ot (@NotAMemeBot) por alguns desses."
     }
 )
