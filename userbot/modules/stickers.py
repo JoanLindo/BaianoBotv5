@@ -103,7 +103,7 @@ async def kang(args):
                 emoji = splat[1]
 
         packname = f"a{user.id}_by_{user.username}_{pack}"
-        packnick = f"@{user.username}'s kang library Book.{pack}"
+        packnick = f"@{user.username}'s kang pack Vol.{pack}"
         cmd = "/newpack"
         file = io.BytesIO()
 
@@ -135,7 +135,7 @@ async def kang(args):
                 while "120" in x.text:
                     pack += 1
                     packname = f"a{user.id}_by_{user.username}_{pack}"
-                    packnick = f"@{user.username}'s kang library Book.{pack}"
+                    packnick = f"@{user.username}'s kang pack Vol.{pack}"
                     await args.edit(
                         "`Trocando para pacote "
                         + str(pack)
@@ -334,7 +334,7 @@ async def get_pack_info(event):
 @register(outgoing=True, pattern="^.getsticker$")
 async def sticker_to_png(sticker):
     if not sticker.is_reply:
-        await sticker.edit("`NULL information to fetch...`")
+        await sticker.edit("`Sem informações para adquirir...`")
         return False
 
     img = await sticker.get_reply_message()
