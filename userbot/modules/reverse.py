@@ -35,7 +35,7 @@ async def okgoogle(img):
         photo = io.BytesIO()
         await bot.download_media(message, photo)
     else:
-        await img.edit("`Responda a uma foto ou sticker.`")
+        await img.edit("`Responda a foto ou sticker`")
         return
 
     if photo:
@@ -43,7 +43,7 @@ async def okgoogle(img):
         try:
             image = Image.open(photo)
         except OSError:
-            await img.edit("`Formato de arquivo não suportado.`")
+            await img.edit("`Extensão não suportada.`")
             return
         name = "okgoogle.png"
         image.save(name, "PNG")
@@ -57,7 +57,7 @@ async def okgoogle(img):
         if response != 400:
             await img.edit(
                 "`Imagem enviada com sucesso.`"
-                "\n`Analisando a fonte`"
+                "\n`Analisando a fonte.`"
             )
         else:
             await img.edit("`Erro no envio.`")
@@ -69,7 +69,7 @@ async def okgoogle(img):
         imgspage = match["similar_images"]
 
         if guess and imgspage:
-            await img.edit(f"[{guess}]({fetchUrl})\n\n`Looking for images...`")
+            await img.edit(f"[{guess}]({fetchUrl})\n\n`Procurando por imagens...`")
         else:
             await img.edit("`Não foram encontrados resultados.`")
             return
@@ -97,7 +97,7 @@ async def okgoogle(img):
 
 
 async def ParseSauce(googleurl):
-    """Analisa o código HTML para obter a informação que desejamos."""
+    """Parse/Scrape the HTML code for the info we want."""
 
     source = opener.open(googleurl).read()
     soup = BeautifulSoup(source, "html.parser")
