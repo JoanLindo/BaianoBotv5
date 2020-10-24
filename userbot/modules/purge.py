@@ -30,20 +30,20 @@ async def fastpurger(purg):
                 await purg.client.delete_messages(chat, msgs)
                 msgs = []
     else:
-        await purg.edit("`I need a mesasge to start purging from.`")
+        await purg.edit("`Eu preciso de uma mensagem para começar a limpar.`")
         return
 
     if msgs:
         await purg.client.delete_messages(chat, msgs)
     done = await purg.client.send_message(
         purg.chat_id,
-        f"`Fast purge complete!`\
-        \nPurged {str(count)} messages",
+        f"`Limpeza rápida completa!`\
+        \nForam limpadas {str(count)} mensagens",
     )
 
     if BOTLOG:
         await purg.client.send_message(
-            BOTLOG_CHATID, "Purge of " + str(count) + " messages done successfully."
+            BOTLOG_CHATID, "Foram limpadas " + str(count) + " mensagens com sucesso."
         )
     await sleep(2)
     await done.delete()
@@ -64,11 +64,11 @@ async def purgeme(delme):
 
     smsg = await delme.client.send_message(
         delme.chat_id,
-        "`Purge complete!` Purged " + str(count) + " messages.",
+        "`Limpeza completa!` Foram limpadas " + str(count) + " mensagens.",
     )
     if BOTLOG:
         await delme.client.send_message(
-            BOTLOG_CHATID, "Purge of " + str(count) + " messages done successfully."
+            BOTLOG_CHATID, "Foram limpadas " + str(count) + " mensagens com sucesso."
         )
     await sleep(2)
     i = 1
@@ -85,12 +85,12 @@ async def delete_it(delme):
             await delme.delete()
             if BOTLOG:
                 await delme.client.send_message(
-                    BOTLOG_CHATID, "Deletion of message was successful"
+                    BOTLOG_CHATID, "Mensagem deletada com sucesso"
                 )
         except rpcbaseerrors.BadRequestError:
             if BOTLOG:
                 await delme.client.send_message(
-                    BOTLOG_CHATID, "Well, I can't delete a message"
+                    BOTLOG_CHATID, "Não posso deletar essa mensagem"
                 )
 
 
@@ -110,13 +110,13 @@ async def editer(edit):
         i = i + 1
     if BOTLOG:
         await edit.client.send_message(
-            BOTLOG_CHATID, "Edit query was executed successfully"
+            BOTLOG_CHATID, "Mensagem editada com sucesso"
         )
 
 
 @register(outgoing=True, pattern="^.sd")
 async def selfdestruct(destroy):
-    """ For .sd command, make seflf-destructable messages. """
+    """ For .sd command, make self-destructable messages. """
     message = destroy.text
     counter = int(message[4:6])
     text = str(destroy.text[6:])
@@ -125,41 +125,41 @@ async def selfdestruct(destroy):
     await sleep(counter)
     await smsg.delete()
     if BOTLOG:
-        await destroy.client.send_message(BOTLOG_CHATID, "sd query done successfully")
+        await destroy.client.send_message(BOTLOG_CHATID, "Mensagem auto-destruída com sucesso")
 
 
 CMD_HELP.update(
     {
         "purge": ".purge\
-        \nUsage: Purges all messages starting from the reply."
+        \nUso: Limpa todas as mensagens a partir da resposta."
     }
 )
 
 CMD_HELP.update(
     {
         "purgeme": ".purgeme <x>\
-        \nUsage: Deletes x amount of your latest messages."
+        \nUso: Exclui x quantidade de suas mensagens mais recentes."
     }
 )
 
 CMD_HELP.update(
     {
         "del": ".del\
-\nUsage: Deletes the message you replied to."
+\nUso: Exclui a mensagem que você respondeu."
     }
 )
 
 CMD_HELP.update(
     {
-        "edit": ".edit <newmessage>\
-\nUsage: Replace your last message with <newmessage>."
+        "edit": ".edit <nova mensagem>\
+\nUso: Substitui sua última mensagem por <nova mensagem>."
     }
 )
 
 CMD_HELP.update(
     {
-        "sd": ".sd <x> <message>\
-\nUsage: Creates a message that selfdestructs in x seconds.\
-\nKeep the seconds under 100 since it puts your bot to sleep."
+        "sd": ".sd <x> <mensagem>\
+\nUso: Cria uma mensagem que se autodestrói em x segundos.\
+\nMantenha os segundos abaixo de 100, pois isso coloca seu bot para dormir."
     }
 )
