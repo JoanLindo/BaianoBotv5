@@ -1960,11 +1960,10 @@ async def alone (event):
     await sleep(0.7)
     await event.edit("O dia que eu aprendi a viver sozinho \nTudo ficou mais bonit")
     await sleep(0.7)
-    await event.edit("O dia que eu aprendi a viver sozinho \nTudo ficou mais bonito."
+    await event.edit("O dia que eu aprendi a viver sozinho \nTudo ficou mais bonito.")
     await sleep(0.7)
     await event.edit("**O dia que eu aprendi a viver sozinho \nTudo ficou mais bonito.**ðŸ™‚")
-    await sleep(0.7)
-    
+
 # Author: sawan(@veryhelpful)
 @register(outgoing=True, pattern="^.mst$")
 async def mst(event):
