@@ -132,7 +132,7 @@ async def type_afk_is_not_true(notafk):
         AFKREASON = None
 
 
-@register(incoming=True, disable_edited=True)
+@register(incoming=True, disable_edited=False)
 async def mention_afk(mention):
     """ This function takes care of notifying the people who mention you that you are AFK."""
     global COUNT_MSG

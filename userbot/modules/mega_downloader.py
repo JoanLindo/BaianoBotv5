@@ -29,7 +29,7 @@ async def subprocess_run(megadl, cmd):
     exitCode = subproc.returncode
     if exitCode != 0:
         await megadl.edit(
-            "**An error was detected while running subprocess.**\n"
+            "**Um erro foi detectado durante a execução do subprocesso.**\n"
             f"exitCode : `{exitCode}`\n"
             f"stdout : `{stdout.decode().strip()}`\n"
             f"stderr : `{stderr.decode().strip()}`"
@@ -40,7 +40,7 @@ async def subprocess_run(megadl, cmd):
 
 @register(outgoing=True, pattern=r"^.mega(?: |$)(.*)")
 async def mega_downloader(megadl):
-    await megadl.edit("`Collecting information...`")
+    await megadl.edit("`Coletando informação...`")
     if not os.path.isdir(TEMP_DOWNLOAD_DIRECTORY):
         os.makedirs(TEMP_DOWNLOAD_DIRECTORY)
     msg_link = await megadl.get_reply_message()
@@ -50,24 +50,24 @@ async def mega_downloader(megadl):
     elif msg_link:
         link = msg_link.text
     else:
-        return await megadl.edit("Usage: `.mega` **<MEGA.nz link>**")
+        return await megadl.edit("Uso: `.mega` **<MEGA.nz link>**")
     try:
         link = re.findall(r"\bhttps?://.*mega.*\.nz\S+", link)[0]
         """ - Mega changed their URL again - """
         if "file" in link:
             link = link.replace("#", "!").replace("file/", "#!")
         elif "folder" in link or "#F" in link or "#N" in link:
-            await megadl.edit("`folder download support are removed...`")
+            await megadl.edit("`o suporte para download de pasta foi removido...`")
             return
     except IndexError:
-        await megadl.edit("`MEGA.nz link not found...`")
+        await megadl.edit("`Link MEGA.nz não encontrado...`")
         return None
     cmd = f"bin/megadown -q -m {link}"
     result = await subprocess_run(megadl, cmd)
     try:
         data = json.loads(result[0])
     except json.JSONDecodeError:
-        await megadl.edit("**JSONDecodeError**: `failed to extract link...`")
+        await megadl.edit("**JSONDecodeError**: `Falha ao extrair link...`")
         return None
     except (IndexError, TypeError):
         return
@@ -113,8 +113,8 @@ async def mega_downloader(megadl):
                 f"{progress_str}\n"
                 f"`{humanbytes(downloaded)} of {humanbytes(total_length)}"
                 f" @ {speed}`\n"
-                f"`ETA` -> {time_formatter(estimated_total_time)}\n"
-                f"`Duration` -> {time_formatter(round(diff))}"
+                f"`Tempo Estimado` -> {time_formatter(estimated_total_time)}\n"
+                f"`Duração` -> {time_formatter(round(diff))}"
             )
             if round(diff % 15.00) == 0 and (
                 display_message != current_message or total_length == downloaded
@@ -125,7 +125,7 @@ async def mega_downloader(megadl):
         except Exception:
             pass
         finally:
-            if status == "Combining":
+            if status == "Combinando":
                 wait = round(downloader.get_eta())
                 await asyncio.sleep(wait)
     if downloader.isSuccessful():
@@ -145,13 +145,13 @@ async def mega_downloader(megadl):
         else:
             await megadl.edit(
                 f"`{file_name}`\n\n"
-                f"Successfully downloaded in: `{file_path}`.\n"
-                f"Download took: {time_formatter(download_time)}."
+                f"Download com sucesso em: `{file_path}`.\n"
+                f"Download levou: {time_formatter(download_time)}."
             )
             return None
     else:
         await megadl.edit(
-            "`Failed to download, " "check heroku Logs for more details.`"
+            "`O download falhou, " "verifique os registros do heroku para mais detalhes.`"
         )
         for e in downloader.get_errors():
             LOGS.info(str(e))
@@ -172,7 +172,7 @@ async def decrypt_file(megadl, file_path, temp_file_path, hex_key, hex_raw_key):
 CMD_HELP.update(
     {
         "mega": ".mega <MEGA.nz link>"
-        "\nUsage: Reply to a MEGA.nz link or paste your MEGA.nz link to "
-        "download the file into your userbot server."
+        "\nUso: Responda a um link MEGA.nz ou cole seu link MEGA.nz para "
+        "baixar o arquivo em seu servidor userbot."
     }
 )

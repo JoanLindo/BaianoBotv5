@@ -86,9 +86,9 @@ async def permitpm(event):
 
             if COUNT_PM[event.chat_id] > 4:
                 await event.respond(
-                    "`Você estava spammando meu PM, o que eu não gostei.`\n"
+                    "`Você está spammando meu PM, o que não é permitido.`\n"
                     "`Não permitirei que mande mensagens novamente até aviso prévio `\n"
-                    "`Bye`"
+                    "`Cya`"
                 )
 
                 try:
@@ -116,7 +116,7 @@ async def permitpm(event):
                         + "](tg://user?id="
                         + str(event.chat_id)
                         + ")"
-                        + " was just another retarded nibba",
+                        + " era só mais um retardado",
                     )
 
 
@@ -231,7 +231,7 @@ async def approvepm(apprvpm):
     try:
         approve(uid)
     except IntegrityError:
-        await apprvpm.edit("`O usuário já deve estar permitido.`")
+        await apprvpm.edit("`O usuário já está permitido.`")
         return
 
     await apprvpm.edit(f"[{name0}](tg://user?id={uid}) `permitido de enviar PMs!`")
@@ -319,7 +319,7 @@ async def unblockpm(unblock):
     if BOTLOG:
         await unblock.client.send_message(
             BOTLOG_CHATID,
-            f"[{name0}](tg://user?id={replied_user.id})" " was unblocc'd!.",
+            f"[{name0}](tg://user?id={replied_user.id})" " foi desbloqueado!.",
         )
 
 
@@ -327,7 +327,7 @@ async def unblockpm(unblock):
 async def add_pmsg(cust_msg):
     """ Defina sua própria Mensagem não aprovada automática. """
     if not PM_AUTO_BAN:
-        return await cust_msg.edit("Você precisa definir `PM_AUTO_BAN` para `True`")
+        return await cust_msg.edit("Você precisa definir `PM_AUTO_BAN` nas ConfigVars do Heroku para `True`")
     try:
         import userbot.modules.sql_helper.globals as sql
     except AttributeError:

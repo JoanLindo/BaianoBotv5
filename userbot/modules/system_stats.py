@@ -34,7 +34,7 @@ async def get_readable_time(seconds: int) -> str:
     count = 0
     up_time = ""
     time_list = []
-    time_suffix_list = ["s", "m", "h", "days"]
+    time_suffix_list = ["s", "m", "h", "dias"]
 
     while count < 4:
         count += 1
@@ -61,44 +61,44 @@ async def get_readable_time(seconds: int) -> str:
 @register(outgoing=True, pattern=r"^\.spc")
 async def psu(event):
     uname = platform.uname()
-    softw = "**System Information**\n"
-    softw += f"`System   : {uname.system}`\n"
-    softw += f"`Release  : {uname.release}`\n"
-    softw += f"`Version  : {uname.version}`\n"
-    softw += f"`Machine  : {uname.machine}`\n"
+    softw = "**Informação de Sistema**\n"
+    softw += f"`Sistema   : {uname.system}`\n"
+    softw += f"`Lançamento  : {uname.release}`\n"
+    softw += f"`Versão  : {uname.version}`\n"
+    softw += f"`Máquina  : {uname.machine}`\n"
     # Boot Time
     boot_time_timestamp = psutil.boot_time()
     bt = datetime.fromtimestamp(boot_time_timestamp)
-    softw += f"`Boot Time: {bt.day}/{bt.month}/{bt.year}  {bt.hour}:{bt.minute}:{bt.second}`\n"
+    softw += f"`Tempo de Boot: {bt.day}/{bt.month}/{bt.year}  {bt.hour}:{bt.minute}:{bt.second}`\n"
     # CPU Cores
     cpuu = "**CPU Info**\n"
-    cpuu += "`Physical cores   : " + str(psutil.cpu_count(logical=False)) + "`\n"
-    cpuu += "`Total cores      : " + str(psutil.cpu_count(logical=True)) + "`\n"
+    cpuu += "`Núcleos físicos   : " + str(psutil.cpu_count(logical=False)) + "`\n"
+    cpuu += "`Núcleos totais      : " + str(psutil.cpu_count(logical=True)) + "`\n"
     # CPU frequencies
     cpufreq = psutil.cpu_freq()
-    cpuu += f"`Max Frequency    : {cpufreq.max:.2f}Mhz`\n"
-    cpuu += f"`Min Frequency    : {cpufreq.min:.2f}Mhz`\n"
-    cpuu += f"`Current Frequency: {cpufreq.current:.2f}Mhz`\n\n"
+    cpuu += f"`Frequência máxima    : {cpufreq.max:.2f}Mhz`\n"
+    cpuu += f"`Frequência mínima    : {cpufreq.min:.2f}Mhz`\n"
+    cpuu += f"`Frequência atual: {cpufreq.current:.2f}Mhz`\n\n"
     # CPU usage
-    cpuu += "**CPU Usage Per Core**\n"
+    cpuu += "**Uso de CPU por núcleo**\n"
     for i, percentage in enumerate(psutil.cpu_percent(percpu=True)):
-        cpuu += f"`Core {i}  : {percentage}%`\n"
-    cpuu += "\n**Total CPU Usage**\n"
-    cpuu += f"`All Core: {psutil.cpu_percent()}%`\n"
+        cpuu += f"`Núcleo {i}  : {percentage}%`\n"
+    cpuu += "\n**Uso de CPU total**\n"
+    cpuu += f"`Todos núcleos: {psutil.cpu_percent()}%`\n"
     # RAM Usage
     svmem = psutil.virtual_memory()
-    memm = "**Memory Usage**\n"
+    memm = "**Uso de memória**\n"
     memm += f"`Total     : {get_size(svmem.total)}`\n"
-    memm += f"`Available : {get_size(svmem.available)}`\n"
-    memm += f"`Used      : {get_size(svmem.used)} ({svmem.percent}%)`\n"
+    memm += f"`Disponível : {get_size(svmem.available)}`\n"
+    memm += f"`Usado      : {get_size(svmem.used)} ({svmem.percent}%)`\n"
     # Disk Usage
     dtotal, dused, dfree = shutil.disk_usage(".")
-    disk = "**Disk Usage**\n"
+    disk = "**Uso de disco**\n"
     disk += f"`Total     : {get_size(dtotal)}`\n"
-    disk += f"`Free      : {get_size(dused)}`\n"
-    disk += f"`Used      : {get_size(dfree)}`\n"
+    disk += f"`Livre      : {get_size(dused)}`\n"
+    disk += f"`Usado      : {get_size(dfree)}`\n"
     # Bandwidth Usage
-    bw = "**Bandwith Usage**\n"
+    bw = "**Uso de banda**\n"
     bw += f"`Upload  : {get_size(psutil.net_io_counters().bytes_sent)}`\n"
     bw += f"`Download: {get_size(psutil.net_io_counters().bytes_recv)}`\n"
     help_string = f"{str(softw)}\n"
@@ -106,7 +106,7 @@ async def psu(event):
     help_string += f"{str(memm)}\n"
     help_string += f"{str(disk)}\n"
     help_string += f"{str(bw)}\n"
-    help_string += "**Engine Info**\n"
+    help_string += "**Informação de Engine**\n"
     help_string += f"`Python {sys.version}`\n"
     help_string += f"`Telethon {__version__}`"
     await event.edit(help_string)
@@ -137,7 +137,7 @@ async def sysdetails(sysd):
 
             await sysd.edit("`" + result + "`")
         except FileNotFoundError:
-            await sysd.edit("`Install neofetch first !!`")
+            await sysd.edit("`Instale o neofetch primeiro !!`")
 
 
 @register(outgoing=True, pattern="^.botver$")
@@ -168,11 +168,11 @@ async def bot_ver(event):
             revout = str(stdout.decode().strip()) + str(stderr.decode().strip())
 
             await event.edit(
-                "`Userbot Version: " f"{verout}" "` \n" "`Revision: " f"{revout}" "`"
+                "`Versão do Userbot: " f"{verout}" "` \n" "`Revisão: " f"{revout}" "`"
             )
         else:
             await event.edit(
-                "Shame that you don't have git, you're running - 'v2.5' anyway!"
+                "Pena que você não tem git, você está executando - 'v2.5' de qualquer jeito!"
             )
 
 
@@ -182,7 +182,7 @@ async def pipcheck(pip):
     if not pip.text[0].isalpha() and pip.text[0] not in ("/", "#", "@", "!"):
         pipmodule = pip.pattern_match.group(1)
         if pipmodule:
-            await pip.edit("`Searching . . .`")
+            await pip.edit("`Procurando . . .`")
             pipc = await asyncrunapp(
                 "pip3",
                 "search",
@@ -196,7 +196,7 @@ async def pipcheck(pip):
 
             if pipout:
                 if len(pipout) > 4096:
-                    await pip.edit("`Output too large, sending as file`")
+                    await pip.edit("`Resultado muito grande, enviando como arquivo`")
                     file = open("output.txt", "w+")
                     file.write(pipout)
                     file.close()
@@ -208,20 +208,20 @@ async def pipcheck(pip):
                     remove("output.txt")
                     return
                 await pip.edit(
-                    "**Query: **\n`"
+                    "**Consulta: **\n`"
                     f"pip3 search {pipmodule}"
-                    "`\n**Result: **\n`"
+                    "`\n**Resultado: **\n`"
                     f"{pipout}"
                     "`"
                 )
             else:
                 await pip.edit(
-                    "**Query: **\n`"
+                    "**Consulta: **\n`"
                     f"pip3 search {pipmodule}"
-                    "`\n**Result: **\n`No Result Returned/False`"
+                    "`\n**Resultado: **\n`Nenhum resultado encontrado/falso`"
                 )
         else:
-            await pip.edit("`Use .help pip to see an example`")
+            await pip.edit("`Use .help pip para ver um exemplo`")
 
 
 @register(outgoing=True, pattern=r"^.(alive|on)$")
@@ -248,8 +248,8 @@ async def amireallyalive(alive):
             await alive.delete()
         except BaseException:
             await alive.edit(
-                output + "\n\n *`The provided logo is invalid."
-                "\nMake sure the link is directed to the logo picture`"
+                output + "\n\n *`O logotipo fornecido é inválido."
+                "\nCertifique-se de que o link seja direcionado para a imagem do logotipo`"
             )
     else:
         await alive.edit(output)
@@ -259,12 +259,12 @@ async def amireallyalive(alive):
 async def amireallyaliveuser(username):
     """ For .aliveu command, change the username in the .alive command. """
     message = username.text
-    output = ".aliveu [new user without brackets] nor can it be empty"
+    output = ".aliveu [novo usuário sem colchetes] nem pode estar vazio"
     if not (message == ".aliveu" or message[7:8] != " "):
         newuser = message[8:]
         global DEFAULTUSER
         DEFAULTUSER = newuser
-        output = "Successfully changed user to " + newuser + "!"
+        output = "Usuário alterado com sucesso para " + newuser + "!"
     await username.edit("`" f"{output}" "`")
 
 
@@ -273,36 +273,36 @@ async def amireallyalivereset(ureset):
     """ For .resetalive command, reset the username in the .alive command. """
     global DEFAULTUSER
     DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
-    await ureset.edit("`" "Successfully reset user for alive!" "`")
+    await ureset.edit("`" "Usuário redefinido com sucesso para .alive/on!" "`")
 
 
 CMD_HELP.update(
     {
         "sysd": ".sysd\
-    \nUsage: Shows system information using neofetch.\
+    \nUsage: Mostra informações do sistema usando neofetch.\
     \n\n.spc\
-    \nUsage: Show system specification."
+    \nUso: Mostrar especificação do sistema."
     }
 )
 CMD_HELP.update(
     {
         "botver": ".botver\
-    \nUsage: Shows the userbot version."
+    \nUso: Mostra a versão do userbot."
     }
 )
 CMD_HELP.update(
     {
-        "pip": ".pip <module(s)>\
-    \nUsage: Does a search of pip modules(s)."
+        "pip": ".pip <módulo(s)>\
+    \nUso: Faz uma pesquisa de módulos pip."
     }
 )
 CMD_HELP.update(
     {
         "alive": ".alive | .on\
-    \nUsage: Type .alive/.on to see wether your bot is working or not.\
-    \n\n.aliveu <text>\
-    \nUsage: Changes the 'user' in alive to the text you want.\
+    \nUso: Digite .alive/.on para ver se seu bot está funcionando ou não.\
+    \n\n.aliveu <texto>\
+    \nUso: Muda o 'usuário' do .alive/.on para o texto que você deseja.\
     \n\n.resetalive\
-    \nUsage: Resets the user to default."
+    \nUso: Redefine o usuário para o padrãoUso."
     }
 )
