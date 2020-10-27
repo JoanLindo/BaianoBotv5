@@ -1,7 +1,7 @@
 {
-  "name": "Telegram One 4u Bot",
-  "description": "[One4uBot] A modular Telegram userbot running on Python 3.8+ with an sqlalchemy database.",
-  "logo": "https://i.ibb.co/CzXcJ0S/photo-2020-01-28-23-32-03.jpg",
+  "name": "Telegram PurpleBot",
+  "description": "[PurpleBot] Um userbot modular do Telegram em execução no Python 3.8+ com um banco de dados sqlalchemy.",
+  "logo": "https://i.ibb.co/fN3nTx0/image.png",
   "keywords": [
     "telegram",
     "userbot",
@@ -11,7 +11,7 @@
   ],
   "repository": "https://github.com/thewhiteharlot/PurpleBot",
   "website": "https://telegra.ph/How-to-host-a-Telegram-Userbot-11-02",
-  "success_url": "https://t.me/userbotindo",
+  "success_url": "https://t.me/redminote8brazil",
   "stack": "container",
   "env": {
     "API_KEY": {
@@ -166,7 +166,7 @@
     },
     "DEFAULT_BIO": {
       "description": "Default profile bio.",
-      "value": "[PM = Report Spam] I ❤ ️One4uBot",
+      "value": "[PM = Report Spam] I ❤ ️PurpleBot",
       "required": false
     },
     "ALIVE_NAME": {
