@@ -169,15 +169,15 @@ async def mention_afk(mention):
                     wday = now + datetime.timedelta(days=-days)
                     afk_since = wday.strftime("%A")
             elif hours > 1:
-                afk_since = f"`{int(hours)}h{int(minutes)}m` atrás"
+                afk_since = f"`{int(hours)}h{int(minutes)}m`"
             elif minutes > 0:
-                afk_since = f"`{int(minutes)}m{int(seconds)}s` atrás"
+                afk_since = f"`{int(minutes)}m{int(seconds)}s`"
             else:
-                afk_since = f"`{int(seconds)}s` atrás"
+                afk_since = f"`{int(seconds)}s`"
             if mention.sender_id not in USERS:
                 if AFKREASON:
                     await mention.reply(
-                        f"Estou ausente desde {afk_since}.\
+                        f"Estou ausente fazem {afk_since}.\
                         \nRazão: `{AFKREASON}`"
                     )
                 else:
@@ -188,7 +188,7 @@ async def mention_afk(mention):
                 if USERS[mention.sender_id] % randint(2, 4) == 0:
                     if AFKREASON:
                         await mention.reply(
-                            f"Ainda estou ausente desde {afk_since}.\
+                            f"Estou ausente fazem {afk_since}.\
                             \nRazão: `{AFKREASON}`"
                         )
                     else:
@@ -253,15 +253,15 @@ async def afk_on_pm(sender):
                     wday = now + datetime.timedelta(days=-days)
                     afk_since = wday.strftime("%A")
             elif hours > 1:
-                afk_since = f"`{int(hours)}h{int(minutes)}m` atrás"
+                afk_since = f"`{int(hours)}h{int(minutes)}m`"
             elif minutes > 0:
-                afk_since = f"`{int(minutes)}m{int(seconds)}s` atrás"
+                afk_since = f"`{int(minutes)}m{int(seconds)}s`"
             else:
-                afk_since = f"`{int(seconds)}s` atrás"
+                afk_since = f"`{int(seconds)}s`"
             if sender.sender_id not in USERS:
                 if AFKREASON:
                     await sender.reply(
-                        f"Estou ausente desde {afk_since}.\
+                        f"Estou ausente fazem {afk_since}.\
                         \nRazão: `{AFKREASON}`"
                     )
                 else:
@@ -272,7 +272,7 @@ async def afk_on_pm(sender):
                 if USERS[sender.sender_id] % randint(2, 4) == 0:
                     if AFKREASON:
                         await sender.reply(
-                            f"Ainda estou ausente desde {afk_since}.\
+                            f"Estou ausente fazem {afk_since}.\
                             \nRazão: `{AFKREASON}`"
                         )
                     else:
