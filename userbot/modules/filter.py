@@ -155,7 +155,7 @@ CMD_HELP.update(
     \nO bot responderá à mensagem sempre que 'palavra-chave' for mencionada\
     \nFunciona com tudo, desde arquivos a stickers.\
     \n\n.stop <palavra-chave>\
-    \nUsage: Pára o filtro especificado.\
+    \nUsage: Para o filtro especificado.\
     \n\n.rmbotfilters <marie/rose>\
     \nUsage: Remove todos os filtros de bots admin (Atualmente com suporte: Marie, Rose e seus clones) do chat."
     }
