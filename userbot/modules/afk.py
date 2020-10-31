@@ -185,19 +185,15 @@ async def mention_afk(mention):
                 USERS.update({mention.sender_id: 1})
                 COUNT_MSG = COUNT_MSG + 1
             elif mention.sender_id in USERS:
-                if USERS[mention.sender_id] % randint(2, 4) == 0:
-                    if AFKREASON:
-                        await mention.reply(
-                            f"Estou ausente fazem {afk_since}.\
-                            \nRazão: `{AFKREASON}`"
-                        )
-                    else:
-                        await mention.reply(str(choice(AFKSTR)))
-                    USERS[mention.sender_id] = USERS[mention.sender_id] + 1
-                    COUNT_MSG = COUNT_MSG + 1
+                if AFKREASON:
+                    await mention.reply(
+                        f"Estou ausente fazem {afk_since}.\
+                        \nRazão: `{AFKREASON}`"
+                    )
                 else:
-                    USERS[mention.sender_id] = USERS[mention.sender_id] + 1
-                    COUNT_MSG = COUNT_MSG + 1
+                    await mention.reply(str(choice(AFKSTR)))
+                USERS[mention.sender_id] = USERS[mention.sender_id] + 1
+                COUNT_MSG = COUNT_MSG + 1
 
 
 @register(incoming=True, disable_errors=True)
@@ -269,19 +265,15 @@ async def afk_on_pm(sender):
                 USERS.update({sender.sender_id: 1})
                 COUNT_MSG = COUNT_MSG + 1
             elif apprv and sender.sender_id in USERS:
-                if USERS[sender.sender_id] % randint(2, 4) == 0:
-                    if AFKREASON:
-                        await sender.reply(
-                            f"Estou ausente fazem {afk_since}.\
-                            \nRazão: `{AFKREASON}`"
-                        )
-                    else:
-                        await sender.reply(str(choice(AFKSTR)))
-                    USERS[sender.sender_id] = USERS[sender.sender_id] + 1
-                    COUNT_MSG = COUNT_MSG + 1
+                if AFKREASON:
+                    await sender.reply(
+                        f"Estou ausente fazem {afk_since}.\
+                        \nRazão: `{AFKREASON}`"
+                    )
                 else:
-                    USERS[sender.sender_id] = USERS[sender.sender_id] + 1
-                    COUNT_MSG = COUNT_MSG + 1
+                    await sender.reply(str(choice(AFKSTR)))
+                USERS[sender.sender_id] = USERS[sender.sender_id] + 1
+                COUNT_MSG = COUNT_MSG + 1
 
 
 CMD_HELP.update(
