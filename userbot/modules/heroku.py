@@ -214,17 +214,17 @@ async def _(dyno):
 CMD_HELP.update(
     {
         "heroku": ".usage"
-        "\nUsage: Verifique as horas restantes dos dynos do Heroku"
+        "\nUso: Verifique as horas restantes dos dynos do Heroku"
         "\n\n.set var <NEW VAR> <VALUE>"
-        "\nUsage: adiciona uma nova variável ou atualiza a variável de valor existente"
+        "\nUso: adiciona uma nova variável ou atualiza a variável de valor existente"
         "\n!!! AVISO !!!, depois de definir uma variável, o bot será reiniciado"
         "\n\n.get var or .get var <VAR>"
-        "\nUsage: pegue suas variáveis ​​existentes, use-as apenas em seu grupo privado!"
+        "\nUso: pegue suas variáveis ​​existentes, use-as apenas em seu grupo privado!"
         "\nIsso retorna todas as suas informações privadas, tenha cuidado..."
         "\n\n.del var <VAR>"
-        "\nUsage: deleta a variável existente"
+        "\nUso: deleta a variável existente"
         "\n!!! AVISO !!!, depois de deletar uma variável, o bot será reiniciado"
         "\n\n`.logs`"
-        "\nUsage: Obtém os logs das dynos do Heroku"
+        "\nUso: Obtém os logs das dynos do Heroku"
     }
 )
