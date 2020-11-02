@@ -230,7 +230,7 @@ CMD_HELP.update(
         "getmusic": ".songn <Artista - Título da música>"
         "\nUso: Baixa a música pelo nome (@WooMaiBot)"
         "\n\n.songl <Spotify/Deezer Link>"
-        "\nUso: Download music by link (@MusicsHunterBot)"
+        "\nUso: Baixa a música pelo link (@MusicsHunterBot)"
         "\n\n.songf <Artista - Título da música>"
         "\nUso: Baixa a música pelo nome (@SpotifyMusicDownloaderBot)"
         "\n\n.songn now"
