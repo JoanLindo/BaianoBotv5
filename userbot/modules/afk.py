@@ -95,8 +95,13 @@ async def type_afk_is_not_true(notafk):
     if ISAFK:
         ISAFK = False
 <<<<<<< HEAD
+<<<<<<< HEAD
         msg = await notafk.respond("Não estou mais AFK.")
         await sleep(1)
+=======
+        msg = await notafk.respond("Não estou mais ausente.")
+        time.sleep(3)
+>>>>>>> parent of ba17dad... Update afk.py
 =======
         msg = await notafk.respond("Não estou mais ausente.")
         time.sleep(3)
@@ -106,14 +111,20 @@ async def type_afk_is_not_true(notafk):
             await notafk.client.send_message(
                 BOTLOG_CHATID,
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "Você recebeu " + str(COUNT_MSG) + " mensagens de " +
                 str(len(USERS)) + " chats enquanto estava ausente",
 =======
+=======
+>>>>>>> parent of ba17dad... Update afk.py
                 "Você recebeu "
                 + str(COUNT_MSG)
                 + " mensagens de "
                 + str(len(USERS))
                 + " chats enquanto você estava fora",
+<<<<<<< HEAD
+>>>>>>> parent of ba17dad... Update afk.py
+=======
 >>>>>>> parent of ba17dad... Update afk.py
             )
             for i in USERS:
@@ -122,9 +133,12 @@ async def type_afk_is_not_true(notafk):
                 await notafk.client.send_message(
                     BOTLOG_CHATID,
 <<<<<<< HEAD
+<<<<<<< HEAD
                     "[" + name0 + "](tg://user?id=" + str(i) + ")" +
                     " te mandou " + "`" + str(USERS[i]) + " mensagens`",
 =======
+=======
+>>>>>>> parent of ba17dad... Update afk.py
                     "["
                     + name0
                     + "](tg://user?id="
@@ -134,6 +148,9 @@ async def type_afk_is_not_true(notafk):
                     + "`"
                     + str(USERS[i])
                     + " mensagens`",
+<<<<<<< HEAD
+>>>>>>> parent of ba17dad... Update afk.py
+=======
 >>>>>>> parent of ba17dad... Update afk.py
                 )
         COUNT_MSG = 0
