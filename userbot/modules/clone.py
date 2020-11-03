@@ -126,7 +126,7 @@ async def get_full_user(event):
 CMD_HELP.update({
     "cloneuser":
     "\
-!clone <nome de usuário> ou responda a uma mensagem\
+.clone <nome de usuário> ou responda a uma mensagem\
 \nUso: Copia a foto de perfil do alvo,nome...etc e define como seu."
 })
 
