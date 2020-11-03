@@ -9,6 +9,7 @@ from telethon.tl.functions.users import GetFullUserRequest
 from telethon.tl.types import MessageEntityMentionName
 from telethon.tl import functions
 from userbot import CMD_HELP, bot, TEMP_DOWNLOAD_DIRECTORY
+from userbot.events import register
 
 @register(outgoing=True, pattern="^\.clone ?(.*)")
 async def _(event):
