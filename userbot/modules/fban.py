@@ -10,7 +10,7 @@ from userbot import CMD_HELP, bot
 from userbot.events import register
 
 
-@register(outgoing=True, disable_edited=True, pattern=r"^\.fban(?: |$)(.*)")
+@register(outgoing=True, disable_edited=True, pattern="^.fban(?: |$)(.*)")
 async def fban(event):
     """Bans a user from connected federations."""
     try:
@@ -39,7 +39,8 @@ async def fban(event):
     if len((fed_list := get_flist())) == 0:
         return await event.edit("**You haven't connected to any federations yet!**")
 
-    return await event.edit(str(fban_id))
+    if len(fban_id) == 0 or fban_id == (None, ''):
+        return await event.edit("**Unspecified user, I can't banish the wind!**")
 
     await event.edit(f"**Fbanning** {user_link}...")
     failed = []
