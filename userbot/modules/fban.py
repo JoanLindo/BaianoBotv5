@@ -39,8 +39,7 @@ async def fban(event):
     if len((fed_list := get_flist())) == 0:
         return await event.edit("**You haven't connected to any federations yet!**")
 
-    if len(fban_id) == 0 or fban_id == None or fban_id == '':
-        return await event.edit("**Unspecified user, I can't fbanish the wind!**")
+    return await event.edit(str(fban_id))
 
     await event.edit(f"**Fbanning** {user_link}...")
     failed = []
