@@ -100,32 +100,19 @@ async def type_afk_is_not_true(notafk):
     afk_end = back_alive.replace(microsecond=0)
     if ISAFK:
         ISAFK = False
-        msg = await notafk.respond("Não estou mais ausente.")
-        time.sleep(3)
-        await msg.delete()
         if BOTLOG:
             await notafk.client.send_message(
                 BOTLOG_CHATID,
-                "Você recebeu "
-                + str(COUNT_MSG)
-                + " mensagens de "
-                + str(len(USERS))
-                + " chats enquanto você estava fora",
+                "Você recebeu " + str(COUNT_MSG) + " mensagens de " + 
+                str(len(USERS)) + " chats enquanto você estava fora",
             )
             for i in USERS:
                 name = await notafk.client.get_entity(i)
                 name0 = str(name.first_name)
                 await notafk.client.send_message(
                     BOTLOG_CHATID,
-                    "["
-                    + name0
-                    + "](tg://user?id="
-                    + str(i)
-                    + ")"
-                    + " te enviou "
-                    + "`"
-                    + str(USERS[i])
-                    + " mensagens`",
+                    "[" + name0 + "](tg://user?id=" + str(i) + ")" +
+                    " te enviou " + "`" + str(USERS[i]) + " mensagens`",
                 )
         COUNT_MSG = 0
         USERS = {}
