@@ -63,7 +63,7 @@ async def neardc(event):
     await event.edit(
         f"País : `{result.country}`\n"
         f"Datacenter mais próximo : `{result.nearest_dc}`\n"
-        f"Este Datacentero : `{result.this_dc}`"
+        f"Este Datacenter : `{result.this_dc}`"
     )
 
 
