@@ -50,7 +50,7 @@ async def get_weather(weather):
     """ For .weather command, gets the current weather of a city. """
 
     if not OWM_API:
-        await weather.edit("`Get an API key from` https://openweathermap.org/ `first.`")
+        await weather.edit("`Obtenha uma chave de API de` https://openweathermap.org/ `primeiro.`")
         return
 
     APPID = OWM_API
@@ -59,7 +59,7 @@ async def get_weather(weather):
         CITY = DEFCITY
         if not CITY:
             await weather.edit(
-                "`Please specify a city or set one as default using the WEATHER_DEFCITY config variable.`"
+                "`Especifique uma cidade ou defina uma como padrão usando o WEATHER_DEFCITY Var no Heroku.`"
             )
             return
     else:
@@ -80,7 +80,7 @@ async def get_weather(weather):
             try:
                 countrycode = timezone_countries[f"{country}"]
             except KeyError:
-                await weather.edit("`Invalid country.`")
+                await weather.edit("`País inválido.`")
                 return
             CITY = newcity[0].strip() + "," + countrycode.strip()
 
@@ -89,7 +89,7 @@ async def get_weather(weather):
     result = json.loads(request.text)
 
     if request.status_code != 200:
-        await weather.edit(f"`Invalid country.`")
+        await weather.edit(f"`País inválido.`")
         return
 
     cityname = result["name"]
@@ -109,7 +109,7 @@ async def get_weather(weather):
     time = datetime.now(ctimezone).strftime("%A, %I:%M %p")
     fullc_n = c_n[f"{country}"]
 
-    dirs = ["N", "NE", "E", "SE", "S", "SW", "W", "NW"]
+    dirs = ["N", "NE", "L", "SE", "S", "SO", "O", "NO"]
 
     div = 360 / len(dirs)
     funmath = int((winddir + (div / 2)) / div)
@@ -130,13 +130,13 @@ async def get_weather(weather):
         return xx
 
     await weather.edit(
-        f"**Temperature:** `{celsius(curtemp)}°C | {fahrenheit(curtemp)}°F`\n"
-        + f"**Min. Temp.:** `{celsius(min_temp)}°C | {fahrenheit(min_temp)}°F`\n"
-        + f"**Max. Temp.:** `{celsius(max_temp)}°C | {fahrenheit(max_temp)}°F`\n"
-        + f"**Humidity:** `{humidity}%`\n"
-        + f"**Wind:** `{kmph[0]} kmh | {mph[0]} mph, {findir}`\n"
-        + f"**Sunrise:** `{sun(sunrise)}`\n"
-        + f"**Sunset:** `{sun(sunset)}`\n\n"
+        f"**Temperatura:** `{celsius(curtemp)}°C | {fahrenheit(curtemp)}°F`\n"
+        + f"**Temp. Min.:** `{celsius(min_temp)}°C | {fahrenheit(min_temp)}°F`\n"
+        + f"**Temp. Max.:** `{celsius(max_temp)}°C | {fahrenheit(max_temp)}°F`\n"
+        + f"**Umidade:** `{humidity}%`\n"
+        + f"**Vento:** `{kmph[0]} kmh | {mph[0]} mph, {findir}`\n"
+        + f"**Nascer do Sol:** `{sun(sunrise)}`\n"
+        + f"**Pôr do Sol:** `{sun(sunset)}`\n\n"
         + f"**{desc}**\n"
         + f"`{cityname}, {fullc_n}`\n"
         + f"`{time}`"
@@ -151,7 +151,7 @@ async def get_wtr(wtr):
         CITY = DEFCITY
         if not CITY:
             await wtr.edit(
-                "`Please specify a city or set one as default using the WEATHER_DEFCITY config variable.`"
+                "`Especifique uma cidade ou defina uma como padrão usando o WEATHER_DEFCITY Var no Heroku.`"
             )
             return
     else:
@@ -185,14 +185,14 @@ async def get_wtr(wtr):
 
     text = (
         f"**{desc}**\n\n"
-        + f"**Temperature:** `{tempC}°C | {tempF}°F`\n"
-        + f"**Min. Temp.:** `{mintempC}°C | {mintempF}°F`\n"
-        + f"**Max. Temp.:** `{maxtempC}°C | {maxtempF}°F`\n"
-        + f"**Humidity:** `{humidity}%`\n"
-        + f"**Wind:** `{windK}Km/h | {windM}Mp/h, {windD}`\n"
-        + f"**Sunrise:** `{sunrise}`\n"
-        + f"**Sunset:** `{sunset}`\n"
-        + f"**Updated on:** `{time}`\n\n"
+        + f"**Temperatura:** `{tempC}°C | {tempF}°F`\n"
+        + f"**Temp. Min.:** `{mintempC}°C | {mintempF}°F`\n"
+        + f"**Temp. Max.:** `{maxtempC}°C | {maxtempF}°F`\n"
+        + f"**Umidade:** `{humidity}%`\n"
+        + f"**Vento:** `{windK}Km/h | {windM}Mp/h, {windD}`\n"
+        + f"**Nascer do Sol:** `{sunrise}`\n"
+        + f"**Pôr do Sol:** `{sunset}`\n"
+        + f"**Atualizado em:** `{time}`\n\n"
         + f"`{region}, {country}`"
     )
 
@@ -201,9 +201,9 @@ async def get_wtr(wtr):
 
 CMD_HELP.update(
     {
-        "weather": ".weather <city> or .weather <city>, <country name/code>\
-    \nUsage: Gets the weather of a city.",
-        "wtr": ".wtr <city> or .wtr <city>, <country name/code>\
-    \nUsage: Gets the weather of a city.",
+        "weather": ".weather <cidade> ou .weather <cidade>, <nome do país/código>\
+    \nUso: Obtém o clima de uma cidade.",
+        "wtr": ".wtr <cidade> or .wtr <cidade>, <nome do país/código>\
+    \nUso: Obtém o clima de uma cidade.",
     }
 )
