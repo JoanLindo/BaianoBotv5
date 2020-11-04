@@ -2415,7 +2415,7 @@ CMD_HELP.update(
 \n\n;_;\
 \nUso: Igual `-_-` só que chorando.\
 \n\n.cp\
-\nUso: Copypasta do meme famoso\
+\nUso: Transforme um texto em copypasta\
 \n\n.vapor\
 \nUso: Vaporize tudo!\
 \n\n.str\
