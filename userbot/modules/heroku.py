@@ -176,7 +176,7 @@ async def dyno_usage(dyno):
             await dyno.edit(
                 "**Uso dos Dynos**:\n\n"
                 f" -> `Uso do Dynos para`  **{app.name}**:\n"
-                f"     •  **{AppHours} hour(s), "
+                f"     •  **{AppHours} horas(s), "
                 f"{AppMinutes} minuto(s)  -  {AppPercentage}%**"
                 "\n-------------------------------------------------------------\n"
                 " -> `Horas de Dyno restantes para esse mês`:\n"
