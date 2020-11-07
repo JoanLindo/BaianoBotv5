@@ -53,7 +53,8 @@ async def add_new_filter(new_handler):
     keyword = value.split(';')[0] if ';' in value else value
     keyword = keyword[len(keyword)-1:] if keyword.endswith(' ') else keyword
     try:
-        string = value[len(keyword):]
+        string = value.split(';')[1] if ';' in value else value[len(keyword):]
+        string = string[len(string)-1:] if string.startswith(' ') else string
     except:
         string = None
     msg = await new_handler.get_reply_message()
