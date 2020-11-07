@@ -52,7 +52,7 @@ async def add_new_filter(new_handler):
     """ - The first words after .filter(space) is the keyword - """
     keyword = value.split('"')[1] if '"' in value else value.split(' ')[1]
     try:
-        string = value[len(keyword):]
+        string = value[len(keyword)+3:]
     except:
         string = None
     msg = await new_handler.get_reply_message()
@@ -149,14 +149,14 @@ async def filters_active(event):
 CMD_HELP.update(
     {
         "filter": ".filters\
-    \nUsage: Lista todos os filtros de userbot ativos em um chat.\
+    \nUso: Lista todos os filtros de userbot ativos em um chat.\
     \n\n.filter <palavra-chave> <texto de resposta> ou responda a uma mensagem com .filter <palavra-chave>\
-    \nUsage: Salva a mensagem respondida como uma resposta ao 'palavra-chave'.\
+    \nUso: Salva a mensagem respondida como uma resposta ao 'palavra-chave'.\
     \nO bot responderá à mensagem sempre que 'palavra-chave' for mencionada\
     \nFunciona com tudo, desde arquivos a stickers.\
     \n\n.stop <palavra-chave>\
-    \nUsage: Para o filtro especificado.\
+    \nUso: Para o filtro especificado.\
     \n\n.rmbotfilters <marie/rose>\
-    \nUsage: Remove todos os filtros de bots admin (Atualmente com suporte: Marie, Rose e seus clones) do chat."
+    \nUso: Remove todos os filtros de bots admin (Atualmente com suporte: Marie, Rose e seus clones) do chat."
     }
 )
