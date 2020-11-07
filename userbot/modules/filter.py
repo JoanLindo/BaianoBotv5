@@ -50,7 +50,7 @@ async def add_new_filter(new_handler):
         return
     value = new_handler.pattern_match.group(1)
     """ - The first words after .filter(space) is the keyword - """
-    keyword = value.split('"')[1] if '"' in value else value.split(' ')[1]
+    keyword = value.split(';')[0] if ';' in value else value
     try:
         string = value[len(keyword)+3:]
     except:
@@ -150,11 +150,11 @@ CMD_HELP.update(
     {
         "filter": ".filters\
     \nUso: Lista todos os filtros de userbot ativos em um chat.\
-    \n\n.filter <palavra-chave> <texto de resposta> ou responda a uma mensagem com .filter <palavra-chave>\
-    \nUso: Salva a mensagem respondida como uma resposta ao 'palavra-chave'.\
-    \nO bot responderá à mensagem sempre que 'palavra-chave' for mencionada\
+    \n\n.filter <texto-chave> ; <texto de resposta> ou responda a uma mensagem com .filter <texto-chave>\
+    \nUso: Salva a mensagem respondida como uma resposta ao 'texto-chave'.\
+    \nO bot responderá à mensagem sempre que 'texto-chave' for mencionada\
     \nFunciona com tudo, desde arquivos a stickers.\
-    \n\n.stop <palavra-chave>\
+    \n\n.stop <texto-chave>\
     \nUso: Para o filtro especificado.\
     \n\n.rmbotfilters <marie/rose>\
     \nUso: Remove todos os filtros de bots admin (Atualmente com suporte: Marie, Rose e seus clones) do chat."
