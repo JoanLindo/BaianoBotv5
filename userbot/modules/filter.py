@@ -48,12 +48,12 @@ async def add_new_filter(new_handler):
     except AttributeError:
         await new_handler.edit("`Executando em modo não-SQL!`")
         return
-    value = new_handler.pattern_match.group(1).split(None, 1)
+    value = new_handler.pattern_match.group(1)
     """ - The first words after .filter(space) is the keyword - """
-    keyword = value[0]
+    keyword = value.split('"')[1] if '"' in value else value.split(' ')[1]
     try:
-        string = value[1]
-    except IndexError:
+        string = value[len(keyword):]
+    except:
         string = None
     msg = await new_handler.get_reply_message()
     msg_id = None
