@@ -51,10 +51,10 @@ async def add_new_filter(new_handler):
     value = new_handler.pattern_match.group(1)
     """ - The first words after .filter(space) is the keyword - """
     keyword = value.split(';')[0] if ';' in value else value
-    keyword = keyword[:1] if keyword.endswith(' ') else keyword
+    keyword = keyword[:len(keyword)-1] if keyword.endswith(' ') else keyword
     try:
         string = value.split(';')[1] if ';' in value else value[len(keyword):]
-        string = string[1:] if string.startswith(' ') else string
+        string = string[len(string)-1:] if string.startswith(' ') else string
     except:
         string = None
     msg = await new_handler.get_reply_message()
