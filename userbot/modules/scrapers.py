@@ -693,13 +693,6 @@ CMD_HELP.update(
         \nUso: Traduz o texto para o idioma definido.\nUse .lang trt <código do idioma> para definir idioma para trt. (Padrão é [English])"
     }
 )
-CMD_HELP.update(
-    {
-        "yt": ".yt <número> <consulta>"
-        "\nUso: Faz uma pesquisa no YouTube."
-        "\nPode especificar o número de resultados necessários (padrão é 5)."
-    }
-)
 CMD_HELP.update({"imdb": ".imdb <nome-do-filme>\nMostra informações do filme e outras coisas."})
 CMD_HELP.update(
     {
