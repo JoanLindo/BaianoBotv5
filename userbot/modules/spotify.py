@@ -44,7 +44,7 @@ async def _(event):
                     event.chat_id,
                     downloaded_file_name,
                     force_document=False,
-                    caption=f"[Play on Spotify]({link})",
+                    caption=f"[Tocar no Spotify]({link})",
                 )
                 await event.client.delete_messages(conv.chat_id, [msg.id, response.id])
         await event.delete()
