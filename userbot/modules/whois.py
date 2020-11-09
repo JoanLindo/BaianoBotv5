@@ -135,18 +135,18 @@ async def fetch_info(replied_user, event):
     user_bio = "Este usuário não tem Sobre" if not user_bio else user_bio
 
     caption = "<b>INFORMAÇÃO DE USUÁRIO:</b>\n\n"
-    caption += f"Primeiro nome: {first_name}\n"
-    caption += f"Último nome: {last_name}\n"
-    caption += f"Nome do usuário: {username}\n"
-    caption += f"Data Centre ID: {dc_id}\n"
-    caption += f"Número de fotos do perfil: {replied_user_profile_photos_count}\n"
-    caption += f"É bot: {is_bot}\n"
-    caption += f"É restrito: {restricted}\n"
-    caption += f"É verificado pelo Telegram: {verified}\n"
-    caption += f"ID: <code>{user_id}</code>\n\n"
-    caption += f"Bio: \n<code>{user_bio}</code>\n\n"
-    caption += f"Bate-papos comuns com este usuário: {common_chat}\n"
-    caption += f"Link permanente de perfil: "
+    caption += f"🗣 Primeiro nome: {first_name}\n"
+    caption += f"🗣 Último nome: {last_name}\n"
+    caption += f"👤 Nome do usuário: {username}\n"
+    caption += f"🏢 Data Centre ID: {dc_id}\n"
+    caption += f"🖼 Número de fotos do perfil: {replied_user_profile_photos_count}\n"
+    caption += f"🤖 É bot: {is_bot}\n"
+    caption += f"🚫 É restrito: {restricted}\n"
+    caption += f"✅ É verificado pelo Telegram: {verified}\n"
+    caption += f"🕵 ID: <code>{user_id}</code>\n\n"
+    caption += f"📝 Bio: \n<code>{user_bio}</code>\n\n"
+    caption += f"👥 Bate-papos comuns com este usuário: {common_chat}\n"
+    caption += f"🔗 Link permanente de perfil: "
     caption += f'<a href="tg://user?id={user_id}">{first_name}</a>'
 
     return photo, caption
