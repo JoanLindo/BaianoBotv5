@@ -43,9 +43,8 @@ wget https://raw.githubusercontent.com/thewhiteharlot/PurpleBot/sql-extended/ter
 
 ## Como hospedar?
 
-https://telegra.ph/𝙎𝙤𝙪𝙡𝙫𝙚𝙨𝙨𝙚𝙡-11-10
+𝐓𝐮𝐭𝐨𝐫𝐢𝐚𝐥: https://telegra.ph/𝙎𝙤𝙪𝙡𝙫𝙚𝙨𝙨𝙚𝙡-11-10
 
-A maneira mais fácil de implantar este bot é clicar no botão abaixo.
 Certifique-se de ter uma conta do heroku e siga todos os passos necessários.
 
 <p align="left"><a href="https://heroku.com/deploy?template=https://github.com/thewhiteharlot/PurpleBot/tree/sql-extended"> <img src="https://www.herokucdn.com/deploy/button.svg" alt="Implantar no Heroku" /></a></p>
