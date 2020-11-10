@@ -22,17 +22,30 @@ from userbot.utils import chrome, human_to_bytes, humanbytes, md5, time_formatte
 GITHUB = "https://github.com"
 
 
-@register(outgoing=True, pattern="^.magisk$")
+@register(outgoing=True, pattern=r"^\.magisk$")
 async def magisk(request):
-    """ últimas versões do magisk """
     magisk_dict = {
         "Stable": "https://raw.githubusercontent.com/topjohnwu/magisk_files/master/stable.json",
         "Beta": "https://raw.githubusercontent.com/topjohnwu/magisk_files/master/beta.json",
-        "Canary": "https://raw.githubusercontent.com/topjohnwu/magisk_files/canary/debug.json",
+        "Canary": "https://raw.githubusercontent.com/topjohnwu/magisk_files/canary/canary.json",
     }
-    releases = "Últimas versões do Magisk:\n"
+    releases = "Últimos lançamentos do Magisk:\n"
     for name, release_url in magisk_dict.items():
         data = get(release_url).json()
+        if str(name) == "Canary":
+            data["magisk"]["link"] = (
+                "https://github.com/topjohnwu/magisk_files/raw/canary/"
+                + data["magisk"]["link"]
+            )
+            data["app"]["link"] = (
+                "https://github.com/topjohnwu/magisk_files/raw/canary/"
+                + data["app"]["link"]
+            )
+            data["uninstaller"]["link"] = (
+                "https://github.com/topjohnwu/magisk_files/raw/canary/"
+                + data["uninstaller"]["link"]
+            )
+
         releases += (
             f'{name}: [ZIP v{data["magisk"]["version"]}]({data["magisk"]["link"]}) | '
             f'[APK v{data["app"]["version"]}]({data["app"]["link"]}) | '
@@ -51,7 +64,7 @@ async def device_info(request):
     elif textx:
         codename = textx.text
     else:
-        await request.edit("`Usage: .device <codename> / <model>`")
+        await request.edit("`Uso: .device <codenome> / <modelo>`")
         return
     data = json.loads(
         get(
@@ -64,9 +77,9 @@ async def device_info(request):
         reply = f"**Resultados da pesquisa por {codename}**:\n\n"
         for item in results:
             reply += (
-                f"**Brand**: {item['brand']}\n"
-                f"**Name**: {item['name']}\n"
-                f"**Model**: {item['model']}\n\n"
+                f"**Marca**: {item['brand']}\n"
+                f"**Nome**: {item['name']}\n"
+                f"**Modelo**: {item['model']}\n\n"
             )
     else:
         reply = f"`Sem informações sobre {codename}!`\n"
@@ -86,7 +99,7 @@ async def codename_info(request):
         brand = textx.text.split(" ")[0]
         device = " ".join(textx.text.split(" ")[1:])
     else:
-        await request.edit("`Usage: .codename <brand> <device>`")
+        await request.edit("`Uso: .codename <marca> <dispositivo>`")
         return
 
     data = json.loads(
@@ -108,9 +121,9 @@ async def codename_info(request):
             results = results[:8]
         for item in results:
             reply += (
-                f"**Device**: {item['device']}\n"
-                f"**Name**: {item['name']}\n"
-                f"**Model**: {item['model']}\n\n"
+                f"**Dispositivo**: {item['device']}\n"
+                f"**Nome**: {item['name']}\n"
+                f"**Modelo**: {item['model']}\n\n"
             )
     else:
         reply = f"`Sem resultados para {device} codename!`\n"
@@ -133,7 +146,7 @@ async def download_api(dl):
         await dl.edit("`Informação inválida...`")
         return
     driver = await chrome()
-    await dl.edit("`Conseguindo informações...`")
+    await dl.edit("`Obtendo informações...`")
     driver.get(URL)
     error = driver.find_elements_by_class_name("swal2-content")
     if len(error) > 0:
@@ -170,7 +183,7 @@ async def download_api(dl):
         if os.path.isfile(file_path + ".crdownload"):
             try:
                 downloaded = os.stat(file_path + ".crdownload").st_size
-                status = "Downloading"
+                status = "Baixando"
             except OSError:  # Rare case
                 await asyncio.sleep(1)
                 continue
@@ -236,7 +249,7 @@ async def devices_specifications(request):
         brand = textx.text.split(" ")[0]
         device = " ".join(textx.text.split(" ")[1:])
     else:
-        await request.edit("`Usage: .specs <brand> <device>`")
+        await request.edit("`Uso: .specs <marca> <dispositivo>`")
         return
     all_brands = (
         BeautifulSoup(
@@ -294,7 +307,7 @@ async def twrp(request):
     elif textx:
         device = textx.text.split(" ")[0]
     else:
-        await request.edit("`Uso: .twrp <codename>`")
+        await request.edit("`Uso: .twrp <codenome>`")
         return
     url = get(f"https://dl.twrp.me/{device}/")
     if url.status_code == 404:
@@ -308,9 +321,9 @@ async def twrp(request):
     size = page.find("span", {"class": "filesize"}).text
     date = page.find("em").text.strip()
     reply = (
-        f"**Latest TWRP for {device}:**\n"
+        f"**TWRP mais recente para {device}:**\n"
         f"[{dl_file}]({dl_link}) - __{size}__\n"
-        f"**Updated:** __{date}__\n"
+        f"**Atualizado:** __{date}__\n"
     )
     await request.edit(reply)
 
