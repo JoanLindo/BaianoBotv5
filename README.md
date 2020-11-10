@@ -43,7 +43,7 @@ wget https://raw.githubusercontent.com/thewhiteharlot/PurpleBot/sql-extended/ter
 
 ## Como hospedar?
 
-𝐓𝐮𝐭𝐨𝐫𝐢𝐚𝐥: https://telegra.ph/𝙎𝙤𝙪𝙡𝙫𝙚𝙨𝙨𝙚𝙡-11-10-2
+𝐓𝐮𝐭𝐨𝐫𝐢𝐚𝐥: https://telegra.ph/𝙎𝙤𝙪𝙡𝙫𝙚𝙨𝙨𝙚𝙡-11-10-3
 
 Certifique-se de ter uma conta do heroku e siga todos os passos necessários.
 
