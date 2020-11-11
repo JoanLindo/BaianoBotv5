@@ -34,7 +34,7 @@
 Maneira fácil de obter STRING_SESSION. 
 
 ### Executar no repl.it
-[![Run repl.it](https://img.shields.io/badge/run-string__session.py-blue?style=flat-square&logo=repl.it)](https://userbotsession.moveangel.repl.run)
+[![Run repl.it](https://img.shields.io/badge/run-string__session.py-blue?style=flat-square&logo=repl.it)](https://generatestringsession.spechide.repl.run)
 
 ### ou execute em seu terminal
 ```
