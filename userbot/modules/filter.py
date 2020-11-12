@@ -48,14 +48,12 @@ async def add_new_filter(new_handler):
     except AttributeError:
         await new_handler.edit("`Executando em modo não-SQL!`")
         return
-    value = new_handler.pattern_match.group(1)
+    value = new_handler.pattern_match.group(1).split(None, 1)
     """ - The first words after .filter(space) is the keyword - """
-    keyword = value.split(';')[0] if ';' in value else value
-    keyword = keyword[:len(keyword)-1] if keyword.endswith(' ') else keyword
+    keyword = value[0]
     try:
-        string = value.split(';')[1] if ';' in value else value[len(keyword):]
-        string = string[len(string)-1:] if string.startswith(' ') else string
-    except:
+        string = value[1]
+    except IndexError:
         string = None
     msg = await new_handler.get_reply_message()
     msg_id = None
@@ -111,7 +109,7 @@ async def kick_marie_filter(event):
     bot_type = event.pattern_match.group(1).lower()
     if bot_type not in ["marie", "rose"]:
         return await event.edit("`Esse bot ainda não é compatível!`")
-    await event.edit("```Todos os filtros serão deletados!```")
+    await event.edit("```Todos os filtros sendo deletados!```")
     await sleep(3)
     resp = await event.get_reply_message()
     filters = resp.text.split("-")[1:]
@@ -152,11 +150,11 @@ CMD_HELP.update(
     {
         "filter": ".filters\
     \nUso: Lista todos os filtros de userbot ativos em um chat.\
-    \n\n.filter <texto-chave> ; <texto de resposta> ou responda a uma mensagem com .filter <texto-chave>\
-    \nUso: Salva a mensagem respondida como uma resposta ao 'texto-chave'.\
-    \nO bot responderá à mensagem sempre que 'texto-chave' for mencionada\
+    \n\n.filter <palavra-chave> <texto de resposta> ou responda a uma mensagem com .filter <palavra-chave>\
+    \nUso: Salva a mensagem respondida como uma resposta a 'palavra-chave'.\
+    \nO bot responderá à mensagem sempre que 'palavra-chave' for mencionada\
     \nFunciona com tudo, desde arquivos a stickers.\
-    \n\n.stop <texto-chave>\
+    \n\n.stop <palavra-chave>\
     \nUso: Para o filtro especificado.\
     \n\n.rmbotfilters <marie/rose>\
     \nUso: Remove todos os filtros de bots admin (Atualmente com suporte: Marie, Rose e seus clones) do chat."
