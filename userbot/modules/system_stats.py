@@ -231,14 +231,14 @@ async def amireallyalive(alive):
     output = (
         "`Tudo funcionando como deveria...`\n"
         "`⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊶⊷⊶⊶⊶⊶⊶⊶⊶`\n"
-        f"•  ⚙️ `Telethon       : v{version.__version__} `\n"
-        f"•  🐍 `Python         : v{python_version()} `\n"
-        f"•  👤 `Usuário        :`  {DEFAULTUSER} \n"
+        f"•  ⚙️ `Telethon     : v{version.__version__} `\n"
+        f"•  🐍 `Python       : v{python_version()} `\n"
+        f"•  👤 `Usuário      :`  {DEFAULTUSER} \n"
         "`-----------------------------`\n"
-        f"•  💻 `Rodando em     : {repo.active_branch.name} `\n"
-        f"•  🗃 `Módulos        : {len(modules)} `\n"
-        f"•  🧸 `PurpleBot      : v{USERBOT_VERSION} `\n"
-        f"•  🕒 `Bot Uptime     : {uptime} `\n"
+        f"•  💻 `Rodando em   : {repo.active_branch.name} `\n"
+        f"•  🗃 `Módulos      : {len(modules)} `\n"
+        f"•  🧸 `PurpleBot    : v{USERBOT_VERSION} `\n"
+        f"•  🕒 `Bot Uptime   : {uptime} `\n"
         "`⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊶⊷⊶⊶⊶⊶⊶⊶⊶`"
     )
     if ALIVE_LOGO:
