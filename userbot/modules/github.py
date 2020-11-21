@@ -90,7 +90,7 @@ async def download(event):
         ms = (end - start).seconds
         await event.delete()
         await mone.edit(
-            "Downloaded to `{}` in {} seconds.".format(downloaded_file_name, ms)
+            "Baixado para `{}` em {} segundos.".format(downloaded_file_name, ms)
         )
         await mone.edit("Committing to Github....")
         await git_commit(downloaded_file_name, mone)
@@ -138,8 +138,8 @@ async def git_commit(file_name, mone):
 CMD_HELP.update(
     {
         "github": ".git <username>"
-        "\nUsage: Like .whois but for GitHub usernames."
+        "\nUso: Like .whois but for GitHub usernames."
         "\n\n.commit <reply file>"
-        "\nUsage: GITHUB File Uploader Plugin for userbot. Heroku Automation should be Enabled."
+        "\nUso: GITHUB File Uploader Plugin for userbot. Heroku Automation should be Enabled."
     }
 )

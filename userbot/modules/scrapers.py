@@ -91,7 +91,7 @@ async def carbon_api(e):
     driver.find_element_by_xpath("//button[@id='export-menu']").click()
     driver.find_element_by_xpath("//button[contains(text(),'4x')]").click()
     driver.find_element_by_xpath("//button[contains(text(),'PNG')]").click()
-    await e.edit("`Processing...\n75%`")
+    await e.edit("`Processando...\n75%`")
     # Waiting for downloading
     while not os.path.isfile(file_path):
         await sleep(0.5)
@@ -678,7 +678,7 @@ CMD_HELP.update(
 CMD_HELP.update(
     {
         "ud": ".ud <consulta>\
-        \nUsage: Faz uma pesquisa no Urban Dictionary."
+        \nUso: Faz uma pesquisa no Urban Dictionary."
     }
 )
 CMD_HELP.update(

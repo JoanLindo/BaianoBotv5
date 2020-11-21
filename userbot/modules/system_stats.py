@@ -279,7 +279,7 @@ async def amireallyalivereset(ureset):
 CMD_HELP.update(
     {
         "sysd": ".sysd\
-    \nUsage: Mostra informações do sistema usando neofetch.\
+    \nUso: Mostra informações do sistema usando neofetch.\
     \n\n.spc\
     \nUso: Mostrar especificação do sistema."
     }

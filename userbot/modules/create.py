@@ -72,13 +72,13 @@ CMD_HELP.update(
     {
         "create": "\
 Create\
-\nUsage: Create Channel, Group & Group With Bot.\
+\nUso: Create Channel, Group & Group With Bot.\
 \n\n.create g <group name>\
-\nUsage: Create a Private Group.\
+\nUso: Create a Private Group.\
 \n\n.create b <group name>\
-\nUsage: Create a Group with Bot.\
+\nUso: Create a Group with Bot.\
 \n\n.create c <channel name>\
-\nUsage: Create a Channel.\
+\nUso: Create a Channel.\
 "
     }
 )

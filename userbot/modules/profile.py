@@ -64,7 +64,7 @@ async def update_name(name):
 @register(outgoing=True, pattern="^.setpfp$")
 async def set_profilepic(propic):
     """ Parao comando .profilepic , muda sua foto de perfil no Telegram. """
-    await propic.edit("`Processing...`")
+    await propic.edit("`Processando...`")
     replymsg = await propic.get_reply_message()
     photo = None
     if replymsg.media:
@@ -93,7 +93,7 @@ async def set_profilepic(propic):
 @register(outgoing=True, pattern="^.setbio (.*)")
 async def set_biograph(setbio):
     """ Para o comando .setbio , define sua bio no Telegram. """
-    await setbio.edit("`Processing...`")
+    await setbio.edit("`Processando...`")
     newbio = setbio.pattern_match.group(1)
     await setbio.client(UpdateProfileRequest(about=newbio))
     await setbio.edit(BIO_SUCCESS)
@@ -102,7 +102,7 @@ async def set_biograph(setbio):
 @register(outgoing=True, pattern="^.username (.*)")
 async def update_username(username):
     """ Para o comando .username , define um novo nome de usuário no Telegram. """
-    await username.edit("`Processing...`")
+    await username.edit("`Processando...`")
     newusername = username.pattern_match.group(1)
     try:
         await username.client(UpdateUsernameRequest(newusername))
@@ -120,7 +120,7 @@ async def count(event):
     bc = 0
     b = 0
     result = ""
-    await event.edit("`Processing...`")
+    await event.edit("`Processando...`")
     dialogs = await bot.get_dialogs(limit=None, ignore_migrated=True)
     for d in dialogs:
         currrent_entity = d.entity
@@ -151,7 +151,7 @@ async def count(event):
 @register(outgoing=True, pattern=r"^.delpfp")
 async def remove_profilepic(delpfp):
     """ Para o comando .delpfp , deleta sua foto atual de perfil no Telegram. """
-    await delpfp.edit("`Processing...`")
+    await delpfp.edit("`Processando...`")
     group = delpfp.text[8:]
     if group == "all":
         lim = 0
@@ -179,18 +179,18 @@ async def remove_profilepic(delpfp):
 CMD_HELP.update(
     {
         "profile": ".username <novo_nome_de_usuário>\
-\nUsage: Muda seu nome de usuário.\
+\nUso: Muda seu nome de usuário.\
 \n\n.name <primeiro_nome> ou .name <primeironome> <últimonome>\
-\nUsage: Muda seu nome no Telegram.(Primeiro e último nome serão separados pelo espaço)\
+\nUso: Muda seu nome no Telegram.(Primeiro e último nome serão separados pelo espaço)\
 \n\n.setpfp\
-\nUsage: Dê reply com .setpfp em uma imagem para definir como foto de perfil.\
+\nUso: Dê reply com .setpfp em uma imagem para definir como foto de perfil.\
 \n\n.setbio <nova_bio>\
-\nUsage: Muda sua bio no Telegram.\
+\nUso: Muda sua bio no Telegram.\
 \n\n.delpfp or .delpfp <numero>/<all>\
-\nUsage: Deleta foto(s) de perfil no Telegram.\
+\nUso: Deleta foto(s) de perfil no Telegram.\
 \n\n.reserved\
-\nUsage: Mostra nomes de usuário reservados por você.\
+\nUso: Mostra nomes de usuário reservados por você.\
 \n\n.count\
-\nUsage: Conta seus grupos, chats, bots etc..."
+\nUso: Conta seus grupos, chats, bots etc..."
     }
 )

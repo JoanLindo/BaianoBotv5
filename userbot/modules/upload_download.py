@@ -79,7 +79,7 @@ async def download(target_file):
                 LOGS.info(str(e))
         if downloader.isSuccessful():
             await target_file.edit(
-                "Downloaded to `{}` successfully !!".format(downloaded_file_name)
+                "Baixado para `{}` com sucesso !!".format(downloaded_file_name)
             )
         else:
             await target_file.edit("Incorrect URL\n{}".format(url))
@@ -97,7 +97,7 @@ async def download(target_file):
             await target_file.edit(str(e))
         else:
             await target_file.edit(
-                "Downloaded to `{}` successfully !!".format(downloaded_file_name)
+                "Baixado para `{}` com sucesso !!".format(downloaded_file_name)
             )
     else:
         await target_file.edit("Reply to a message to download to my local server.")
@@ -175,7 +175,7 @@ async def uploadir(udir_event):
                     )
                 os.remove(single_file)
                 uploaded = uploaded + 1
-        await udir_event.edit("Uploaded {} files successfully !!".format(uploaded))
+        await udir_event.edit("Uploaded {} files com sucesso !!".format(uploaded))
     else:
         await udir_event.edit("404: Directory Not Found")
 
@@ -199,7 +199,7 @@ async def upload(u_event):
                 progress(d, t, u_event, c_time, "[UPLOAD]", input_str)
             ),
         )
-        await u_event.edit("Uploaded successfully !!")
+        await u_event.edit("Uploaded com sucesso !!")
     else:
         await u_event.edit("404: File Not Found")
 
@@ -341,7 +341,7 @@ async def uploadas(uas_event):
             elif spam_big_messages:
                 return await uas_event.edit("TBD: Not (yet) Implemented")
             os.remove(thumb)
-            await uas_event.edit("Uploaded successfully !!")
+            await uas_event.edit("Uploaded com sucesso !!")
         except FileNotFoundError as err:
             await uas_event.edit(str(err))
     else:
@@ -351,8 +351,8 @@ async def uploadas(uas_event):
 CMD_HELP.update(
     {
         "download": ".download <link|filename> or reply to media\
-\nUsage: Downloads file to the server.\
+\nUso: Downloads file to the server.\
 \n\n.upload <path in server>\
-\nUsage: Uploads a locally stored file to the chat."
+\nUso: Uploads a locally stored file to the chat."
     }
 )
