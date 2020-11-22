@@ -160,8 +160,8 @@ async def tor_search(event):
 CMD_HELP.update(
     {
         "torrent": ".ts Search query.\
-    \nUsage: Search for torrent query and post to dogbin.\
+    \nUso: Search for torrent query and post to dogbin.\
     \n\n.tos Search query.\
-    \nUsage: Search for torrent magnet from query."
+    \nUso: Search for torrent magnet from query."
     }
 )

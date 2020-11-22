@@ -126,6 +126,6 @@ async def lst(event):
 CMD_HELP.update(
     {
         "file": ".ls <directory>"
-        "\nUsage: Get an information about data covid-19 in your country."
+        "\nUso: Get an information about data covid-19 in your country."
     }
 )

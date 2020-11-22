@@ -334,7 +334,7 @@ async def add_pmsg(cust_msg):
         await cust_msg.edit("`Executando em modo não-SQL!`")
         return
 
-    await cust_msg.edit("Processing...")
+    await cust_msg.edit("Processando...")
     conf = cust_msg.pattern_match.group(1)
 
     custom_message = sql.gvarstatus("unapproved_msg")

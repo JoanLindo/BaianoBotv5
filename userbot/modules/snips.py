@@ -113,13 +113,13 @@ CMD_HELP.update(
     {
         "snips": "\
 $<snip_name>\
-\nUsage: Gets the specified snip, anywhere.\
+\nUso: Gets the specified snip, anywhere.\
 \n\n.snip <name> <data> or reply to a message with .snip <name>\
-\nUsage: Saves the message as a snip (global note) with the name. (Works with pics, docs, and stickers too!)\
+\nUso: Saves the message as a snip (global note) with the name. (Works with pics, docs, and stickers too!)\
 \n\n.snips\
-\nUsage: Gets all saved snips.\
+\nUso: Gets all saved snips.\
 \n\n.remsnip <snip_name>\
-\nUsage: Deletes the specified snip.\
+\nUso: Deletes the specified snip.\
 "
     }
 )

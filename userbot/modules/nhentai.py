@@ -45,6 +45,6 @@ async def _(hentai):
 CMD_HELP.update(
     {
         "nhentai": ".nhentai <link / code> \
-        \nUsage: view nhentai in telegra.ph\n"
+        \nUso: view nhentai in telegra.ph\n"
     }
 )

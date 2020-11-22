@@ -22,7 +22,7 @@ auth_url = r["auth_url"]
 @register(outgoing=True, pattern="^.tg (m|t)$")
 async def telegraphs(graph):
     """For .telegraph command, upload media & text to telegraph site."""
-    await graph.edit("`Processing...`")
+    await graph.edit("`Processando...`")
     if not graph.text[0].isalpha() and graph.text[0] not in ("/", "#", "@", "!"):
         if graph.fwd_from:
             return
@@ -39,7 +39,7 @@ async def telegraphs(graph):
                 end = datetime.now()
                 ms = (end - start).seconds
                 await graph.edit(
-                    "Downloaded to {} in {} seconds.".format(downloaded_file_name, ms)
+                    "Baixado para {} em {} segundos.".format(downloaded_file_name, ms)
                 )
                 try:
                     if downloaded_file_name.endswith((".webp")):
@@ -98,6 +98,6 @@ def resize_image(image):
 CMD_HELP.update(
     {
         "telegraph": ".tg <m|t>\
-        \nUsage: Upload t(text) or m(media) on Telegraph."
+        \nUso: Upload t(text) or m(media) on Telegraph."
     }
 )

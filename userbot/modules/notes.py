@@ -147,14 +147,14 @@ CMD_HELP.update(
     {
         "notes": "\
 #<notename>\
-\nUsage: Gets the specified note.\
+\nUso: Gets the specified note.\
 \n\n.save <notename> <notedata> or reply to a message with .save <notename>\
-\nUsage: Saves the replied message as a note with the notename. (Works with pics, docs, and stickers too!)\
+\nUso: Saves the replied message as a note with the notename. (Works with pics, docs, and stickers too!)\
 \n\n.notes\
-\nUsage: Gets all saved notes in a chat.\
+\nUso: Gets all saved notes in a chat.\
 \n\n.clear <notename>\
-\nUsage: Deletes the specified note.\
+\nUso: Deletes the specified note.\
 \n\n.rmbotnotes <marie/rose>\
-\nUsage: Removes all notes of admin bots (Currently supported: Marie, Rose and their clones.) in the chat."
+\nUso: Removes all notes of admin bots (Currently supported: Marie, Rose and their clones.) in the chat."
     }
 )

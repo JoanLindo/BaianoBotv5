@@ -42,7 +42,7 @@ async def subprocess_run(cmd):
 @register(outgoing=True, pattern=r"^.direct(?: |$)([\s\S]*)")
 async def direct_link_generator(request):
     """ direct links generator """
-    await request.edit("`Processing...`")
+    await request.edit("`Processando...`")
     textx = await request.get_reply_message()
     message = request.pattern_match.group(1)
     if message:
@@ -50,7 +50,7 @@ async def direct_link_generator(request):
     elif textx:
         message = textx.text
     else:
-        await request.edit("`Usage: .direct <url>`")
+        await request.edit("`Uso: .direct <url>`")
         return
     reply = ""
     links = re.findall(r"\bhttps?://.*\.\S+", message)
@@ -383,7 +383,7 @@ async def useragent():
 CMD_HELP.update(
     {
         "direct": ".direct <url>\n"
-        "Usage: Reply to a link or paste a URL to\n"
+        "Uso: Reply to a link or paste a URL to\n"
         "generate a direct download link\n\n"
         "List of supported URLs:\n"
         "`Google Drive - Cloud Mail - Yandex.Disk - AFH - "

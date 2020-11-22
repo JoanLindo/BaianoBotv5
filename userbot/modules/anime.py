@@ -431,7 +431,7 @@ async def get_anime(message):
             query = await message.get_reply_message().text
         else:
             await message.reply(
-                "You gave nothing to search. (｡ì _ í｡)\n `Usage: .scanime <anime name>`"
+                "You gave nothing to search. (｡ì _ í｡)\n `Uso: .scanime <anime name>`"
             )
             return
     except Exception as err:
@@ -652,20 +652,20 @@ def is_gif(file):
 CMD_HELP.update(
     {
         "anime": ".anime <anime>\
-    \nUsage: Returns with Anime information.\
+    \nUso: Returns with Anime information.\
     \n\n.manga <manga name>\
-    \nUsage: Returns with the Manga information.\
+    \nUso: Returns with the Manga information.\
     \n\n.akaizoku or .akayo <anime name>\
-    \nUsage: Returns with the Anime Download link.\
+    \nUso: Returns with the Anime Download link.\
     \n\n.char <character name>\
-    \nUsage: Return with character information.\
+    \nUso: Return with character information.\
     \n\n.upcoming\
-    \nUsage: Returns with Upcoming Anime information.\
+    \nUso: Returns with Upcoming Anime information.\
     \n\n.scanime <anime> or .sanime <anime>\
-    \nUsage: Search anime.\
+    \nUso: Search anime.\
     \n\n.smanga <manga>\
-    \nUsage: Search manga.\
+    \nUso: Search manga.\
     \n\n.whatanime Reply with media.\
-    \nUsage: Find anime from media file."
+    \nUso: Find anime from media file."
     }
 )

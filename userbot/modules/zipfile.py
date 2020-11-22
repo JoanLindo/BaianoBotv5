@@ -24,14 +24,14 @@ today = date.today()
 async def _(event):
     # Prevent Channel Bug to use update
     if event.is_channel and not event.is_group:
-        await event.edit("`Compress Command isn't permitted on channels`")
+        await event.edit("`Comando de compressão não é permitido em canais`")
         return
     if event.fwd_from:
         return
     if not event.is_reply:
-        await event.edit("`Reply to a file to compress it.`")
+        await event.edit("`Responda a um arquivo para compactá-lo.`")
         return
-    mone = await event.edit("`Processing...`")
+    mone = await event.edit("`Processando...`")
     if not os.path.isdir(TEMP_DOWNLOAD_DIRECTORY):
         os.makedirs(TEMP_DOWNLOAD_DIRECTORY)
     if event.reply_to_msg_id:
@@ -47,7 +47,7 @@ async def _(event):
             )
             directory_name = downloaded_file_name
             await event.edit(
-                f"Downloaded to `{directory_name}`" "`\ncompressing file...`"
+                f"Baixado para `{directory_name}`" "`\ncompactando arquivo...`"
             )
         except Exception as e:  # pylint:disable=C0103,W0703
             await mone.edit(str(e))
@@ -65,7 +65,7 @@ async def _(event):
             progress(d, t, mone, c_time, "[UPLOADING]")
         ),
     )
-    await event.edit("`Done!!`")
+    await event.edit("`Feito!!`")
     await asyncio.sleep(7)
     await event.delete()
 
@@ -75,14 +75,14 @@ async def addzip(add):
     """ Copyright (c) 2020 azrim @github"""
     # Prevent Channel Bug to use update
     if add.is_channel and not add.is_group:
-        await add.edit("`Command isn't permitted on channels`")
+        await add.edit("`O comando não é permitido em canais`")
         return
     if add.fwd_from:
         return
     if not add.is_reply:
-        await add.edit("`Reply to a file to compress it.`")
+        await add.edit("`Responda a um arquivo para compactá-lo.`")
         return
-    mone = await add.edit("`Processing...`")
+    mone = await add.edit("`Processando...`")
     if not os.path.isdir(ZIP_DOWNLOAD_DIRECTORY):
         os.makedirs(ZIP_DOWNLOAD_DIRECTORY)
     if add.reply_to_msg_id:
@@ -97,7 +97,7 @@ async def addzip(add):
                 ),
             )
             success = str(downloaded_file_name).replace("./zips/", "")
-            await add.edit(f"`{success} Successfully added to list`")
+            await add.edit(f"`{success} Adicionado com sucesso à lista`")
         except Exception as e:  # pylint:disable=C0103,W0703
             await mone.edit(str(e))
             return
@@ -106,9 +106,9 @@ async def addzip(add):
 @register(outgoing=True, pattern=r"^\.upzip(?: |$)(.*)")
 async def upload_zip(up):
     if not os.path.isdir(ZIP_DOWNLOAD_DIRECTORY):
-        await up.edit("`Files not found`")
+        await up.edit("`Arquivos não encontrados`")
         return
-    mone = await up.edit("`Zipping File...`")
+    mone = await up.edit("`Compactando Arquivo...`")
     input_str = up.pattern_match.group(1)
     curdate = today.strftime("%m%d%y")
     title = str(input_str) if input_str else "zipfile" + f"{curdate}"
@@ -133,10 +133,10 @@ async def upload_zip(up):
 @register(outgoing=True, pattern=r"^\.rmzip(?: |$)(.*)")
 async def remove_dir(rm):
     if not os.path.isdir(ZIP_DOWNLOAD_DIRECTORY):
-        await rm.edit("`Directory not found`")
+        await rm.edit("`Diretório não encontrado`")
         return
     os.rmdir(ZIP_DOWNLOAD_DIRECTORY)
-    await rm.edit("`Zip list removed`")
+    await rm.edit("`Lista zip removida`")
 
 
 def zipdir(path, ziph):
@@ -149,13 +149,13 @@ def zipdir(path, ziph):
 
 CMD_HELP.update(
     {
-        "zipfile": ".compress **[optional: <reply to file>]**\
-            \nUsage: make files to zip.\
-            \n.addzip **<reply to file>**\
-            \nUsage: add files to zip list.\
-            \n.upzip **[optional: <zip title>]**\
-            \nUsage: upload zip list.\
-            \n.rmzip **[optional: <zip title>]**\
-            \nUsage: clear zip list."
+        "zipfile": ".compress **[opcional: <responder ao arquivo>]**\
+            \nUso: para compactar arquivos.\
+            \n.addzip **<responder ao arquivo>**\
+            \nUso: adicionar arquivos à lista zip.\
+            \n.upzip **[opcional: <título zip>]**\
+            \nUso: carregar lista zip.\
+            \n.rmzip **[opcional: <título zip>]**\
+            \nUso: limpar lista zip."
     }
 )

@@ -82,15 +82,15 @@ async def dspammer(dspam):
 CMD_HELP.update(
     {
         "spam": ".cspam <text>\
-\nUsage: Spam the text letter by letter.\
+\nUso: Spam the text letter by letter.\
 \n\n.spam <count> <text>\
-\nUsage: Floods text in the chat !!\
+\nUso: Floods text in the chat !!\
 \n\n.wspam <text>\
-\nUsage: Spam the text word by word.\
+\nUso: Spam the text word by word.\
 \n\n.picspam <count> <link to image/gif>\
-\nUsage: As if text spam was not enough !!\
+\nUso: As if text spam was not enough !!\
 \n\n.delayspam <delay> <count> <text>\
-\nUsage: .bigspam but with custom delay.\
+\nUso: .bigspam but with custom delay.\
 \n\n\nNOTE : Spam at your own risk !!"
     }
 )
