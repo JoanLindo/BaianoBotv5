@@ -165,7 +165,7 @@ async def show_all(event):
         await sleep(5)
         await event.delete()
     else:
-        await event.edit("`A saída é muito grande, enviando-a como um arquivo...`")
+        await event.edit("`O resultado é muito grande, enviando-o como um arquivo...`")
         with open(output, "w") as f:
             f.write(msg)
         await sleep(2)
@@ -196,7 +196,7 @@ async def check_progress_for_dl(gid, event, previous):
             if not complete and not file.error_message:
                 percentage = int(file.progress)
                 downloaded = percentage * int(file.total_length) / 100
-                prog_str = "`Downloading` | [{0}{1}] `{2}`".format(
+                prog_str = "`Baixando` | [{0}{1}] `{2}`".format(
                     "".join(["■" for i in range(math.floor(percentage / 10))]),
                     "".join(["▨" for i in range(10 - math.floor(percentage / 10))]),
                     file.progress_string(),
@@ -205,9 +205,9 @@ async def check_progress_for_dl(gid, event, previous):
                     f"`Nome`: `{file.name}`\n"
                     f"`Status` -> **{file.status.capitalize()}**\n"
                     f"{prog_str}\n"
-                    f"`{humanbytes(downloaded)} of {file.total_length_string()}"
+                    f"`{humanbytes(downloaded)} de {file.total_length_string()}"
                     f" @ {file.download_speed_string()}`\n"
-                    f"`ETA` -> {file.eta_string()}\n"
+                    f"`Tempo estimado` -> {file.eta_string()}\n"
                 )
                 if msg != previous:
                     await event.edit(msg)
@@ -222,8 +222,8 @@ async def check_progress_for_dl(gid, event, previous):
                 return await event.edit(
                     f"`Nome`: `{file.name}`\n"
                     f"`Tamanho`: `{file.total_length_string()}`\n"
-                    f"`Caminho`: `{TEMP_DOWNLOAD_DIRECTORY + file.name}`\n"
-                    "`Resposta`: **OK** - Successfully downloaded..."
+                    f"`Diretório`: `{TEMP_DOWNLOAD_DIRECTORY + file.name}`\n"
+                    "`Resposta`: **OK** - Download concluído com sucesso..."
                 )
         except Exception as e:
             if " não encontrado" in str(e) or "'arquivo'" in str(e):
