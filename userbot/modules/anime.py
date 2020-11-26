@@ -431,7 +431,7 @@ async def get_anime(message):
             query = await message.get_reply_message().text
         else:
             await message.reply(
-                "You gave nothing to search. (｡ì _ í｡)\n `Uso: .scanime <anime name>`"
+                "Você não deu nada para pesquisar. (｡ì _ í｡)\n `Uso: .scanime <anime name>`"
             )
             return
     except Exception as err:
