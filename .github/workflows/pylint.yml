@@ -43,6 +43,6 @@ jobs:
           commit_message: 'pylint: auto fixes'
           commit_options: '--no-verify --signoff'
           repository: .
-          commit_user_name: MoveAngel
-          commit_user_email: moveangel@minaproject.tech
-          commit_author: MoveAngel <moveangel@minaproject.tech>
+          commit_user_name: thewhiteharlot
+          commit_user_email: scryptt@gmail.com
+          commit_author: thewhiteharlot <scryptt@gmail.com>
