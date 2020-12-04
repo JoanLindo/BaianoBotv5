@@ -646,16 +646,15 @@ async def rm_deletedacc(show):
         )
 
 
-@register(outgoing=True, pattern="^.all$")
-async def tagaso(event):
-    """ For .all command, mention all of the member in the group chat"""
+@register(outgoing=True, pattern=r"^\.all$")
+async def all(event):
     if event.fwd_from:
         return
     await event.delete()
-    mentions = "@all"
+    mentions = "⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣⁣؜"
     chat = await event.get_input_chat()
-    async for user in bot.iter_participants(chat, 500):
-        mentions += f"[\u2063](tg://user?id={user.id})"
+    async for x in bot.iter_participants(chat, 100):
+        mentions += f"[\u2063](tg://user?id={x.id})"
     await bot.send_message(chat, mentions, reply_to=event.message.reply_to_msg_id)
 
 
