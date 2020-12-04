@@ -267,6 +267,7 @@ async def draw_meme_text(image_path, text):
     img.save(webp_file, "WebP")
     return webp_file
 
+
 @register(outgoing=True, pattern=r"^\.mmf2(?: |$)(.*)")
 async def mim(event):
     if event.fwd_from:
@@ -295,8 +296,7 @@ async def mim(event):
             file_name = "meme.jpg"
             reply_message = await event.get_reply_message()
             to_download_directory = TEMP_DOWNLOAD_DIRECTORY
-            downloaded_file_name = os.path.join(
-                to_download_directory, file_name)
+            downloaded_file_name = os.path.join(to_download_directory, file_name)
             downloaded_file_name = await bot.download_media(
                 reply_message,
                 downloaded_file_name,
@@ -416,6 +416,7 @@ async def draw_meme_text(image_path, text):
     webp_file = os.path.join(TEMP_DOWNLOAD_DIRECTORY, image_name)
     img.save(webp_file, "WebP")
     return webp_file
+
 
 @register(outgoing=True, pattern=r"^\.q")
 async def quotess(qotli):
@@ -559,7 +560,9 @@ async def fryerrr(fry):
             await fry.reply("`Desbloqueie` @image_deepfrybot`...`")
             return
         if response.text.startswith("Forward"):
-            await fry.edit("`Desative sua configuração de privacidade de encaminhamento...`")
+            await fry.edit(
+                "`Desative sua configuração de privacidade de encaminhamento...`"
+            )
         else:
             downloaded_file_name = await fry.client.download_media(
                 response.media, TEMP_DOWNLOAD_DIRECTORY

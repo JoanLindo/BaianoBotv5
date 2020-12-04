@@ -26,9 +26,7 @@ async def _(event):
                 await event.reply("`Desbloqueie` @SpotifyNowBot`...`")
                 return
             if response.text.startswith("You're"):
-                await event.edit(
-                    "`Você não está ouvindo nada no Spotify no momento`"
-                )
+                await event.edit("`Você não está ouvindo nada no Spotify no momento`")
                 await event.client.delete_messages(conv.chat_id, [msg.id, response.id])
                 return
             if response.text.startswith("Ads."):

@@ -263,7 +263,9 @@ async def ban(bon):
         if reply:
             await reply.delete()
     except BadRequestError:
-        await bon.edit("`Eu não tenho direitos de detonação de mensagens! Mas ainda assim ele foi banido!`")
+        await bon.edit(
+            "`Eu não tenho direitos de detonação de mensagens! Mas ainda assim ele foi banido!`"
+        )
         return
     # Delete message and then tell that the command
     # is done gracefully
@@ -359,7 +361,9 @@ async def spider(spdr):
     self_user = await spdr.client.get_me()
 
     if user.id == self_user.id:
-        await spdr.edit("`Mãos muito curtas, não consigo colocar fita adesiva em mim mesmo...\n(ヘ･_･)ヘ┳━┳`")
+        await spdr.edit(
+            "`Mãos muito curtas, não consigo colocar fita adesiva em mim mesmo...\n(ヘ･_･)ヘ┳━┳`"
+        )
         return
 
     # If everything goes well, do announcing and mute
@@ -509,7 +513,9 @@ async def ungmoot(un_gmute):
     await un_gmute.edit("```Desmutando globalmente...```")
 
     if ungmute(user.id) is False:
-        await un_gmute.edit("`Erro! Usuário provavelmente não está mutado globalmente.`")
+        await un_gmute.edit(
+            "`Erro! Usuário provavelmente não está mutado globalmente.`"
+        )
     else:
         # Inform about success
         await un_gmute.edit("```Desmutado globamente com sucesso!```")
@@ -552,7 +558,9 @@ async def gspider(gspdr):
     # If pass, inform and start gmuting
     await gspdr.edit("`Pega uma fita adesiva enorme e pegajosa!`")
     if gmute(user.id) is False:
-        await gspdr.edit("`Erro! O usuário provavelmente já está mutado globalmente.\nRola a fita novamente.`")
+        await gspdr.edit(
+            "`Erro! O usuário provavelmente já está mutado globalmente.\nRola a fita novamente.`"
+        )
     else:
         if reason:
             await gspdr.edit(f"`Globalmente adesivado!`Razão: {reason}")
@@ -825,7 +833,9 @@ async def get_users(show):
     try:
         await show.edit(mentions)
     except MessageTooLongError:
-        await show.edit("Este é um grupo enorme. Enviando lista de usuários como arquivo.")
+        await show.edit(
+            "Este é um grupo enorme. Enviando lista de usuários como arquivo."
+        )
         file = open("userslist.txt", "w+")
         file.write(mentions)
         file.close()
@@ -950,7 +960,9 @@ async def get_userdel_from_event(event):
             user = int(user)
 
         if not user:
-            await event.edit("`Passe o nome de usuário, id ou resposta do usuário excluído!`")
+            await event.edit(
+                "`Passe o nome de usuário, id ou resposta do usuário excluído!`"
+            )
             return
 
         if event.message.entities is not None:

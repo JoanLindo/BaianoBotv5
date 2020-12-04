@@ -109,9 +109,7 @@ async def editer(edit):
             break
         i = i + 1
     if BOTLOG:
-        await edit.client.send_message(
-            BOTLOG_CHATID, "Mensagem editada com sucesso"
-        )
+        await edit.client.send_message(BOTLOG_CHATID, "Mensagem editada com sucesso")
 
 
 @register(outgoing=True, pattern="^.sd")
@@ -125,7 +123,9 @@ async def selfdestruct(destroy):
     await sleep(counter)
     await smsg.delete()
     if BOTLOG:
-        await destroy.client.send_message(BOTLOG_CHATID, "Mensagem auto-destruída com sucesso")
+        await destroy.client.send_message(
+            BOTLOG_CHATID, "Mensagem auto-destruída com sucesso"
+        )
 
 
 CMD_HELP.update(

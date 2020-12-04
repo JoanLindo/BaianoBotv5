@@ -19,7 +19,9 @@ async def _(event):
         return
     to_add_users = event.pattern_match.group(1)
     if event.is_private:
-        await event.edit("`.invite` Convida usuários para um chat, não para uma mensagem privada")
+        await event.edit(
+            "`.invite` Convida usuários para um chat, não para uma mensagem privada"
+        )
     else:
         if not event.is_channel and event.is_group:
             # https://lonamiwebs.github.io/Telethon/methods/messages/add_chat_user.html

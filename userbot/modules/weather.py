@@ -50,7 +50,9 @@ async def get_weather(weather):
     """ For .weather command, gets the current weather of a city. """
 
     if not OWM_API:
-        await weather.edit("`Obtenha uma chave de API de` https://openweathermap.org/ `primeiro.`")
+        await weather.edit(
+            "`Obtenha uma chave de API de` https://openweathermap.org/ `primeiro.`"
+        )
         return
 
     APPID = OWM_API

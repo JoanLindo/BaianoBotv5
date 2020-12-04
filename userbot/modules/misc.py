@@ -118,7 +118,9 @@ async def raw(rawtext):
         reply_to_id = rawtext.message.id
     with io.BytesIO(str.encode(the_real_message)) as out_file:
         out_file.name = "raw_message_data.txt"
-        await rawtext.edit("`Verifique o log do userbot para os dados da mensagem decodificada !!`")
+        await rawtext.edit(
+            "`Verifique o log do userbot para os dados da mensagem decodificada !!`"
+        )
         await rawtext.client.send_file(
             BOTLOG_CHATID,
             out_file,

@@ -7,7 +7,7 @@
 
 import time
 from datetime import datetime
-from random import choice, randint
+from random import choice
 
 from telethon.events import StopPropagation
 

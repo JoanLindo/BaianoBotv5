@@ -120,7 +120,9 @@ async def kick_marie_filter(event):
             i = i.replace("`", "")
             await event.reply("/stop %s" % (i.strip()))
         await sleep(0.3)
-    await event.respond("```Filtros de bots apagados com sucesso yaay!```\n Me dê biscoitos!")
+    await event.respond(
+        "```Filtros de bots apagados com sucesso yaay!```\n Me dê biscoitos!"
+    )
     if BOTLOG:
         await event.client.send_message(
             BOTLOG_CHATID, "Limpei todos os filtros em " + str(event.chat_id)

@@ -69,7 +69,6 @@ async def neko(nekobin):
         )
 
 
-
 @register(outgoing=True, pattern=r"^.paste(?: |$)([\s\S]*)")
 async def paste(pstl):
     """ For .paste command, pastes the text directly to dogbin. """
@@ -176,7 +175,9 @@ async def get_dogbin_content(dog_url):
         )
         return
 
-    reply_text = "`Conteúdo do URL dogbin buscado com sucesso!`\n\n`Conteúdo:` " + resp.text
+    reply_text = (
+        "`Conteúdo do URL dogbin buscado com sucesso!`\n\n`Conteúdo:` " + resp.text
+    )
 
     await dog_url.edit(reply_text)
     if BOTLOG:

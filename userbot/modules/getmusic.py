@@ -153,7 +153,9 @@ async def _(event):
                 """- don't spam notif -"""
                 await bot.send_read_acknowledge(conv.chat_id)
             except YouBlockedUserError:
-                await event.reply("`Desbloqueie `@SpotifyMusicDownloaderBot` e tente novamente`")
+                await event.reply(
+                    "`Desbloqueie `@SpotifyMusicDownloaderBot` e tente novamente`"
+                )
                 return
             await bot.forward_messages(event.chat_id, respond.message)
         await event.client.delete_messages(conv.chat_id, [msg.id, r.id, respond.id])

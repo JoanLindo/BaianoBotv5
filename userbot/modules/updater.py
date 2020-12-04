@@ -95,7 +95,9 @@ async def deploy(event, repo, ups_rem, ac_br, txt):
         except GitCommandError as error:
             await event.edit(f"{txt}\n`Aqui está o error log:\n{error}`")
             return repo.__del__()
-        await event.edit("`Atualizado com sucesso!\n" "Reiniciando, por favor aguarde...`")
+        await event.edit(
+            "`Atualizado com sucesso!\n" "Reiniciando, por favor aguarde...`"
+        )
 
         if BOTLOG:
             await event.client.send_message(
@@ -113,9 +115,7 @@ async def update(event, repo, ups_rem, ac_br):
     except GitCommandError:
         repo.git.reset("--hard", "FETCH_HEAD")
     await update_requirements()
-    await event.edit(
-        "`Atualizado com sucesso!\n" "Reiniciando, por favor aguarde...`"
-    )
+    await event.edit("`Atualizado com sucesso!\n" "Reiniciando, por favor aguarde...`")
 
     if BOTLOG:
         await event.client.send_message(
@@ -186,11 +186,11 @@ async def upstream(event):
         return repo.__del__()
 
     if conf is None and force_update is False:
-        changelog_str = (
-            f"**Nova ATUALIZAÇÃO disponível para [{ac_br}]:\n\nLISTA DE MUDANÇAS:**\n`{changelog}`"
-        )
+        changelog_str = f"**Nova ATUALIZAÇÃO disponível para [{ac_br}]:\n\nLISTA DE MUDANÇAS:**\n`{changelog}`"
         if len(changelog_str) > 4096:
-            await event.edit("`Lista de mudanças muito grande, abra o arquivo para conferir.`")
+            await event.edit(
+                "`Lista de mudanças muito grande, abra o arquivo para conferir.`"
+            )
             file = open("output.txt", "w+")
             file.write(changelog_str)
             file.close()

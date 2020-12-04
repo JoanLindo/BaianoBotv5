@@ -55,10 +55,7 @@ async def okgoogle(img):
         fetchUrl = response.headers["Location"]
 
         if response != 400:
-            await img.edit(
-                "`Imagem enviada com sucesso.`"
-                "\n`Analisando a fonte.`"
-            )
+            await img.edit("`Imagem enviada com sucesso.`" "\n`Analisando a fonte.`")
         else:
             await img.edit("`Erro no envio.`")
             return

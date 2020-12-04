@@ -30,9 +30,7 @@ from userbot.events import register
 
 # =================== CONSTANT ===================
 LFM_BIO_ENABLED = "```A música atual do last.fm para a bio está agora habilitada.```"
-LFM_BIO_DISABLED = (
-    "```A música atual do last.fm para a bio está agora desativada. Bio revertido para o padrão.```"
-)
+LFM_BIO_DISABLED = "```A música atual do last.fm para a bio está agora desativada. Bio revertido para o padrão.```"
 LFM_BIO_RUNNING = "```Música atual do last.fm para bio já está em execução.```"
 LFM_BIO_ERR = "```Nenhuma opção especificada.```"
 LFM_LOG_ENABLED = "```O registro do last.fm no log do bot agora está habilitado.```"
@@ -78,7 +76,9 @@ async def last_fm(lastFM):
     else:
         recent = User(LASTFM_USERNAME, lastfm).get_recent_tracks(limit=3)
         playing = User(LASTFM_USERNAME, lastfm).get_now_playing()
-        output = f"[{LASTFM_USERNAME}]({username}) __estava ouvindo pela última vez:__\n\n"
+        output = (
+            f"[{LASTFM_USERNAME}]({username}) __estava ouvindo pela última vez:__\n\n"
+        )
         for i, track in enumerate(recent):
             print(i)
             printable = await artist_and_song(track)
@@ -145,7 +145,8 @@ async def get_curr_track(lfmbio):
                 try:
                     if BOTLOG and LastLog:
                         await bot.send_message(
-                            BOTLOG_CHATID, f"Tentativa de mudar a biografia para\n{lfmbio}"
+                            BOTLOG_CHATID,
+                            f"Tentativa de mudar a biografia para\n{lfmbio}",
                         )
                     await bot(UpdateProfileRequest(about=lfmbio))
                 except AboutTooLongError:
@@ -157,7 +158,8 @@ async def get_curr_track(lfmbio):
                     await bot(UpdateProfileRequest(about=DEFAULT_BIO))
                     if BOTLOG and LastLog:
                         await bot.send_message(
-                            BOTLOG_CHATID, f"Biografia redefinida de volta para\n{DEFAULT_BIO}"
+                            BOTLOG_CHATID,
+                            f"Biografia redefinida de volta para\n{DEFAULT_BIO}",
                         )
         except AttributeError:
             try:
@@ -166,11 +168,14 @@ async def get_curr_track(lfmbio):
                     await bot(UpdateProfileRequest(about=DEFAULT_BIO))
                     if BOTLOG and LastLog:
                         await bot.send_message(
-                            BOTLOG_CHATID, f"Biografia redefinida de volta para\n{DEFAULT_BIO}"
+                            BOTLOG_CHATID,
+                            f"Biografia redefinida de volta para\n{DEFAULT_BIO}",
                         )
             except FloodWaitError as err:
                 if BOTLOG and LastLog:
-                    await bot.send_message(BOTLOG_CHATID, f"Erro ao alterar bio:\n{err}")
+                    await bot.send_message(
+                        BOTLOG_CHATID, f"Erro ao alterar bio:\n{err}"
+                    )
         except FloodWaitError as err:
             if BOTLOG and LastLog:
                 await bot.send_message(BOTLOG_CHATID, f"Erro ao alterar bio:\n{err}")

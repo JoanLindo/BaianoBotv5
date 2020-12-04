@@ -6,7 +6,6 @@
 """ Userbot module containing various scrapers. """
 
 import asyncio
-import json
 import os
 import re
 import shutil
@@ -39,7 +38,6 @@ from youtube_dl.utils import (
     UnavailableVideoError,
     XAttrMetadataError,
 )
-from youtube_search import YoutubeSearch
 
 from userbot import BOTLOG, BOTLOG_CHATID, CMD_HELP, TEMP_DOWNLOAD_DIRECTORY, WOLFRAM_ID
 from userbot.events import register
@@ -203,7 +201,8 @@ async def gsearch(q_event):
         except IndexError:
             break
     await q_event.edit(
-        "**Consulta de Pesquisa:**\n`" + match + "`\n\n**Resultados:**\n" + msg, link_preview=False
+        "**Consulta de Pesquisa:**\n`" + match + "`\n\n**Resultados:**\n" + msg,
+        link_preview=False,
     )
 
     if BOTLOG:
@@ -254,7 +253,9 @@ async def urban_dict(ud_e):
     try:
         define(query)
     except HTTPError:
-        await ud_e.edit(f"Desculpe, não foi possível encontrar nenhum resultado para: {query}")
+        await ud_e.edit(
+            f"Desculpe, não foi possível encontrar nenhum resultado para: {query}"
+        )
         return
     mean = define(query)
     deflen = sum(len(i) for i in mean[0]["def"])
@@ -295,7 +296,8 @@ async def urban_dict(ud_e):
         )
         if BOTLOG:
             await ud_e.client.send_message(
-                BOTLOG_CHATID, "Consulta UrbanDictionary `" + query + "` executada com sucesso."
+                BOTLOG_CHATID,
+                "Consulta UrbanDictionary `" + query + "` executada com sucesso.",
             )
     else:
         await ud_e.edit("Nenhum resultado encontrado para **" + query + "**")
@@ -311,7 +313,9 @@ async def text_to_speech(query):
     elif textx:
         message = textx.text
     else:
-        await query.edit("`Envie uma mensagem de texto ou responda a uma mensagem para transformar em áudio!`")
+        await query.edit(
+            "`Envie uma mensagem de texto ou responda a uma mensagem para transformar em áudio!`"
+        )
         return
 
     try:
@@ -585,7 +589,9 @@ async def download_video(v_url):
         return await v_url.edit(f"{str(type(e)): {str(e)}}")
     c_time = time.time()
     if song:
-        await v_url.edit(f"`Preparando para fazer upload da música:`\n**{rip_data['title']}**")
+        await v_url.edit(
+            f"`Preparando para fazer upload da música:`\n**{rip_data['title']}**"
+        )
         await v_url.client.send_file(
             v_url.chat_id,
             f"{rip_data['id']}.mp3",
@@ -693,7 +699,9 @@ CMD_HELP.update(
         \nUso: Traduz o texto para o idioma definido.\nUse .lang trt <código do idioma> para definir idioma para trt. (Padrão é [English])"
     }
 )
-CMD_HELP.update({"imdb": ".imdb <nome-do-filme>\nMostra informações do filme e outras coisas."})
+CMD_HELP.update(
+    {"imdb": ".imdb <nome-do-filme>\nMostra informações do filme e outras coisas."}
+)
 CMD_HELP.update(
     {
         "rip": ".ripaudio <url> ou ripvideo <url>\

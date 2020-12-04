@@ -191,7 +191,9 @@ async def notifon(non_event):
         await non_event.edit("`Executando em modo não-SQL!`")
         return
     delgvar("NOTIF_OFF")
-    await non_event.edit("`Notificações de PMs não-aprovados não estão mais silenciadas!`")
+    await non_event.edit(
+        "`Notificações de PMs não-aprovados não estão mais silenciadas!`"
+    )
 
 
 @register(outgoing=True, pattern=r"^.approve$")
@@ -327,7 +329,9 @@ async def unblockpm(unblock):
 async def add_pmsg(cust_msg):
     """ Defina sua própria Mensagem não aprovada automática. """
     if not PM_AUTO_BAN:
-        return await cust_msg.edit("Você precisa definir `PM_AUTO_BAN` nas ConfigVars do Heroku para `True`")
+        return await cust_msg.edit(
+            "Você precisa definir `PM_AUTO_BAN` nas ConfigVars do Heroku para `True`"
+        )
     try:
         import userbot.modules.sql_helper.globals as sql
     except AttributeError:
@@ -361,20 +365,24 @@ async def add_pmsg(cust_msg):
 
         if BOTLOG:
             await cust_msg.client.send_message(
-                BOTLOG_CHATID, f"***{status} Mensagem não aprovada automática :*** \n\n{msg}"
+                BOTLOG_CHATID,
+                f"***{status} Mensagem não aprovada automática :*** \n\n{msg}",
             )
 
     if conf.lower() == "reset":
         if custom_message is not None:
             sql.delgvar("unapproved_msg")
-            await cust_msg.edit("`Mensagem não aprovada automática redefinida para o padrão`")
+            await cust_msg.edit(
+                "`Mensagem não aprovada automática redefinida para o padrão`"
+            )
         else:
             await cust_msg.edit("`Você ainda não definiu uma mensagem personalizada`")
 
     if conf.lower() == "get":
         if custom_message is not None:
             await cust_msg.edit(
-                "***Esta é a sua Mensagem não aprovada automática atual:***" f"\n\n{custom_message}"
+                "***Esta é a sua Mensagem não aprovada automática atual:***"
+                f"\n\n{custom_message}"
             )
         else:
             await cust_msg.edit(
