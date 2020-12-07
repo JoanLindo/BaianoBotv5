@@ -457,19 +457,20 @@ async def translateme(trans):
         message = str(trans.pattern_match.group(1))
 
     if not message:
-        return await trans.edit("`Envie um texto ou responda a uma mensagem para traduzir!`")
+        return await trans.edit(
+            "`Envie um texto ou responda a uma mensagem para traduzir!`"
+        )
 
     await trans.edit("Processando...")
     translator = google_translator()
     try:
-        reply_text = translator.translate(deEmojify(message),
-                                          lang_tgt=TRT_LANG)
+        reply_text = translator.translate(deEmojify(message), lang_tgt=TRT_LANG)
     except ValueError:
         return await trans.edit("Idioma de destino inválido.")
 
     try:
         source_lan = translator.detect(deEmojify(message))[1].title()
-    except:
+    except BaseException:
         source_lan = "(O Google não forneceu esta informação.)"
 
     reply_text = f"De: **{source_lan}**\nPara: **{LANGUAGES.get(TRT_LANG).title()}**\n\n{reply_text}"
