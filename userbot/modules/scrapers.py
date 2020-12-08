@@ -458,6 +458,7 @@ async def translateme(trans):
         message = textx.text
     else:
 <<<<<<< HEAD
+<<<<<<< HEAD
         message = str(trans.pattern_match.group(1))
 
     if not message:
@@ -480,6 +481,16 @@ async def translateme(trans):
     except BaseException:
         source_lan = "(O Google não forneceu esta informação.)"
 =======
+        reply_text = translator.translate(deEmojify(message), dest=TRT_LANG)
+    except ValueError:
+        await trans.edit("Idioma de destino inválido.")
+        return
+>>>>>>> parent of 9d1dd42... Fix de tradução de kensurbot
+=======
+        await trans.edit("`Dê um texto ou responda a uma mensagem para traduzir!`")
+        return
+
+    try:
         reply_text = translator.translate(deEmojify(message), dest=TRT_LANG)
     except ValueError:
         await trans.edit("Idioma de destino inválido.")
