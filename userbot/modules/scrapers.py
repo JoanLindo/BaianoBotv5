@@ -448,7 +448,7 @@ async def imdb(e):
 
 @register(outgoing=True, pattern=r"^.trt(?: |$)([\s\S]*)")
 async def translateme(trans):
-    """ Para o comando .trt, traduz o texto fornecido usando o Google Translate. """
+    """ For .trt command, translate the given text using Google Translate. """
     translator = Translator()
     textx = await trans.get_reply_message()
     message = trans.pattern_match.group(1)
@@ -457,35 +457,7 @@ async def translateme(trans):
     elif textx:
         message = textx.text
     else:
-        message = str(trans.pattern_match.group(1))
-
-    if not message:
-        return await trans.edit(
-            "`Envie um texto ou responda a uma mensagem para traduzir!`"
-        )
-=======
-        await trans.edit("`Dê um texto ou responda a uma mensagem para traduzir!`")
-        return
->>>>>>> parent of 9d1dd42... Fix de tradução de kensurbot
-
-    try:
-<<<<<<< HEAD
-        reply_text = translator.translate(deEmojify(message), lang_tgt=TRT_LANG)
-    except ValueError:
-        return await trans.edit("Idioma de destino inválido.")
-
-    try:
-        source_lan = translator.detect(deEmojify(message))[1].title()
-    except BaseException:
-        source_lan = "(O Google não forneceu esta informação.)"
-=======
-        reply_text = translator.translate(deEmojify(message), dest=TRT_LANG)
-    except ValueError:
-        await trans.edit("Idioma de destino inválido.")
-        return
->>>>>>> parent of 9d1dd42... Fix de tradução de kensurbot
-=======
-        await trans.edit("`Dê um texto ou responda a uma mensagem para traduzir!`")
+        await trans.edit("`Envie um texto ou responda a uma mensagem para traduzir!`")
         return
 
     try:
@@ -493,27 +465,6 @@ async def translateme(trans):
     except ValueError:
         await trans.edit("Idioma de destino inválido.")
         return
->>>>>>> parent of 9d1dd42... Fix de tradução de kensurbot
-=======
-        await trans.edit("`Dê um texto ou responda a uma mensagem para traduzir!`")
-        return
-
-    try:
-        reply_text = translator.translate(deEmojify(message), dest=TRT_LANG)
-    except ValueError:
-        await trans.edit("Idioma de destino inválido.")
-        return
->>>>>>> parent of 9d1dd42... Fix de tradução de kensurbot
-=======
-        await trans.edit("`Dê um texto ou responda a uma mensagem para traduzir!`")
-        return
-
-    try:
-        reply_text = translator.translate(deEmojify(message), dest=TRT_LANG)
-    except ValueError:
-        await trans.edit("Idioma de destino inválido.")
-        return
->>>>>>> parent of 9d1dd42... Fix de tradução de kensurbot
 
     source_lan = LANGUAGES[f"{reply_text.src.lower()}"]
     transl_lan = LANGUAGES[f"{reply_text.dest.lower()}"]
@@ -523,7 +474,7 @@ async def translateme(trans):
     if BOTLOG:
         await trans.client.send_message(
             BOTLOG_CHATID,
-            f"Traduzido algumas {source_lan.title()} coisas para {transl_lan.title()} agora.",
+            f"Traduzidas algumas coisas de {source_lan.title()} para {transl_lan.title()} agora.",
         )
 
 
