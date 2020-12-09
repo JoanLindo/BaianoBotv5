@@ -476,7 +476,7 @@ async def translateme(trans):
     except:
         source_lan = "(O Google não forneceu esta informação)"
 
-     reply_text = f"De: **{source_lan}**\nPara: **{LANGUAGES.get(TRT_LANG).title()}**\n\n{reply_text}"
+    reply_text = f"De: **{source_lan}**\nPara: **{LANGUAGES.get(TRT_LANG).title()}**\n\n{reply_text}"
 
     await trans.edit(reply_text)
 
