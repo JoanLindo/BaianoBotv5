@@ -18,7 +18,7 @@ from urllib.parse import quote_plus
 
 from bs4 import BeautifulSoup
 from emoji import get_emoji_regexp
-from googletrans import LANGUAGES, Translator
+from google_trans_new import LANGUAGES, google_translator
 from gtts import gTTS
 from gtts.lang import tts_langs
 from requests import get
@@ -446,36 +446,39 @@ async def imdb(e):
         await e.edit("Insira um **nome de filme válido** k obgd")
 
 
-@register(outgoing=True, pattern=r"^.trt(?: |$)([\s\S]*)")
+@register(outgoing=True, pattern=r"^\.trt(?: |$)([\s\S]*)")
 async def translateme(trans):
     """ For .trt command, translate the given text using Google Translate. """
-    translator = Translator()
-    textx = await trans.get_reply_message()
-    message = trans.pattern_match.group(1)
-    if message:
-        pass
-    elif textx:
-        message = textx.text
+    
+    if trans.is_reply and not trans.pattern_match.group(1):
+        message = await trans.get_reply_message()
+        message = str(message.message)
     else:
-        await trans.edit("`Envie um texto ou responda a uma mensagem para traduzir!`")
-        return
+                message = str(trans.pattern_match.group(1))
+
+    if not message:
+        return await trans.edit(
+            "**Envie algum texto ou responda a uma mensagem para traduzir!**")
+
+        await trans.edit("**Processando...**")
+    translator = google_translator()
 
     try:
-        reply_text = translator.translate(deEmojify(message), dest=TRT_LANG)
+        reply_text = translator.translate(deEmojify(message),
+                                          lang_tgt=TRT_LANG)
     except ValueError:
-        await trans.edit("Idioma de destino inválido.")
-        return
+        return await trans.edit(
+            "**Idioma inválido selecionado, use **`.lang tts <código do idioma>`**.**"
+        )
 
-    source_lan = LANGUAGES[f"{reply_text.src.lower()}"]
-    transl_lan = LANGUAGES[f"{reply_text.dest.lower()}"]
-    reply_text = f"De **{source_lan.title()}**\nPara **{transl_lan.title()}:**\n\n{reply_text.text}"
+    try:
+        source_lan = translator.detect(deEmojify(message))[1].title()
+    except:
+        source_lan = "(O Google não forneceu esta informação)"
+
+     reply_text = f"De: **{source_lan}**\nPara: **{LANGUAGES.get(TRT_LANG).title()}**\n\n{reply_text}"
 
     await trans.edit(reply_text)
-    if BOTLOG:
-        await trans.client.send_message(
-            BOTLOG_CHATID,
-            f"Traduzidas algumas coisas de {source_lan.title()} para {transl_lan.title()} agora.",
-        )
 
 
 @register(pattern=".lang (trt|tts) (.*)", outgoing=True)

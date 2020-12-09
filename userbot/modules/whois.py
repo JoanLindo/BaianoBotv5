@@ -29,11 +29,14 @@ async def who(event):
         os.makedirs(TEMP_DOWNLOAD_DIRECTORY)
 
     replied_user = await get_user(event)
+    if replied_user is None:
+        await event.edit("`Este é um administrador anônimo neste grupo.\nNão consigo obter a informação`")
+        return
 
     try:
         photo, caption = await fetch_info(replied_user, event)
     except AttributeError:
-        event.edit("`Não foi possível buscar as informações desse usuário.`")
+       await event.edit("`Não foi possível buscar as informações desse usuário.`")
         return
 
     message_id_to_reply = event.message.reply_to_msg_id
@@ -64,7 +67,10 @@ async def get_user(event):
     """ Get the user from argument or replied message. """
     if event.reply_to_msg_id and not event.pattern_match.group(1):
         previous_message = await event.get_reply_message()
-        replied_user = await event.client(GetFullUserRequest(previous_message.from_id))
+          if previous_message.from_id is None:  # Anonymous admin seems don't have id attr
+            return None
+        replied_user = await event.client(
+            GetFullUserRequest(previous_message.from_id))
     else:
         user = event.pattern_match.group(1)
 
@@ -159,6 +165,6 @@ async def fetch_info(replied_user, event):
 CMD_HELP.update(
     {
         "whois": ".whois <nome de usuário> ou responda ao texto de alguém com .whois\
-    \nUso: Obtém informações de um usuário."
+         \nUso: Obtém informações de um usuário."
     }
 )
