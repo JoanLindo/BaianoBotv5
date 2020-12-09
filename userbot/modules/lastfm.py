@@ -82,7 +82,7 @@ async def last_fm(lastFM):
         for i, track in enumerate(recent):
             print(i)
             printable = await artist_and_song(track)
-             try:
+            try:
                 tags = await gettags(track)
             except WSError as err:
                 return await lastFM.edit(err)

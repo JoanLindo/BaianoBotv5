@@ -37,7 +37,7 @@ async def who(event):
         photo, caption = await fetch_info(replied_user, event)
     except AttributeError:
        await event.edit("`Não foi possível buscar as informações desse usuário.`")
-        return
+    return
 
     message_id_to_reply = event.message.reply_to_msg_id
 
