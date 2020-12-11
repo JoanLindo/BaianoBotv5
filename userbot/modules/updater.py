@@ -79,7 +79,7 @@ async def deploy(event, repo, ups_rem, ac_br, txt):
                 f"{txt}\n`Credenciais inválidos do Heroku para implantar a userbot dyno.`"
             )
             return repo.__del__()
-        await event.edit("Userbot Dyno Build em progresso, por favor aguarde...`")
+        await event.edit("`Userbot Dyno Build em progresso, por favor aguarde...`")
         ups_rem.fetch(ac_br)
         repo.git.reset("--hard", "FETCH_HEAD")
         heroku_git_url = heroku_app.git_url.replace(
@@ -202,7 +202,7 @@ async def upstream(event):
             remove("output.txt")
         else:
             await event.edit(changelog_str)
-        return await event.respond('`do ".update now/deploy" to update`')
+        return await event.respond('`Envie ".update now" ou ".update deploy" para atualizar`')
 
     if force_update:
         await event.edit(

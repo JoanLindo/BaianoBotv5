@@ -32,8 +32,8 @@ async def _(event):
         "invalid_arl_token": "please set the required variables for this module",
         "wrong_cmd_syntax": "bruh, now i think how far should we go. please terminate my Session!",
         "server_error": "We're experiencing technical difficulties.",
-        "processing": "`Downloading...`",
-        "uploading": "`Uploading...`",
+        "Processando": "`Downloading...`",
+        "enviando": "`Uploading...`",
     }
 
     ARL_TOKEN = DEEZER_ARL_TOKEN
@@ -55,7 +55,7 @@ async def _(event):
     required_link = event.pattern_match.group(1)
     required_qty = event.pattern_match.group(2)
 
-    await event.edit(strings["processing"])
+    await event.edit(strings["Processando"])
 
     if "spotify" in required_link:
         if "track" in required_link:
@@ -67,7 +67,7 @@ async def _(event):
                 recursive_download=True,
                 not_interface=True,
             )
-            await event.edit(strings["uploading"])
+            await event.edit(strings["enviando"])
             await upload_track(required_track, event)
             shutil.rmtree(temp_dl_path)
             await event.delete()
@@ -82,7 +82,7 @@ async def _(event):
                 not_interface=True,
                 zips=False,
             )
-            await event.edit(strings["uploading"])
+            await event.edit(strings["enviando"])
             for required_track in reqd_albums:
                 await upload_track(required_track, event)
             shutil.rmtree(temp_dl_path)
@@ -98,7 +98,7 @@ async def _(event):
                 recursive_download=True,
                 not_interface=True,
             )
-            await event.edit(strings["uploading"])
+            await event.edit(strings["enviando"])
             await upload_track(required_track, event)
             shutil.rmtree(temp_dl_path)
             await event.delete()
@@ -113,7 +113,7 @@ async def _(event):
                 not_interface=True,
                 zips=False,
             )
-            await event.edit(strings["uploading"])
+            await event.edit(strings["enviando"])
             for required_track in reqd_albums:
                 await upload_track(required_track, event)
             shutil.rmtree(temp_dl_path)

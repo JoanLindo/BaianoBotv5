@@ -210,7 +210,7 @@ async def download_api(dl):
             f"`Status`\n{prog_str}\n"
             f"`{humanbytes(downloaded)} of {humanbytes(file_size)}"
             f" @ {humanbytes(speed)}`\n"
-            f"`ETA` -> {time_formatter(eta)}"
+            f"`Tempo Estimado` -> {time_formatter(eta)}"
         )
         if (
             round(diff % 15.00) == 0

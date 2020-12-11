@@ -29,7 +29,7 @@ from userbot.utils import humanbytes, progress
 @register(pattern=r".download(?: |$)(.*)", outgoing=True)
 async def download(target_file):
     """ For .download command, download files to the userbot's server. """
-    await target_file.edit("Processing ...")
+    await target_file.edit("Processando ...")
     input_str = target_file.pattern_match.group(1)
     if not os.path.isdir(TEMP_DOWNLOAD_DIRECTORY):
         os.makedirs(TEMP_DOWNLOAD_DIRECTORY)
@@ -64,12 +64,12 @@ async def download(target_file):
             estimated_total_time = downloader.get_eta(human=True)
             try:
                 current_message = (
-                    f"`Name` : `{file_name}`\n"
+                    f"`Nome` : `{file_name}`\n"
                     "Status"
                     f"\n**{status}**... | {progress_str}"
                     f"\n{humanbytes(downloaded)} of {humanbytes(total_length)}"
                     f" @ {speed}"
-                    f"\n`ETA` -> {estimated_total_time}"
+                    f"\n`Tempo Estimado` -> {estimated_total_time}"
                 )
 
                 if round(diff % 10.00) == 0 and current_message != display_message:
@@ -82,7 +82,7 @@ async def download(target_file):
                 "Baixado para `{}` com sucesso !!".format(downloaded_file_name)
             )
         else:
-            await target_file.edit("Incorrect URL\n{}".format(url))
+            await target_file.edit("URL incorreto\n{}".format(url))
     elif target_file.reply_to_msg_id:
         try:
             c_time = time.time()
@@ -100,7 +100,7 @@ async def download(target_file):
                 "Baixado para `{}` com sucesso !!".format(downloaded_file_name)
             )
     else:
-        await target_file.edit("Reply to a message to download to my local server.")
+        await target_file.edit("Responda a uma mensagem para fazer o download no meu servidor local.")
 
 
 @register(pattern=r".uploadir (.*)", outgoing=True)
@@ -108,7 +108,7 @@ async def uploadir(udir_event):
     """ For .uploadir command, allows you to upload everything from a folder in the server"""
     input_str = udir_event.pattern_match.group(1)
     if os.path.exists(input_str):
-        await udir_event.edit("Processing ...")
+        await udir_event.edit("Processando ...")
         lst_of_files = []
         for r, d, f in os.walk(input_str):
             for file in f:
@@ -118,7 +118,7 @@ async def uploadir(udir_event):
         LOGS.info(lst_of_files)
         uploaded = 0
         await udir_event.edit(
-            "Found {} files. Uploading will start soon. Please wait!".format(
+            "Encontrados {} arquivos. O upload começará em breve. Por favor, espere!".format(
                 len(lst_of_files)
             )
         )
@@ -175,7 +175,7 @@ async def uploadir(udir_event):
                     )
                 os.remove(single_file)
                 uploaded = uploaded + 1
-        await udir_event.edit("Uploaded {} files com sucesso !!".format(uploaded))
+        await udir_event.edit("Enviados {} arquivos com sucesso !!".format(uploaded))
     else:
         await udir_event.edit("404: Directory Not Found")
 
@@ -183,10 +183,10 @@ async def uploadir(udir_event):
 @register(pattern=r".upload (.*)", outgoing=True)
 async def upload(u_event):
     """ For .upload command, allows you to upload a file from the userbot's server """
-    await u_event.edit("Processing ...")
+    await u_event.edit("Processando ...")
     input_str = u_event.pattern_match.group(1)
     if input_str in ("userbot.session", "config.env"):
-        return await u_event.edit("`That's a dangerous operation! Not Permitted!`")
+        return await u_event.edit("`Essa é uma operação perigosa! Acesso negado!`")
     if os.path.exists(input_str):
         c_time = time.time()
         await u_event.client.send_file(
@@ -259,7 +259,7 @@ def extract_w_h(file):
 @register(pattern=r".uploadas(stream|vn|all) (.*)", outgoing=True)
 async def uploadas(uas_event):
     """ For .uploadas command, allows you to specify some arguments for upload. """
-    await uas_event.edit("Processing ...")
+    await uas_event.edit("Processando ...")
     type_of_upload = uas_event.pattern_match.group(1)
     supports_streaming = False
     round_message = False
@@ -350,9 +350,9 @@ async def uploadas(uas_event):
 
 CMD_HELP.update(
     {
-        "download": ".download <link|filename> or reply to media\
-\nUso: Downloads file to the server.\
-\n\n.upload <path in server>\
-\nUso: Uploads a locally stored file to the chat."
+        "download": ".download <link|nome do arquivo> ou responda a uma mídia\
+\nUso: Baixa o arquivo para o servidor.\
+\n\n.upload <caminho no servidor>\
+\nUso: Carrega um arquivo armazenado localmente para o chat."
     }
 )

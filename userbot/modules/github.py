@@ -72,7 +72,7 @@ async def download(event):
     if GIT_REPO_NAME is None:
         await event.edit("`Please ADD Proper Github Repo Name of your userbot`")
         return
-    mone = await event.reply("Processing ...")
+    mone = await event.reply("Processando ...")
     if not os.path.isdir(GIT_TEMP_DIR):
         os.makedirs(GIT_TEMP_DIR)
     start = datetime.now()
