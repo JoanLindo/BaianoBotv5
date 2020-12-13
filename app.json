@@ -1,6 +1,6 @@
 {
-  "name": "Telegram PurpleBot",
-  "description": "[PurpleBot] Um userbot modular do Telegram em execução no Python 3.8+ com um banco de dados sqlalchemy.",
+  "name": "Telegram PurpleBot Baiano",
+  "description": "[PurpleBot baiano] Um userbot modular do Telegram em execução no Python 3.8+ com um banco de dados sqlalchemy.",
   "logo": "https://i.ibb.co/fN3nTx0/image.png",
   "keywords": [
     "telegram",
