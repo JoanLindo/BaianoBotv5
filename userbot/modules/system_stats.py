@@ -229,15 +229,15 @@ async def amireallyalive(alive):
     """ For .alive command, check if the bot is running.  """
     uptime = await get_readable_time((time.time() - StartTime))
     output = (
-        "`ta tudo na paz fml...`\n"
+        "`ta tudo pegando!...`\n"
         "`⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊶⊷⊶⊶⊶⊶⊶⊶⊶`\n"
-        f"•  ⚙️ `Telethon   : v{version.__version__} `\n"
+        f"•  🚩 `Telethon   : v{version.__version__} `\n"
         f"•  🐍 `Python     : v{python_version()} `\n"
-        f"•  👤 `Joan   :`  {DEFAULTUSER} \n"
+        f"•  🥱 `Joan   :`  {DEFAULTUSER} \n"
         "`-----------------------------`\n"
-        f"•  💻 `Rodando em : {repo.active_branch.name} `\n"
+        f"•  🛌 ` : {repo.active_branch.name} `\n"
         f"•  🗃 `Módulos    : {len(modules)} `\n"
-        f"•  🧸 `BaianoBot  : v{USERBOT_VERSION} `\n"
+        f"•  😴 `BaianoBot  : v{USERBOT_VERSION} `\n"
         f"•  🕒 `Bot Uptime : {uptime} `\n"
         "`⊷⊷⊷⊷⊷⊷⊷⊷⊷⊷⊶⊷⊶⊶⊶⊶⊶⊶⊶`"
     )
