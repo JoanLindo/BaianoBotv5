@@ -27,29 +27,29 @@ from userbot import (  # noqa pylint: disable=unused-import isort:skip
 
 # ========================= CONSTANTS ============================
 AFKSTR = [
-    "Agora estou ocupado. Por favor, fale em uma bolsa e quando eu voltar você pode apenas me dar a bolsa!",
-    "Estou fora agora. Se precisar de alguma coisa, deixe mensagem após o beep:\n`beeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeep`!",
-    "Você me errou, da próxima vez mire melhor.",
-    "Volto em alguns minutos e se não ..,\nespere mais um pouco.",
-    "Não estou aqui agora, então provavelmente estou em outro lugar.",
-    "Sei que quer falar comigo, mas estou ocupado salvando o mundo agora.",
-    "Às vezes, vale a pena esperar pelas melhores coisas da vida…\nJá volto.",
-    "Já volto,\nmas se não voltar agora,\nvolto mais tarde.",
-    "Se você ainda não percebeu,\nnão estou aqui.",
-    "Olá, seja bem-vindo à minha mensagem de ausência, como posso ignorá-lo hoje?",
-    "Estou mais longe que 7 mares e 7 países,\n7 águas e 7 continentes,\n7 montanhas e 7 colinas,\n7 planícies e 7 montes,\n7 piscinas e 7 lagos,\n7 nascentes e 7 prados,\n7 cidades e 7 bairros,\n7 quadras e 7 casas...\n\nOnde nem mesmo suas mensagens podem me alcançar!",
-    "Estou ausente no momento, mas se você gritar alto o suficiente na tela, talvez eu possa ouvir você.",
-    "Eu fui pra lá\n---->",
-    "Eu fui pra lá\n<----",
-    "Por favor, deixe uma mensagem e me faça sentir ainda mais importante do que já sou.",
-    "Eu não estou aqui então pare de escrever para mim,\nou então você se verá com uma tela cheia de suas próprias mensagens.",
-    "Se eu estivesse aqui,\nEu te diria onde estou.\n\nMas eu não estou,\nentão me pergunte quando eu voltar...",
-    "Estou ausente!\nNão sei quando voltarei!\nEspero que daqui a alguns minutos!",
-    "Não estou disponível agora, por favor, deixe seu nome, número e endereço e eu irei persegui-lo mais tarde. ",
-    "Desculpe, eu não estou aqui agora.\nSinta-se à vontade para falar com meu userbot pelo tempo que desejar.\nEu respondo mais tarde.",
-    "Aposto que você estava esperando uma mensagem de ausência, mas era eu! Dio!",
-    "A vida é tão curta, há tantas coisas para fazer ...\nEstou ausente fazendo uma delas ..",
-    "Eu não estou aqui agora ...\nmas se estivesse...\n\nisso não seria incrível?",
+    "Estou no modo baiano fdp nao me ",
+    "Estou no modo baiano fdp para de me incomoda",
+    "Filha da puta tá vendo que eu tô em afk caraio.",
+    "Vai se fode estou em afk pare de me mencionar !.",
+    "Espera eu voltar arrombado !.",
+    "Si continuar me mencionando eu vou comer teu cu eu tou em afk fdp",
+    "Estou baianando pode esperar o pai cair da rede.",
+    "Desculpa ae fml o pai n tá on !.",
+    "Si for o kadso que tiver me mencionando vai tomar no cu.",
+    "Tô em afk agora !",
+    "AAAAAAAAAAAAAAAAAAAAAA FILHA DA PUTA EU TO OFF DESGRAÇA",
+    "Si for o junin que tiver me marcando vai tomar no cu.",
+    "Eu fui comer seu cu\n---->",
+    "Eu fui voltei ta um oco agora\n<----",
+    "Ado ado quem me chamou e viado.",
+    "Fodase kadso eu estou em afk",
+    "Oi estou em afk gostosa por favor n me chamar ok ?",
+    "Seu cu",
+    "Lmao. ",
+    "ok depois eu ti como",
+    "To no zapzap!",
+    "to cagando arrombado..",
+    "ate?",
 ]
 
 global USER_AFK  # pylint:disable=E0602
@@ -83,11 +83,11 @@ async def set_afk(afk_e):
     if string:
         AFKREASON = string
         await afk_e.edit(
-            f"Ficarei ausente!\
+            f"Ativei o modo baiano!\
         \nRazão: `{string}`"
         )
     else:
-        await afk_e.edit("Ficarei ausente!")
+        await afk_e.edit("Ativei o modo baiano!")
     if BOTLOG:
         await afk_e.client.send_message(BOTLOG_CHATID, "#AFK\nVocê ficou ausente!")
     ISAFK = True
