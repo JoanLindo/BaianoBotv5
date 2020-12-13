@@ -135,7 +135,7 @@ async def kang(args):
                 while "120" in x.text:
                     pack += 1
                     packname = f"a{user.id}_by_{user.username}_{pack}"
-                    packnick = f"@{user.username} kang library Book.{pack}"
+                    packnick = f"@{user.username} da baia lindo.{pack}"
                     await args.edit(
                         "`Trocando para pacote "
                         + str(pack)
