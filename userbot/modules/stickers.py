@@ -24,16 +24,16 @@ from userbot import CMD_HELP, bot
 from userbot.events import register
 
 KANGING_STR = [
-    "Usando alquimia para clonar esse sticker...",
-    "Pegando isso aqui emprestado...",
-    "Convidando esse sticker pro meu pack...",
-    "Hey, lindo sticker!\nSe importa se eu roubar?!..",
-    "hehe achado não é roubado\nquem perdeu foi relaxado.",
-    "Ay olha aquilo ali (☉｡☉)!→\nEnquanto eu pego isso aqui...",
-    "Enviando sticker para meu banco de dados.",
-    "Simsalabim, passe esse sticker para mim.",
-    "Sticker capturado com sucesso...",
-    "Sr. RoubaSticker roubando seu sticker... ",
+    "Sticker roubado carai kkk",
+    "Kibando",
+    "Gostei vou add a meu pack do zap",
+    "Daora dmais vou rouba?!..",
+    "ado ado estou roubando um sticker de um viado.",
+    "Perdeu",
+    "Enviando para o pack do joanlindo.",
+    "E nos fml lindo sticker .",
+    "Sticker kibado com sucesso...",
+    "kibandoo esse sticker kkk ",
 ]
 
 
