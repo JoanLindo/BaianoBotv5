@@ -86,9 +86,9 @@ UNMUTE_RIGHTS = ChatBannedRights(until_date=None, send_messages=False)
 # ================================================
 
 
-@register(outgoing=True, pattern="^!setgpic$")
+@register(outgoing=True, pattern="^.setgpic$")
 async def set_group_photo(gpic):
-    """ For !setgpic command, changes the picture of a group """
+    """ For .setgpic command, changes the picture of a group """
     await gpic.edit("`Processando...`")
     await sleep(1)
     if not gpic.is_group:
@@ -160,7 +160,7 @@ async def promote(promt):
     # Try to promote if current user is admin or creator
     try:
         await promt.client(EditAdminRequest(promt.chat_id, user.id, new_rights, rank))
-        await promt.edit("`Promovido com sucesso!`")
+        await promt.edit("`Promovido a ademir!`")
 
     # If Telethon spit BadRequestError, assume
     # we don't have Promote permission
@@ -250,7 +250,7 @@ async def ban(bon):
         return
 
     # Announce that we're going to whack the pest
-    await bon.edit("`Acabando com a praga!`")
+    await bon.edit("`SAIA DO GRUPO AGORA!`")
 
     try:
         await bon.client(EditBannedRequest(bon.chat_id, user.id, BANNED_RIGHTS))
