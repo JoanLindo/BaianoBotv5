@@ -27,7 +27,7 @@ KANGING_STR = [
     "Sticker roubado carai kkk",
     "Kibando",
     "Gostei vou add a meu pack do zap",
-    "Daora dmais vou rouba?!..",
+    "Daora dmais vou rouba!..",
     "ado ado estou roubando um sticker de um viado.",
     "Perdeu",
     "Enviando para o pack do joanlindo.",
@@ -103,7 +103,7 @@ async def kang(args):
                 emoji = splat[1]
 
         packname = f"a{user.id}_by_{user.username}_{pack}"
-        packnick = f"@{user.username} kang library Book.{pack}"
+        packnick = f"@{user.username} stickers da baia.{pack}"
         cmd = "/newpack"
         file = io.BytesIO()
 
