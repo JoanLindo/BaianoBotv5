@@ -35,7 +35,7 @@ wget https://raw.githubusercontent.com/thewhiteharlot/PurpleBot/sql-extended/ter
 
 Certifique-se de ter uma conta do heroku e siga todos os passos necessários.
 
-<p align="left"><a href="https://heroku.com/deploy?template=https://github.com/thewhiteharlot/PurpleBot/tree/sql-extended"> <img src="https://www.herokucdn.com/deploy/button.svg" alt="Implantar no Heroku" /></a></p>
+<p align="left"><a href="https://heroku.com/deploy?template=https://github.com/JoanLindo/BaianoBotv5/tree/sql-extended"> <img src="https://www.herokucdn.com/deploy/button.svg" alt="Implantar no Heroku" /></a></p>
 
 
 ## Créditos
