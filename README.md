@@ -1,6 +1,6 @@
-# (One4uBot based) PurpleBot userbot project
+# Baiano bot e bot baseado no PurpleBot
 
-![logo](https://i.ibb.co/xH67gZN/image.png)
+![logo](https://ibb.co/s2XTMJX)
 
 ```
 #include <std/disclaimer.h>
