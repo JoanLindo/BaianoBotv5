@@ -1,4 +1,4 @@
-# Baiano bot e bot baseado no PurpleBot
+# Baianobot e um bot baseado no PurpleBot
 
 ![logo](https://telegra.ph/file/ef9282b36c48deefba9a0.jpg)
 
